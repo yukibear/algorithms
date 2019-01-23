@@ -64,26 +64,37 @@ return $hour.':'.$min;
     // return $hourParts[0].$hourParts[1].':'.$minParts[0].$minParts[1];
 }
 
-function largestTimeFromDigits_old($nums) {
-    /**
-     * 始めに時間のために23までの最大値を求める
-     * その後の残りで59までの最大値を求める
-     * 失敗したら時間を修正していく
-     */
-    if ($idx = array_search(2, $nums) !== -1) {
-        $nums[$idx];
-        unset $nums[$idx];
-        for ($i = 3; $i > -1; $i--) {
-            if ($idx = array_search($i, $nums) !== -1) {
-                $nums[$i];
+function largestTimeFromDigits($A) {
+    $largestTime = array('hours' => null, 'mins' => null, 'minFormat' => null);
+
+    for ($i = 0; $i < 4; $i++) {
+        for ($j = 0; $j < 4; $j++) {
+            if ($j === $i) continue;
+
+            for ($k = 0; $k < 4; $k++) {
+                if ($k === $i || $k === $j) continue;
+
+                $l = 6 - $i - $j - $k;
+
+                $hours = 10 * $A[$i] + $A[$j];
+                $mins = 10 * $A[$k] + $A[$l];
+                if ($hours < 24 && $mins < 60) {
+                    $minFormat = $hours * 60 + $mins;
+                    if ($minFormat >= $largestTime['minFormat']) {
+                        $largestTime['minFormat'] = $minFormat;
+                        $largestTime['hours'] = $hours;
+                        $largestTime['mins'] = $mins;
+                    }
+                }
             }
         }
     }
-
-    $nums = array_search(2, $nums);
-    $nums = array_search(1, $nums);
-    $nums = array_search(0, $nums);
+    if (isset($largestTime['hours'])) {
+        return sprintf('%1$02d:%2$02d', $largestTime['hours'], $largestTime['mins']);
+    } else {
+        return '';
+    }
 }
-
 var_dump(largestTimeFromDigits([1,2,3,4]));
 var_dump(largestTimeFromDigits([5,5,5,5]));
+var_dump(largestTimeFromDigits([0,0,0,0]));

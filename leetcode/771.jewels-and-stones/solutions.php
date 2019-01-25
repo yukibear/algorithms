@@ -5,7 +5,19 @@
  * The letters in J are guaranteed distinct, and all characters in J and S are letters. Letters are case sensitive, so "a" is considered a different type of stone from "A".
  */
 function numJewelsInStones($J, $S) {
-
+    $stoneCounts = [];
+    for($i = 0; $i < strlen($S); $i++) {
+        if (isset($stoneCounts[$S[$i]])) {
+            $stoneCounts[$S[$i]]++;
+        } else {
+            $stoneCounts[$S[$i]] = 1;
+        }
+    }
+    $jewelCount = 0;
+    for($i = 0; $i < strlen($J); $i++) {
+        if (isset($stoneCounts[$J[$i]])) $jewelCount += $stoneCounts[$J[$i]];
+    }
+    return $jewelCount;
 }
 
 echo numJewelsInStones("aA", "aAAbbbb")."\n"; // should return 2

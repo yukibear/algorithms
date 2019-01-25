@@ -3,24 +3,45 @@ class MinStack {
 
     /** initialize your data structure here. */
     public function __construct() {
-
+        $this->minHistory = [];
+        $this->minHistoryLastIndex = -1;
+        $this->array = [];
+        $this->arrayLastIndex = -1;
     }
 
     public function push($x) {
+        $this->arrayLastIndex++;
+        $this->array[$this->arrayLastIndex] = $x;
 
+        if ($this->minHistoryLastIndex === -1 || $this->minHistory[$this->minHistoryLastIndex] >= $x) {
+            $this->minHistory[$this->minHistoryLastIndex+1] = $x;
+            $this->minHistoryLastIndex++;
+        }
     }
 
     public function pop() {
+        if ($this->arrayLastIndex < 0) return null;
 
+        $val = $this->array[$this->arrayLastIndex];
+        unset($this->array[$this->arrayLastIndex]);
+        $this->arrayLastIndex--;
+
+        if ($this->minHistory[$this->minHistoryLastIndex] === $val) {
+            unset($this->minHistory[$this->minHistoryLastIndex]);
+            $this->minHistoryLastIndex--;
+        }
+        return $val;
     }
 
     public function top() {
-
+        if ($this->arrayLastIndex < 0) return null;
+        return $this->array[$this->arrayLastIndex];
     }
 
     public function getMin() {
-
+        return $this->minHistory[$this->minHistoryLastIndex];
     }
+
 }
 
 /**
@@ -32,10 +53,9 @@ class MinStack {
  * $ret_4 = $obj->getMin();
  */
 $minStack = new MinStack();
-$minStack->push(-2);
 $minStack->push(0);
-$minStack->push(-3);
-echo $minStack->getMin()."\n";  # Returns -3.
+$minStack->push(1);
+$minStack->push(0);
+echo $minStack->getMin()."\n";  # Returns 0
 $minStack->pop();
-echo $minStack->top()."\n";     # Returns 0.
-echo $minStack->getMin()."\n";  # Returns -2.Vkkkk
+echo $minStack->getMin()."\n";  # Returns 0

@@ -8,11 +8,35 @@
  * You may return the list in any order.
  */
 function uncommonFromSentences($A, $B) {
-
+    $result = [];
+    $history = [];
+    $words = explode(' ', $A);
+    foreach($words as $word) {
+        if (!isset($history[$word])) {
+            $history[$word] = true;
+            $result[$word] = true;
+        } else {
+            $result[$word] = false;
+        }
+    }
+    $words = explode(' ', $B);
+    foreach($words as $word) {
+        if (!isset($history[$word])) {
+            $history[$word] = true;
+            $result[$word] = true;
+        } else {
+            $result[$word] = false;
+        }
+    }
+    $uniqList = [];
+    foreach($result as $key => $isUniq) {
+        if ($isUniq) $uniqList[] = $key;
+    }
+    return $uniqList;
 }
 
-echo uncommonFromSentences("this apple is sweet", "this apple is sour")."\n";
+var_dump(uncommonFromSentences("this apple is sweet", "this apple is sour"));
 // Output: ["sweet","sour"]
 
-echo uncommonFromSentences("apple apple", "banana")."\n";
+var_dump(uncommonFromSentences("apple apple", "banana"));
 // Output: ["banana"]

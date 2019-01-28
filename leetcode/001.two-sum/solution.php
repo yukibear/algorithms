@@ -42,8 +42,8 @@ function twoSum_old($nums, $target) {
  */
 function twoSum($nums, $target) {
     $minusresult = [];
-
-    for($i = 0; $i < count($nums); $i++) {
+    $count = count($nums);
+    for($i = 0; $i < $count; $i++) {
         $minus = $target - $nums[$i];
 
         // issetで探せているので早い

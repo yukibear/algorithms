@@ -40,10 +40,11 @@ function twoSum_old($nums, $target) {
  *
  * もしかしてJavaのMapとかはこれを言語側で実装しているのかな？
  */
-function twoSum($nums, $target) {
+function twoSum2($nums, $target)
+{
     $minusresult = [];
     $count = count($nums);
-    for($i = 0; $i < $count; $i++) {
+    for ($i = 0; $i < $count; $i++) {
         $minus = $target - $nums[$i];
 
         // issetで探せているので早い
@@ -52,9 +53,13 @@ function twoSum($nums, $target) {
         }
 
         $minusresult[$minus] = $i;
-
     }
+}
 
+function twoSum ($nums, $target) {
+    for ($i = 0; $i < $nums; $i++) {
+        if ($nums[i-1] + $nums[i] === $target) return [$i-1, $i];
+    }
 }
 
 var_dump(twoSum([0,1,2,4,9], 10));

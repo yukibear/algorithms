@@ -1,0 +1,15 @@
+name: "leetcode-on-push"
+on:
+  push:
+    branches:
+      - "*"
+    paths:
+      - "leetcode/**"
+jobs:
+  test:
+    name: Test LeetCode
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: curl -fsSL https://deno.land/x/install/install.sh | sh
+      - run: /home/runner/.deno/bin/deno test --allow-net leetcode/solutions/

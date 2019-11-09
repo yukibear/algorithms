@@ -2,5 +2,8 @@
   "devDependencies": {
     "typescript": "^3.6.3",
     "typescript-deno-plugin": "^1.2.7"
+  },
+  "scripts": {
+    "test-leetcode": "deno test --allow-net leetcode/solutions"
   }
 }

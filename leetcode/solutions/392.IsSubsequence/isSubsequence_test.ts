@@ -4,5 +4,5 @@ import isSubsequence from './isSubsequence.ts';
 
 test('0392. Is Subsequence', () => {
     assertEquals(isSubsequence("abc", "ahbgdc"), true);
-    // assertEquals(isSubsequence(0), [0]);
+    assertEquals(isSubsequence("axc", "ahbgdc"), false);
 });

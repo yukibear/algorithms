@@ -2,7 +2,9 @@
  * @param {number} n
  * @return {number[]}
  */
-var grayCode = function(n) {
+export default function grayCode(
+    n: number
+): number[] {
     const max = 2 ** n;
     let result = [];
     for (var i = 0; i < max; i++) {
@@ -11,4 +13,4 @@ var grayCode = function(n) {
     return result;
 };
 
-const toGray = (n) => n ^ (n >> 1);
+const toGray = (n: number): number => n ^ (n >> 1);

@@ -3,7 +3,7 @@
  * @param {number[]} costs
  * @return {number}
  */
-export default function minimumCostForTickets(
+export default function mincostTickets(
   days: number[],
   costs: number[]
 ): number {

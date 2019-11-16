@@ -24,4 +24,9 @@ test("0112. Path Sum", () => {
     },
   }
   assertEquals(hasPathSum(testTreeNode, 22), true);
+
+  const testTreeNode2: TreeNode = {
+    val: 1,
+  }
+  assertEquals(hasPathSum(testTreeNode2, 1), true);
 });

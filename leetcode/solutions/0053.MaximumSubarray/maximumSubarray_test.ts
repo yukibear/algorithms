@@ -3,6 +3,5 @@ import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import maximumSubarray from "./maximumSubarray.ts";
 
 test("0053. Maximum Subarray", () => {
-  const testValue = "";
-  assertEquals(maximumSubarray(testValue, 777), true);
+  assertEquals(maximumSubarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]), 6);
 });

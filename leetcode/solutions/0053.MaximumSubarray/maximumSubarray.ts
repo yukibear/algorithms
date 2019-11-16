@@ -1,9 +1,11 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 export default function maximumSubarray(
-  str: string,
-  num: number
-): boolean {
+  nums: number[],
+): number {
 
-  // write some code here
 
-  return false;
+  return 0;
 }

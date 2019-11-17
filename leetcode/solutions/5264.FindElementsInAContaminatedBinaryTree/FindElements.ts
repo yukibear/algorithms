@@ -5,10 +5,22 @@ import TreeNode from "../../../data_structures/TreeNode.ts";
  */
 export default class FindElements {
 
-  root: TreeNode;
+  node: TreeNode;
+  set;
 
-  constructor(root: TreeNode) {
-    this.root = root;
+  constructor(node: TreeNode) {
+    this.set = new Set();
+    this.node = node;
+    this.recoverNode(node, 0);
+  }
+
+  recoverNode(node: TreeNode, x: number) {
+    if (!node) return;
+
+    node.val = x;
+    this.set.add(x);
+    this.recoverNode(node.left!, 2 * x + 1);
+    this.recoverNode(node.right!, 2 * x + 2);
   }
 
   /**
@@ -16,6 +28,6 @@ export default class FindElements {
    * @return {boolean}
    */
   find(target: number) {
-    return false;
+    return this.set.has(target);
   }
 }

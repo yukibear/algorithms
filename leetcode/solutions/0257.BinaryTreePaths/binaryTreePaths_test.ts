@@ -13,4 +13,6 @@ test("0257. Binary Tree Paths", () => {
     right: { val: 3 },
   }
   assertEquals(binaryTreePaths(testTreeNode), ["1->2->5", "1->3"]);
+  assertEquals(binaryTreePaths(null), []);
+  assertEquals(binaryTreePaths({ val: 1 }), ["1"]);
 });

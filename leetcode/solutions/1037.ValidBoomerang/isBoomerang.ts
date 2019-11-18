@@ -3,10 +3,7 @@
  * @return {boolean}
  */
 export default function isBoomerang(
-  points: number[][],
+  p: [[number, number], [number, number], [number, number]],
 ): boolean {
-
-  // write some code here
-
-  return false;
+  return (p[0][0] - p[1][0]) * (p[0][1] - p[2][1]) != (p[0][0] - p[2][0]) * (p[0][1] - p[1][1])
 }

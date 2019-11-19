@@ -8,21 +8,14 @@ export default function hasCycle(
 ): boolean {
   if (node == null) return false;
 
-  const head = node;
-  let i = 0;
+  const nodeSet = new Set();
 
   while (node.next) {
     node = node.next;
 
-    let j = i;
-    let check = head;
-    while (j >= 0) {
-      if (node === check) return true;
-      check = check.next!;
-      j -= 1;
-    }
+    if (nodeSet.has(node)) return true;
 
-    i += 1;
+    nodeSet.add(node);
   }
 
   return false;

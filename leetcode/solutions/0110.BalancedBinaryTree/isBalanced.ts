@@ -16,8 +16,10 @@ export default function isBalanced(
 ): boolean {
   if (node == null) return true;
 
-  return Math.abs(depth(node.left) - depth(node.right)) <= 1
-    && isBalanced(node.left) && isBalanced(node.right);
+  const left = depth(node.left);
+  const right = depth(node.right);
+
+  return Math.abs(left - right) <= 1 && isBalanced(node.left) && isBalanced(node.right);
 }
 
 const depth = (node?: TreeNode): number => {

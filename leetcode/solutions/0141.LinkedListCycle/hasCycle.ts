@@ -10,9 +10,9 @@ export default function hasCycle(
   const nodeSet = new Set();
 
   while (node) {
+    if (nodeSet.has(node)) return true;
     nodeSet.add(node);
     node = node.next;
-    if (nodeSet.has(node)) return true;
   }
 
   return false;

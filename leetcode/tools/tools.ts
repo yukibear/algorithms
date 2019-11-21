@@ -1,18 +1,19 @@
 import { TreeNode } from "../../data_structures/TreeNode.ts";
 
-export function ConvertToTreeNode<T>(values: T[]): TreeNode<T> {
+export function StringArrayToTreeNode<T>(values: T[]): TreeNode<T> {
 
-  const dfs = (i: number): TreeNode<T> | null => {
+  const dfs = (i: number, depth: number): TreeNode<T> | null => {
     if (values[i] == null) return null;
 
-    const node: TreeNode<T> = {
-      val: values[i],
-      left: dfs(i + 1),
-      right: dfs(i + 2),
-    };
+    const node: TreeNode<T> = { val: values[i], left: null, right: null };
+    const nextDepth = depth + 1;
+    depth += 1;
+
+    left: dfs(nextIndex, depth),
+    right: dfs(nextIndex + 1, depth),
 
     return node;
   }
 
-  return dfs(0);
+  return dfs(0, 1);
 };

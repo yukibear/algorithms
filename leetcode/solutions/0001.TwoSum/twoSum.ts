@@ -8,10 +8,10 @@ export default function twoSum(
   target: number
 ): [number, number] | null {
   let map = [];
-  map[nums[0]] = 0;
 
-  for (let i = 1; i < nums.length; i++) {
-    if (map[target - nums[i]] != null) return [map[target - nums[i]], i];
+  for (let i = 0; i < nums.length; ++i) {
+    let key = target - nums[i];
+    if (map[key] != null) return [map[key], i];
     map[nums[i]] = i;
   }
   return null;

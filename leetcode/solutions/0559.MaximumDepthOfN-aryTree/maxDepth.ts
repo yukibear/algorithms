@@ -8,18 +8,13 @@ export interface Node<T> {
  * @return {number}
  */
 export default function maxDepth(
-  node: Node<number>
+  node: Node<number> | null
 ): number {
-
-  const dfs = (node: Node<number>) => {
     if (node == null) return 0;
-    if (node.children.length === 0) return 1;
 
-    let resuls = new Array(node.children.length).fill(0);
-    for (let [i, child] of node.children.entries()) {
-      resuls[i] = dfs(child);
+    let max = 0;
+    for (let child of node.children) {
+      max = Math.max(maxDepth(child), max);
     }
-    return 1 + Math.max(...resuls);
-  }
-  return dfs(node);
+    return 1 + max;
 }

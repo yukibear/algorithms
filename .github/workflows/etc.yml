@@ -1,4 +1,4 @@
-name: LeetCode
+name: etc
 on:
   push:
     branches:

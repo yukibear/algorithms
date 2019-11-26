@@ -1,12 +1,13 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import FindElements from "./FindElements.ts";
-import TreeNode from "../../../data_structures/TreeNode.ts";
+import { TreeNode } from "../../../data_structures/TreeNode.ts";
 
 test("5264. Find Elements in a Contaminated Binary Tree", () => {
-  let treeNode: TreeNode = {
+  let treeNode: TreeNode<number> = {
     val: -1,
-    right: { val: -1 },
+    left: null,
+    right: { val: -1, left: null, right: null },
   }
   let obj = new FindElements(treeNode);
   assertEquals(obj.find(1), false);
@@ -16,10 +17,10 @@ test("5264. Find Elements in a Contaminated Binary Tree", () => {
     val: -1,
     left: {
       val: -1,
-      left: { val: -1 },
-      right: { val: -1 },
+      left: { val: -1, left: null, right: null },
+      right: { val: -1, left: null, right: null },
     },
-    right: { val: -1 },
+    right: { val: -1, left: null, right: null },
   }
   obj = new FindElements(treeNode);
   assertEquals(obj.find(1), true);
@@ -28,12 +29,15 @@ test("5264. Find Elements in a Contaminated Binary Tree", () => {
 
   treeNode = {
     val: -1,
+    left: null,
     right: {
       val: -1,
       left: {
         val: -1,
-        left: { val: -1 },
+        left: { val: -1, left: null, right: null },
+        right: null,
       },
+      right: null,
     },
   }
   obj = new FindElements(treeNode);

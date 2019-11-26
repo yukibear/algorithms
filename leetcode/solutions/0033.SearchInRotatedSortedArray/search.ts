@@ -8,6 +8,7 @@ export default function search(
   target: number
 ): number {
 
+
   const search = (from: number, to: number): number => {
     if (to - from < 2) {
       if (nums[from] === target) {
@@ -23,13 +24,14 @@ export default function search(
     const middle = Math.floor((from + to) / 2);
     const [first, pivot, last] = [nums[from], nums[middle], nums[to]];
 
+    if (target === pivot) return middle;
     if (first < last) {
-      return target <= pivot ? search(from, middle) : search(middle + 1, to);
+      return target < pivot ? search(from, middle - 1) : search(middle + 1, to);
     } else {
-      if (first < pivot && first <= target && target <= pivot) {
-        return search(from, middle);
-      } else if (first > pivot && (first <= target || target <= pivot)) {
-        return search(from, middle);
+      if (first < pivot && first <= target && target < pivot) {
+        return search(from, middle - 1);
+      } else if (first > pivot && (first <= target || target < pivot)) {
+        return search(from, middle - 1);
       } else {
         return search(middle + 1, to);
       }

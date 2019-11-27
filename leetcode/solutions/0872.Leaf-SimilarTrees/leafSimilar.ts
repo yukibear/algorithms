@@ -21,5 +21,8 @@ export default function leafSimilar(
     return dfs(left).concat(dfs(right));
   }
 
-  return JSON.stringify(dfs(root1)) === JSON.stringify(dfs(root2));
+  const leaves1 = dfs(root1);
+  const leaves2 = dfs(root2);
+
+  return leaves1.length === leaves2.length && leaves1.every((n, i) => n === leaves2[i]);
 }

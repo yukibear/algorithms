@@ -1,6 +1,6 @@
 /**
- * @param {string} S
- * @param {string} C
+ * @param {string} str
+ * @param {string} char
  * @return {number[]}
  */
 export default function shortestToChar(

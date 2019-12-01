@@ -1,12 +1,19 @@
 /**
- * @param {number} tomatoSlices
- * @param {number} cheeseSlices
+ * @param {number} tomato
+ * @param {number} cheese
  * @return {number[]}
  */
 export default function numOfBurgers(
-  tomatoSlices: number,
-  cheeseSlices: number
+  tomato: number,
+  cheese: number
 ): number[] {
-
+  let i = 0;
+  while (i * 2 <= tomato) {
+    let tomatoLeft = tomato - i * 2;
+    if (tomatoLeft === (cheese - i) * 4) {
+      return [tomatoLeft / 4, i];
+    }
+    i++;
+  }
   return [];
 }

@@ -1,5 +1,5 @@
 /**
- * @param {string} s
+ * @param {string} str
  * @return {number}
  */
 export default function longestPalindrome(
@@ -7,23 +7,18 @@ export default function longestPalindrome(
 ): number {
   let list: Record<string, number> = {};
 
+  let length = 0;
   for (let s of str) {
     if (list[s]) {
       list[s]++;
     } else {
       list[s] = 1;
     }
-  }
 
-  let sum = 0;
-  let oddExists = false;
-  for (let count of Object.values(list)) {
-    if (count % 2 === 0) {
-      sum += count;
-    } else {
-      sum += count - 1;
-      oddExists = true;
+    if (list[s] === 2) {
+      length += 2;
+      list[s] = 0;
     }
   }
-  return sum + (oddExists ? 1 : 0);
+  return (length === str.length) ? length : length + 1;
 }

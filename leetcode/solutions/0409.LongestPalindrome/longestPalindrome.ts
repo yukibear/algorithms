@@ -5,20 +5,16 @@
 export default function longestPalindrome(
   str: string
 ): number {
-  let list: Record<string, number> = {};
-
   let length = 0;
-  for (let s of str) {
-    if (list[s]) {
-      list[s]++;
-    } else {
-      list[s] = 1;
+  const set = new Set<string>();
+  for (const s of str) {
+    if (!set.has(s)) {
+      set.add(s);
+      continue;
     }
 
-    if (list[s] === 2) {
-      length += 2;
-      list[s] = 0;
-    }
+    length += 2;
+    set.delete(s);
   }
-  return (length === str.length) ? length : length + 1;
+  return length + (set.size ? 1 : 0);
 }

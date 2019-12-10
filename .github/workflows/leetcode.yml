@@ -9,7 +9,9 @@ jobs:
   test:
     name: Test LeetCode
     runs-on: ubuntu-latest
+    env:
+      DENO_INSTALL: ~/.local
     steps:
       - uses: actions/checkout@master
       - run: curl -fsSL https://deno.land/x/install/install.sh | sh
-      - run: /home/runner/.deno/bin/deno test --allow-net leetcode/solutions
+      - run: $DENO_INSTALL/bin/deno test --allow-net leetcode/solutions

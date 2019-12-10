@@ -8,4 +8,6 @@ test("0859. Buddy Strings", () => {
   assertEquals(buddyStrings("aa", "aa"), true);
   assertEquals(buddyStrings("aaaaaaabc", "aaaaaaacb"), true);
   assertEquals(buddyStrings("", "aa"), false);
+  assertEquals(buddyStrings("abcaa", "abcbb"), false);
+  assertEquals(buddyStrings("abab", "abab"), true);
 });

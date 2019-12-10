@@ -11,29 +11,22 @@ export default function floodFill(
   sc: number,
   newColor: number,
 ): number[][] {
-  const targetColor = image[sr][sc];
-  if (targetColor === newColor) {
-    return image;
-  }
-
-  const dfs = (n: number, m: number) => {
-    if (image[n] == null || image[n][m] == null) {
-      return;
-    }
-
-    if (image[n][m] !== targetColor) {
-      return;
-    }
-
-    image[n][m] = newColor;
-
-    dfs(n - 1, m);
-    dfs(n + 1, m);
-    dfs(n, m - 1);
-    dfs(n, m + 1);
-  }
-
-  dfs(sr, sc);
-
+  if (image[sr][sc] === newColor) return image;
+  fill(image, sr, sc, image[sr][sc], newColor);
   return image;
+}
+
+const fill = (
+  image: number[][],
+  n: number,
+  m: number,
+  color: number,
+  newColor: number,
+): void => {
+  if (image[n] == null || image[n][m] == null || image[n][m] !== color) return;
+  image[n][m] = newColor;
+  fill(image, n - 1, m, color, newColor);
+  fill(image, n + 1, m, color, newColor);
+  fill(image, n, m - 1, color, newColor);
+  fill(image, n, m + 1, color, newColor);
 }

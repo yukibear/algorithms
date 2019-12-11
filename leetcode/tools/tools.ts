@@ -9,8 +9,8 @@ export function StringArrayToTreeNode<T>(values: T[]): TreeNode<T> {
     const nextDepth = depth + 1;
     depth += 1;
 
-    left: dfs(nextIndex, depth),
-    right: dfs(nextIndex + 1, depth),
+    node.left = dfs(nextIndex, depth);
+    node.right = dfs(nextIndex + 1, depth);
 
     return node;
   }

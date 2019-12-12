@@ -4,6 +4,7 @@
     "typescript-deno-plugin": "^1.2.7"
   },
   "scripts": {
-    "test-leetcode": "deno test --allow-net leetcode/solutions"
+    "test-leetcode": "deno test --allow-net leetcode/solutions",
+    "test-etc": "deno test --allow-net etc"
   }
 }

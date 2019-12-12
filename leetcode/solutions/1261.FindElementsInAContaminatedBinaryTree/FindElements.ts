@@ -1,20 +1,20 @@
-import TreeNode from "../../../data_structures/TreeNode.ts";
+import { TreeNode } from "../../../data_structures/TreeNode.ts";
 
 /**
  * @param {TreeNode} root
  */
 export default class FindElements {
 
-  node: TreeNode;
-  set;
+  node: TreeNode<number> | null;
+  set: Set<number>;
 
-  constructor(node: TreeNode) {
-    this.set = new Set();
+  constructor(node: TreeNode<number> | null) {
+    this.set = new Set<number>();
     this.node = node;
     this.recoverNode(node, 0);
   }
 
-  recoverNode(node: TreeNode, x: number) {
+  recoverNode(node: TreeNode<number> | null, x: number) {
     if (!node) return;
 
     node.val = x;

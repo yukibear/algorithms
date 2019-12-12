@@ -1,13 +1,13 @@
-name: LeetCode
+name: etc
 on:
   push:
     branches:
       - "*"
     paths:
-      - "leetcode/solutions/**"
+      - "etc/**"
 jobs:
   test:
-    name: Test LeetCode
+    name: Test etc
     runs-on: ubuntu-latest
     env:
       DENO_INSTALL: ~/.local

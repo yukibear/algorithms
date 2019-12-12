@@ -1,18 +1,25 @@
 import { TreeNode } from "../../data_structures/TreeNode.ts";
 
-export function ConvertToTreeNode<T>(values: T[]): TreeNode<T> {
+type isLeftNode = boolean;
 
-  const dfs = (i: number): TreeNode<T> | null => {
-    if (values[i] == null) return null;
+export function ConvertArrayToTreeNode<T>(values: T[]): TreeNode<T> {
+  const root: TreeNode<T> = { val: values.pop()!, left: null, right: null };
+  let queue: [TreeNode<T>, isLeftNode][] = [[root, true], [root, false]];
 
-    const node: TreeNode<T> = {
-      val: values[i],
-      left: dfs(i + 1),
-      right: dfs(i + 2),
-    };
+  let value: T;
+  while ((value = values.pop()!) !== undefined) {
+    const [node, isLeftNode] = queue.shift()!;
 
-    return node;
+    const childNode = (value == null) ? null : { val: value, left: null, right: null };
+    if (isLeftNode) {
+      node.left = childNode;
+    } else {
+      node.right = childNode;
+    }
+    if (childNode !== null) {
+      queue.push([childNode, true], [childNode, false]);
+    }
   }
 
-  return dfs(0);
+  return root;
 };

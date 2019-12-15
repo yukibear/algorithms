@@ -1,7 +1,4 @@
-export default function gcdOfStrings(
-  str1: string,
-  str2: string
-): string {
+export default function gcdOfStrings(str1: string, str2: string): string {
   if (str1.length > str2.length) {
     [str1, str2] = [str2, str1];
   }
@@ -13,9 +10,11 @@ export default function gcdOfStrings(
     }
 
     const divider = str1.slice(0, dividerLength);
-    if (str1 === divider.repeat(i) && str2 === divider.repeat(str2.length / dividerLength)) {
+    if (str1 === divider.repeat(i)
+      && str2 === divider.repeat(str2.length / dividerLength)) {
       return divider;
     }
   }
+
   return "";
 }

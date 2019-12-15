@@ -1,7 +1,4 @@
-export default function rob(
-  nums: number[]
-): number {
-
+export default function rob(nums: number[]): number {
   let dp = new Array(nums.length + 2);
   dp[0] = 0;
   dp[1] = 0;

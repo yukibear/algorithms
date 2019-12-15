@@ -1,7 +1,6 @@
 import { TreeNode } from "../../../data_structures/TreeNode.ts";
 
 export default class FindElements {
-
   node: TreeNode<number> | null;
   set: Set<number>;
 
@@ -12,7 +11,9 @@ export default class FindElements {
   }
 
   recoverNode(node: TreeNode<number> | null, x: number) {
-    if (!node) return;
+    if (!node) {
+      return;
+    }
 
     node.val = x;
     this.set.add(x);

@@ -1,9 +1,5 @@
-export default function search(
-  nums: number[],
-  target: number
-): number {
-
-  const search = (from: number, to: number): number => {
+export default function search(nums: number[],target: number): number {
+  function search(from: number, to: number): number {
     if (to - from < 2) {
       if (nums[from] === target) return from;
       if (nums[to] === target) return to;

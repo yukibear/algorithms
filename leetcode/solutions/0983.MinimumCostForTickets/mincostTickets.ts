@@ -4,9 +4,10 @@ export default function mincostTickets(
 ): number {
   const [c1, c7, c30] = [...costs];
 
-  let daySet = new Set([...days]);
-  let dp = new Array(days.length + 30).fill(0);
+  const daySet = new Set([...days]);
   const max = days[days.length - 1] + 30;
+  const dp = new Array(days.length + 30).fill(0);
+
   for (let i = 31; i <= max; i++) {
     if (!daySet.has(i - 30)) {
       dp[i] = dp[i - 1];

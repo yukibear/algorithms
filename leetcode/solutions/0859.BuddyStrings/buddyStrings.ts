@@ -4,6 +4,7 @@ export default function buddyStrings(A: string, B: string): boolean {
   }
 
   let diff: number[] = [];
+
   for (let i = 0; i < A.length; i++) {
     if (A[i] !== B[i]) {
       diff.push(i);

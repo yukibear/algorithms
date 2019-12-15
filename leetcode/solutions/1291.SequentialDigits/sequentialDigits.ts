@@ -3,8 +3,8 @@ export default function sequentialDigits(
   high: number
 ): number[] {
   let result: number[] = [];
-  const lowLen = ~~Math.log10(low) + 1;
-  const highLen = ~~Math.log10(high) + 1;
+  const lowLen = Math.floor(Math.log10(low)) + 1;
+  const highLen = Math.floor(Math.log10(high)) + 1;
 
   loop:
   for (let len = lowLen; len <= highLen; len++) {

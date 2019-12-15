@@ -3,7 +3,6 @@ import { TreeNode } from '../../../data_structures/TreeNode.ts';
 export default function binaryTreePaths(
   root: TreeNode<number> | null
 ): string[] {
-
   let returnArr: string[] = [];
 
   const dfs = (node: TreeNode<number> | null, str: string) => {

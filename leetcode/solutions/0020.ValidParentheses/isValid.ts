@@ -1,19 +1,22 @@
-export default function isValid(
-  s: string
-): boolean {
+export default function isValid(s: string): boolean {
   if (s.length % 2 !== 0) {
     return false;
   }
 
-  const closerMap = new Map([["{", "}"], ["(", ")"], ["[", "]"]]);
-  const openerSet = new Set(closerMap.keys());
-  const closerStack: string[] = [];
+  const stack: string[] = [];
+
   for (let i = 0; i < s.length; i++) {
-    if (openerSet.has(s[i])) {
-      closerStack.push(closerMap.get(s[i])!);
-    } else if (closerStack.pop() !== s[i]) {
+    const char = s[i];
+
+    if (OPEN_BRACKET_SET.has(char)) {
+      stack.push(BRACKET_PAIR_MAP.get(char)!);
+    } else if (stack.pop() !== char) {
       return false;
     }
   }
-  return closerStack.length === 0;
+
+  return stack.length === 0;
 }
+
+const BRACKET_PAIR_MAP = new Map([["{", "}"], ["(", ")"], ["[", "]"]]);
+const OPEN_BRACKET_SET = new Set(BRACKET_PAIR_MAP.keys());

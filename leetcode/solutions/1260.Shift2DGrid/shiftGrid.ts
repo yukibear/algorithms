@@ -6,7 +6,9 @@ export default function shiftGrid(
   const m = grid[0].length;
 
   k = k % (n * m);
-  if (k === 0) return grid;
+  if (k === 0) {
+    return grid;
+  }
 
   const returnArr = JSON.parse(JSON.stringify((new Array(n)).fill((new Array(m)).fill(0))));
 
@@ -14,6 +16,7 @@ export default function shiftGrid(
     for (let j = 0; j < m; j++) {
       let nextJ = j + k;
       let x = i, y = j;
+
       if (nextJ >= m) {
         y = nextJ % m;
         x = (i + Math.floor(nextJ / m)) % n;
@@ -21,6 +24,7 @@ export default function shiftGrid(
         x = i;
         y = nextJ;
       }
+
       returnArr[x][y] = grid[i][j];
     }
   }

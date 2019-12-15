@@ -1,7 +1,4 @@
-export default function customSortString(
-  S: string,
-  T: string
-): string {
+export default function customSortString(S: string, T: string): string {
   let sList = S.split("");
   const map = new Map(sList.map(s => [s, 0]));
 
@@ -14,5 +11,6 @@ export default function customSortString(
   }).join("");
 
   S = sList.map(s => s.repeat(map.get(s)!)).join("");
+
   return S + T;
 }

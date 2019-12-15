@@ -1,9 +1,5 @@
 type Point = number;
 
-/**
- * @param {number[][]} routers
- * @return {number[]}
- */
 export default function getCriticalRouters(
   routers: [number, number][]
 ): number[] {

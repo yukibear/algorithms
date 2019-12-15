@@ -1,9 +1,5 @@
 import { TreeNode } from "../../../data_structures/TreeNode.ts";
 
-/**
- * @param {TreeNode} root
- * @return {number}
- */
 export default function minDepth(
   root: TreeNode<number> | null
 ): number {

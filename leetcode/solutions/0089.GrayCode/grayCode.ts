@@ -1,7 +1,3 @@
-/**
- * @param {number} n
- * @return {number[]}
- */
 export default function grayCode(
     n: number
 ): number[] {

@@ -4,11 +4,6 @@ export interface TreeNode {
   right?: TreeNode;
 }
 
-/**
- * @param {TreeNode} root
- * @param {number} sum
- * @return {boolean}
- */
 export default function hasPathSum(node: TreeNode, sum: number): boolean {
   if (!node) return false;
 

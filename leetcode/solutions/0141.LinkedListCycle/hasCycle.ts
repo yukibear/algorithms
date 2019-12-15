@@ -1,9 +1,5 @@
 import { SinglyLinkedListNode } from "../../../data_structures/SinglyLinkedListNode.ts";
 
-/**
- * @param {SinglyLinkedListNode} head
- * @return {boolean}
- */
 export default function hasCycle(
   node: SinglyLinkedListNode<number> | null,
 ): boolean {

@@ -1,16 +1,5 @@
 import { TreeNode } from "../../../data_structures/TreeNode.ts";
 
-/**
- * Definition for a binary tree node.
- * function TreeNode(val) {
- *     this.val = val;
- *     this.left = this.right = null;
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {boolean}
- */
 export default function isBalanced(
   node: TreeNode<number> | null,
 ): boolean {

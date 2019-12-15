@@ -1,8 +1,3 @@
-/**
- * @param {string} str
- * @param {string} char
- * @return {number[]}
- */
 export default function shortestToChar(
   str: string,
   char: string

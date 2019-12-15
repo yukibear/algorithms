@@ -1,30 +1,26 @@
 import { TreeNode as BST } from "../../../data_structures/TreeNode.ts";
 
 export default function rangeSumBST(
-  root: BST<number> | null,
+  node: BST<number> | null,
   low: number,
   high: number
 ): number {
-  let sum = 0;
-
-  const func = (node: BST<number> | null) => {
-    if (!node) {
-      return;
-    }
-    const { left, right } = node;
-
-    if (node.val < low) {
-      func(right);
-    } else if (node.val > high) {
-      func(left);
-    } else {
-      sum += node.val;
-      func(left);
-      func(right);
-    }
+  if (!node) {
+    return 0;
   }
 
-  func(root);
+  let sum = 0;
+  const { left, right } = node;
+
+  if (node.val < low) {
+    sum += rangeSumBST(right, low, high);
+  } else if (node.val > high) {
+    sum += rangeSumBST(left, low, high);
+  } else {
+    sum += node.val;
+    sum += rangeSumBST(left, low, high) + rangeSumBST(right, low, high);
+  }
+
   return sum;
 }
 

@@ -4,7 +4,6 @@ import rangeSumBST from "./rangeSumBST.ts";
 import { TreeNode as BST } from "../../../data_structures/TreeNode.ts";
 
 test("0938. Range Sum of BST", () => {
-  [10,5,15,3,7,null,18]
   let tree1: BST<number> = {
     val: 10,
     left: {

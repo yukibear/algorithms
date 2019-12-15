@@ -1,7 +1,3 @@
-/**
- * @param {string} s
- * @return {boolean}
- */
 export default function isValid(
   s: string
 ): boolean {

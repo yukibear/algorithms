@@ -1,8 +1,3 @@
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number}
- */
 export default function search(
   nums: number[],
   target: number

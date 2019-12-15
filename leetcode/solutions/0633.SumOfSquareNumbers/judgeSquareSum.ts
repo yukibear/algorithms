@@ -1,7 +1,3 @@
-/**
- * @param {number} c
- * @return {boolean}
- */
 export default function judgeSquareSum(
   c: number
 ): boolean {

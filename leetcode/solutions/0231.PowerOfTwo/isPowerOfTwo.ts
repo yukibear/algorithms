@@ -1,7 +1,3 @@
-/**
- * @param {number} n
- * @return {boolean}
- */
 export default function isPowerOfTwo(
   n: number
 ): boolean {

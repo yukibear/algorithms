@@ -3,10 +3,6 @@ export interface Node<T> {
   children: Node<T>[];
 }
 
-/**
- * @param {Node} node
- * @return {number}
- */
 export default function maxDepth(
   node: Node<number> | null
 ): number {

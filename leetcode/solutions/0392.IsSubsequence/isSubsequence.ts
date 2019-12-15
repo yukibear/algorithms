@@ -1,8 +1,3 @@
-/**
- * @param {string} s
- * @param {string} t
- * @return {boolean}
- */
 export default function isSubsequence(
   subsequence: string,
   target: string

@@ -1,7 +1,3 @@
-/**
- * @param {string} s
- * @return {number}
- */
 const romanNums = new Map([
   ["I", 1],
   ["V", 5],

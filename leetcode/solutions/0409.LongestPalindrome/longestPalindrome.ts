@@ -1,7 +1,3 @@
-/**
- * @param {string} str
- * @return {number}
- */
 export default function longestPalindrome(
   str: string
 ): number {

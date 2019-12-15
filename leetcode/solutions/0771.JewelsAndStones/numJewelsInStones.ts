@@ -1,8 +1,3 @@
-/**
- * @param {string} jewelChars
- * @param {string} stoneChars
- * @return {number}
- */
 export default function numJewelsInStones(
   jewelChars: string,
   stoneChars: string

@@ -1,8 +1,3 @@
-/**
- * @param {number} tomato
- * @param {number} cheese
- * @return {number[]}
- */
 export default function numOfBurgers(
   tomato: number,
   cheese: number

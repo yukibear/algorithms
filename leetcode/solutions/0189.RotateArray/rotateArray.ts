@@ -1,8 +1,3 @@
-/**
- * @param {number[]} nums
- * @param {number} k
- * @return {void}
- */
 export default function rotate(
   nums: number[],
   k: number

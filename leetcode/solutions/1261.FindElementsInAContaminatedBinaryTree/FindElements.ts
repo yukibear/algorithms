@@ -1,8 +1,5 @@
 import { TreeNode } from "../../../data_structures/TreeNode.ts";
 
-/**
- * @param {TreeNode} root
- */
 export default class FindElements {
 
   node: TreeNode<number> | null;

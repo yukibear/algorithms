@@ -1,7 +1,3 @@
-/**
- * @param {number[][]} moves
- * @return {string}
- */
 export default function tictactoe(
   moves: number[][]
 ): string {

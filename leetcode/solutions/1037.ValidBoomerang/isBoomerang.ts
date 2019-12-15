@@ -1,7 +1,3 @@
-/**
- * @param {number[][]} points
- * @return {boolean}
- */
 export default function isBoomerang(
   points: [[number, number], [number, number], [number, number]],
 ): boolean {

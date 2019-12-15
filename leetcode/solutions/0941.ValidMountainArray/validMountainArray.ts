@@ -1,7 +1,3 @@
-/**
- * @param {number[]} nums
- * @return {boolean}
- */
 export default function validMountainArray(
   nums: number[]
 ): boolean {

@@ -1,7 +1,3 @@
-/**
- * @param {number[]} nums
- * @return {number}
- */
 export default function maxSubArray(
   nums: number[],
 ): number {

@@ -4,6 +4,25 @@ export default function insertIntoBST(
   root: TreeNode<number> | null,
   val: number
 ): TreeNode<number> | null {
+  let head = root;
 
-  return null;
+  while (head) {
+    if (head.val > val) {
+      if (!head.left) {
+        head.left = { val, left: null, right: null };
+        break;
+      } else {
+        head = head.left;
+      }
+    } else {
+      if (!head.right) {
+        head.right = { val, left: null, right: null };
+        break;
+      } else {
+        head = head.right;
+      }
+    }
+  }
+
+  return root;
 }

@@ -1,25 +1,27 @@
 import { TreeNode } from "../../../data_structures/TreeNode.ts";
 
 export default function insertIntoBST(
-  root: TreeNode<number> | null,
+  root: TreeNode<number>,
   val: number
-): TreeNode<number> | null {
-  let head = root;
+): TreeNode<number> {
+  let node = root;
 
-  while (head) {
-    if (head.val > val) {
-      if (!head.left) {
-        head.left = { val, left: null, right: null };
-        break;
+  while (true) {
+    if (node.val > val) {
+      if (node.left) {
+        node = node.left;
+        continue;
       } else {
-        head = head.left;
+        node.left = { val, left: null, right: null };
+        break;
       }
     } else {
-      if (!head.right) {
-        head.right = { val, left: null, right: null };
-        break;
+      if (node.right) {
+        node = node.right;
+        continue;
       } else {
-        head = head.right;
+        node.right = { val, left: null, right: null };
+        break;
       }
     }
   }

@@ -16,7 +16,6 @@ export default function getRow(rowIndex: number): number[] {
         currentRow[j] = prevRow[j - 1] + prevRow[j];
       }
     }
-    console.log(prevRow)
     prevRow = currentRow;
   }
 

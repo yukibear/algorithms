@@ -1,15 +1,6 @@
 export default function numOfBurgers(tomato: number, cheese: number): number[] {
-  let i = 0;
+  const numOfSmall = (cheese * 4 - tomato) / 2;
 
-  while (i * 2 <= tomato) {
-    let tomatoLeft = tomato - i * 2;
-
-    if (tomatoLeft === (cheese - i) * 4) {
-      return [tomatoLeft / 4, i];
-    }
-
-    i++;
-  }
-
-  return [];
+  return numOfSmall % 1 === 0 && numOfSmall >= 0 && numOfSmall <= cheese ?
+    [cheese - numOfSmall, numOfSmall] : [];
 }

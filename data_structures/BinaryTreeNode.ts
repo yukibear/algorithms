@@ -6,7 +6,7 @@ export interface BinaryTreeNode<T> {
 
 type isLeft = boolean;
 
-export function createTreeNode<T>(
+export function createBinaryTreeNode<T>(
   values: (T | null)[]
 ): BinaryTreeNode<T> | null {
   if (values.length === 0) return null;
@@ -30,8 +30,8 @@ export function createTreeNode<T>(
   return root;
 }
 
-export const createSingleNode = <T>(
+function createSingleNode<T>(
   value: T | null
-): BinaryTreeNode<T> | null => {
+): BinaryTreeNode<T> | null {
   return (value === null) ? null : { val: value, left: null, right: null };
 };

@@ -6,9 +6,13 @@ export interface BinaryTreeNode<T> {
 
 type isLeft = boolean;
 
-export function createTreeNode<T>(values: T[]): BinaryTreeNode<T> {
-  const root: BinaryTreeNode<T> = createSingleNode(values[0])!;
-  let queue: [BinaryTreeNode<T>, isLeft][] = [[root, true], [root, false]];
+export function createTreeNode<T>(
+  values: (T | null)[]
+): BinaryTreeNode<T> | null {
+  if (values.length === 0) return null;
+
+  const root = createSingleNode(values[0]);
+  let queue: [BinaryTreeNode<T>, isLeft][] = [[root!, true], [root!, false]];
 
   for (let i = 1; i < values.length; i++) {
     const [node, isLeft] = queue.shift()!;
@@ -26,6 +30,8 @@ export function createTreeNode<T>(values: T[]): BinaryTreeNode<T> {
   return root;
 }
 
-export const createSingleNode = <T>(value: T | null): BinaryTreeNode<T> | null => {
+export const createSingleNode = <T>(
+  value: T | null
+): BinaryTreeNode<T> | null => {
   return (value === null) ? null : { val: value, left: null, right: null };
 };

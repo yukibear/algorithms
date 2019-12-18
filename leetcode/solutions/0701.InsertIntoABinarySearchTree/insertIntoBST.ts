@@ -1,9 +1,9 @@
-import { TreeNode } from "../../../data_structures/TreeNode.ts";
+import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 export default function insertIntoBST(
-  root: TreeNode<number>,
+  root: BinaryTreeNode<number>,
   val: number
-): TreeNode<number> {
+): BinaryTreeNode<number> {
   let node = root;
 
   while (true) {

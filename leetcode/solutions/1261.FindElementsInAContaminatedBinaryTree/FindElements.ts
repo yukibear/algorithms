@@ -1,16 +1,16 @@
-import { TreeNode } from "../../../data_structures/TreeNode.ts";
+import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 export default class FindElements {
-  node: TreeNode<number> | null;
+  node: BinaryTreeNode<number> | null;
   set: Set<number>;
 
-  constructor(node: TreeNode<number> | null) {
+  constructor(node: BinaryTreeNode<number> | null) {
     this.set = new Set<number>();
     this.node = node;
     this.recoverNode(node, 0);
   }
 
-  recoverNode(node: TreeNode<number> | null, x: number) {
+  recoverNode(node: BinaryTreeNode<number> | null, x: number) {
     if (!node) {
       return;
     }

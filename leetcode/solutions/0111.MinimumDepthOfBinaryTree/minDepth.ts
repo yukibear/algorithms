@@ -1,9 +1,9 @@
-import { TreeNode } from "../../../data_structures/TreeNode.ts";
+import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
-export default function minDepth(root: TreeNode<number> | null): number {
+export default function minDepth(root: BinaryTreeNode<number> | null): number {
   return root ? dfs(root) : 0;
 
-  function dfs(node: TreeNode<number> | null): number {
+  function dfs(node: BinaryTreeNode<number> | null): number {
     if (!node) return Infinity;
 
     const { left, right } = node;

@@ -1,10 +1,10 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import FindElements from "./FindElements.ts";
-import { TreeNode } from "../../../data_structures/TreeNode.ts";
+import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 test("5264. Find Elements in a Contaminated Binary Tree", () => {
-  let treeNode: TreeNode<number> = {
+  let treeNode: BinaryTreeNode<number> = {
     val: -1,
     left: null,
     right: { val: -1, left: null, right: null },

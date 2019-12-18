@@ -1,7 +1,7 @@
-import { TreeNode } from "../../../data_structures/TreeNode.ts";
+import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 export default function isBalanced(
-  node: TreeNode<number> | null,
+  node: BinaryTreeNode<number> | null,
 ): boolean {
   if (node == null) return true;
 
@@ -11,7 +11,7 @@ export default function isBalanced(
   return Math.abs(left - right) <= 1 && isBalanced(node.left) && isBalanced(node.right);
 }
 
-const depth = (node: TreeNode<number> | null): number => {
+const depth = (node: BinaryTreeNode<number> | null): number => {
   if (node == null) return 0;
 
   return Math.max(depth(node.left), depth(node.right)) + 1;

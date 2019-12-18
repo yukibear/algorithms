@@ -1,14 +1,14 @@
-export interface TreeNode<T> {
+export interface BinaryTreeNode<T> {
   val: T;
-  left: TreeNode<T> | null;
-  right: TreeNode<T> | null;
+  left: BinaryTreeNode<T> | null;
+  right: BinaryTreeNode<T> | null;
 }
 
 type isLeft = boolean;
 
-export function createTreeNode<T>(values: T[]): TreeNode<T> {
-  const root: TreeNode<T> = createSingleNode(values[0])!;
-  let queue: [TreeNode<T>, isLeft][] = [[root, true], [root, false]];
+export function createTreeNode<T>(values: T[]): BinaryTreeNode<T> {
+  const root: BinaryTreeNode<T> = createSingleNode(values[0])!;
+  let queue: [BinaryTreeNode<T>, isLeft][] = [[root, true], [root, false]];
 
   for (let i = 1; i < values.length; i++) {
     const [node, isLeft] = queue.shift()!;
@@ -26,6 +26,6 @@ export function createTreeNode<T>(values: T[]): TreeNode<T> {
   return root;
 }
 
-export const createSingleNode = <T>(value: T | null): TreeNode<T> | null => {
+export const createSingleNode = <T>(value: T | null): BinaryTreeNode<T> | null => {
   return (value === null) ? null : { val: value, left: null, right: null };
 };

@@ -1,7 +1,7 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import rangeSumBST from "./rangeSumBST.ts";
-import { TreeNode as BST } from "../../../data_structures/TreeNode.ts";
+import { BinaryTreeNode as BST } from "../../../data_structures/BinaryTreeNode.ts";
 
 test("0938. Range Sum of BST", () => {
   let tree1: BST<number> = {

@@ -1,9 +1,9 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import { TreeNode, createTreeNode } from "./TreeNode.ts";
+import { BinaryTreeNode, createTreeNode } from "./BinaryTreeNode.ts";
 
 test("createTreeNode", () => {
-  let expected: TreeNode<number>;
+  let expected: BinaryTreeNode<number>;
 
   assertEquals(createTreeNode([1]), { val: 1, left: null, right: null });
 

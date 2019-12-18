@@ -1,11 +1,11 @@
-import { TreeNode } from "../../../data_structures/TreeNode.ts";
+import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 export default function leafSimilar(
-  root1: TreeNode<number> | null,
-  root2: TreeNode<number> | null
+  root1: BinaryTreeNode<number> | null,
+  root2: BinaryTreeNode<number> | null
 ): boolean {
 
-  const dfs = (node: TreeNode<number> | null): number[] => {
+  const dfs = (node: BinaryTreeNode<number> | null): number[] => {
     if (!node) return [];
 
     const { left, right } = node;

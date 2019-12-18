@@ -1,7 +1,7 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import searchBST from "./searchBST.ts";
-import { TreeNode as BST } from "../../../data_structures/TreeNode.ts";
+import { BinaryTreeNode as BST } from "../../../data_structures/BinaryTreeNode.ts";
 
 test("0700. Search in a Binary Search Tree", () => {
   let tree: BST<number> = {

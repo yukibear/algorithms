@@ -1,32 +1,16 @@
 
 import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import hasPathSum, { TreeNode } from "./hasPathSum.ts";
+import hasPathSum from "./hasPathSum.ts";
+import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 test("0112. Path Sum", () => {
-  const testTreeNode: TreeNode = {
-    val: 5,
-    left: {
-      val: 4,
-      left: {
-        val: 11,
-        left: { val: 7 },
-        right: { val: 2 },
-      }
-    },
-    right: {
-      val: 8,
-      left: { val: 13 },
-      right: {
-        val: 4,
-        right: { val: 1 },
-      },
-    },
-  }
-  assertEquals(hasPathSum(testTreeNode, 22), true);
-
-  const testTreeNode2: TreeNode = {
-    val: 1,
-  }
-  assertEquals(hasPathSum(testTreeNode2, 1), true);
+  assertEquals(hasPathSum(
+    createBinaryTreeNode([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1]),
+    22
+  ), true);
+  assertEquals(hasPathSum(
+    createBinaryTreeNode([1]),
+    1
+  ), true);
 });

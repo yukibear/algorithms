@@ -1,6 +1,4 @@
-export default function isPerfectSquare(
-  num: number
-): boolean {
+export default function isPerfectSquare(num: number): boolean {
   let i = 1;
 
   while (num > 0) {

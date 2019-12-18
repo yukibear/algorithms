@@ -1,10 +1,9 @@
-export interface TreeNode {
-  val: number;
-  left?: TreeNode;
-  right?: TreeNode;
-}
+import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
-export default function hasPathSum(node: TreeNode, sum: number): boolean {
+export default function hasPathSum(
+  node: BinaryTreeNode<number> | null,
+  sum: number
+): boolean {
   if (!node) return false;
 
   sum -= node.val;

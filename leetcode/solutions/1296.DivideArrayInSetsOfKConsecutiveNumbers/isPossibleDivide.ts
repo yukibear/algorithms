@@ -9,22 +9,23 @@ export default function isPossibleDivide(nums: number[], len: number): boolean {
     numCountMap.set(num, (numCountMap.get(num) || 0) + 1);
   }
 
-  let keys: number[];
+  let minNum: number | null;
 
-  do {
-    keys = Array.from(numCountMap.keys()).sort((a, b) => a - b);
-
-    if (!checkConsecutiveNums(keys[0], len, numCountMap)) {
+  while ((minNum = getFirstKey(numCountMap)) != null) {
+    if (!consecutiveNumsExist(minNum, len, numCountMap)) {
       return false;
     }
-
-  } while (keys.length > 0);
-
+  }
 
   return true;
 }
 
-function checkConsecutiveNums(
+function getFirstKey(map: Map<number, number>) {
+  // array[0] >= 1
+  return [...map.keys()].sort((a, b) => a - b)[0] || null;
+}
+
+function consecutiveNumsExist(
   firstNum: number,
   length: number,
   numCountMap: Map<number, number>

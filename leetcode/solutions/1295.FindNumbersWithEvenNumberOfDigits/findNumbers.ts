@@ -1,13 +1,3 @@
-export default function findNumbers(
-  nums: number[]
-): number {
-  let count = 0;
-
-  for (const num of nums) {
-    if (~~Math.log10(num) % 2 === 1) {
-      count++;
-    }
-  }
-
-  return count;
+export default function findNumbers(nums: number[]): number {
+  return nums.filter(n => Math.floor(Math.log10(n)) % 2 === 1).length;
 }

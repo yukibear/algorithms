@@ -1,41 +1,48 @@
-export default function isPossibleDivide(
-  nums: number[],
-  k: number
-): boolean {
-  if (nums.length === 0 || nums.length % k !== 0) {
+export default function isPossibleDivide(nums: number[], len: number): boolean {
+  if (nums.length === 0 || nums.length % len !== 0) {
     return false;
   }
 
-  const map = new Map<number, number>();
+  const numCountMap = new Map<number, number>();
 
   for (const num of nums) {
-    map.set(num, (map.get(num) || 0) + 1);
+    numCountMap.set(num, (numCountMap.get(num) || 0) + 1);
   }
 
-  const keys = Array.from(map.keys()).sort((a, b) => a-b);
-  let minKey = keys.shift()!;
+  let keys: number[];
 
-  while (true) {
-    for (let num = minKey; num < k + minKey; num++) {
-      let currentNumCount = map.get(num)!;
+  do {
+    keys = Array.from(numCountMap.keys()).sort((a, b) => a - b);
 
-      if (currentNumCount == null || currentNumCount === 0) {
-        return false;
-      }
-
-      if (--currentNumCount === 0) {
-        map.delete(num);
-      } else {
-        map.set(num, currentNumCount);
-      }
+    if (!checkConsecutiveNums(keys[0], len, numCountMap)) {
+      return false;
     }
 
-    const keys = Array.from(map.keys());
+  } while (keys.length > 0);
 
-    if (keys.length === 0) {
-      break;
+
+  return true;
+}
+
+function checkConsecutiveNums(
+  firstNum: number,
+  length: number,
+  numCountMap: Map<number, number>
+) {
+  const lastNum =  firstNum + length - 1;
+
+  for (let num = firstNum; num <= lastNum; num++) {
+    if (!numCountMap.has(num)) {
+      return false;
     }
-    minKey = keys.sort((a, b) => a-b)[0];
+
+    const numCount = numCountMap.get(num)! - 1;
+
+    if (numCount === 0) {
+      numCountMap.delete(num);
+    } else {
+      numCountMap.set(num, numCount);
+    }
   }
 
   return true;

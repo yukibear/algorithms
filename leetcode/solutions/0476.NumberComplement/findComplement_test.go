@@ -8,9 +8,9 @@ func Test_0476_NumberComplement(t *testing.T) {
 
 	if result != expected {
 		t.Errorf("TEST FAILED! got: %#v, want: %#v.", result, expected)
-  }
+	}
 
-  result = findComplement(1)
+	result = findComplement(1)
 	expected = 0
 
 	if result != expected {

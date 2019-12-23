@@ -1,11 +1,11 @@
+// actually we do NOT need _maxSize argument
+// because the smallest substring covers all patterns of ones with longer
 export default function maxFreq(
   s: string,
   maxLetters: number,
   minSize: number,
-  maxSize: number
+  _maxSize: number
 ): number {
-  // actually we do NOT need maxSize
-  // because larger substring cannot beat smaller
 
   const strCountMap = new Map<string, number>();
 

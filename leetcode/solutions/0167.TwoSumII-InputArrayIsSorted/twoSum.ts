@@ -6,19 +6,17 @@ export default function twoSum(
   let j = numbers.length - 1;
 
   while (i < j) {
-    const small = numbers[i];
-    const large = numbers[j]
-    const diff = target - small;
+    const sum = numbers[i] + numbers[j];
 
-    if (large === diff) {
+    if (sum === target) {
       return [++i, ++j]
     }
-    if (large < diff) {
-      i++;
-      continue;
-    }
 
-    j--;
+    if (sum < target) {
+      i++;
+    } else {
+      j--;
+    }
   }
 
   return [];

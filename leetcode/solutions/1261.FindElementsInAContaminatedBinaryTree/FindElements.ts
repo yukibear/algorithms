@@ -21,11 +21,7 @@ export default class FindElements {
     this.recoverNode(node.right!, 2 * x + 2);
   }
 
-  /**
-   * @param {number} target
-   * @return {boolean}
-   */
-  find(target: number) {
+  find(target: number): boolean {
     return this.set.has(target);
   }
 }

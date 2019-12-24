@@ -11,4 +11,32 @@ test("0002. Add Two Numbers", () => {
     ),
     createNode([7, 0, 8])
   );
+  assertEquals(
+    addTwoNumbers(
+      createNode([0]),
+      createNode([0])
+    ),
+    createNode([0])
+  );
+  assertEquals(
+    addTwoNumbers(
+      createNode([1,8]),
+      createNode([0])
+    ),
+    createNode([1, 8])
+  );
+  assertEquals(
+    addTwoNumbers(
+      createNode([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]),
+      createNode([5, 6, 4])
+    ),
+    createNode([6, 6, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1])
+  );
+  assertEquals(
+    addTwoNumbers(
+      createNode([5]),
+      createNode([5])
+    ),
+    createNode([0, 1])
+  );
 });

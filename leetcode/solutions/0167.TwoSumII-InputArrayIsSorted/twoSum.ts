@@ -2,21 +2,23 @@ export default function twoSum(
   numbers: number[],
   target: number
 ): number[] {
+  let i = 0;
   let j = numbers.length - 1;
 
-  for (let i = 0; i < numbers.length; i++) {
-    const pair = target - numbers[i];
+  while (i < j) {
+    const small = numbers[i];
+    const large = numbers[j]
+    const diff = target - small;
 
-    for (; j > i; j--) {
-      const check = numbers[j];
-
-      if (check < pair) {
-        break;
-      }
-      if (check === pair) {
-        return [++i, ++j]
-      }
+    if (large === diff) {
+      return [++i, ++j]
     }
+    if (large < diff) {
+      i++;
+      continue;
+    }
+
+    j--;
   }
 
   return [];

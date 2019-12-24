@@ -1,23 +1,25 @@
 import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 export default function findTarget(
-  root: BinaryTreeNode<number>,
+  root: BinaryTreeNode<number> | null,
   k: number
 ): boolean {
-  const set = new Set<number>();
+  return dfs(root, new Set<number>(), k);
+}
 
-  function dfs(node: BinaryTreeNode<number> | null): boolean {
-    if (!node) {
-      return false;
-    }
-    if (set.has(k - node.val)) {
-      return true;
-    }
-
-    set.add(node.val);
-
-    return dfs(node.left) || dfs(node.right);
+function dfs(
+  node: BinaryTreeNode<number> | null,
+  foundNums: Set<number>,
+  k: number
+): boolean {
+  if (!node) {
+    return false;
+  }
+  if (foundNums.has(k - node.val)) {
+    return true;
   }
 
-  return dfs(root);
+  foundNums.add(node.val);
+
+  return dfs(node.left, foundNums, k) || dfs(node.right, foundNums, k);
 }

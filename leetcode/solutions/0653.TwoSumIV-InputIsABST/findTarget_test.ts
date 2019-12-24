@@ -1,6 +1,6 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import findTarget, { findTarget1 } from "./findTarget.ts";
+import findTarget, { findTarget_DFS } from "./findTarget.ts";
 import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 function createTest(func: Function) {
@@ -18,7 +18,7 @@ function createTest(func: Function) {
 
 test(
   "0653. Two Sum IV - Input is a BST / DFS solution",
-  createTest(findTarget1)
+  createTest(findTarget_DFS)
 );
 test(
   "0653. Two Sum IV - Input is a BST / Sorted array solution",

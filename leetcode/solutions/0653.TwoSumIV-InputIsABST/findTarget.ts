@@ -42,7 +42,7 @@ function inorder(node: BinaryTreeNode<number> | null, nums: number[]) {
 
 // DFS solution where building a Set of TreeNode values
 // and checking if a difference(target - node.var) exists in the Set.
-export function findTarget1(
+export function findTarget_DFS(
   root: BinaryTreeNode<number> | null,
   k: number
 ): boolean {

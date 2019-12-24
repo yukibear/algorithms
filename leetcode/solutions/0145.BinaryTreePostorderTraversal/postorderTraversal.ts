@@ -4,19 +4,19 @@ export default function postorderTraversal(
   root: BinaryTreeNode<number> | null
 ): number[] {
   const nums: number[] = [];
+  const stack = [root];
 
-  function dfs(node: BinaryTreeNode<number> | null): void {
+  while (stack.length > 0) {
+    const node = stack.pop();
+
     if (!node) {
-      return;
+      continue;
     }
 
-    dfs(node.left);
-    dfs(node.right);
-
-    nums.push(node.val);
+    nums.unshift(node.val);
+    stack.push(node.left);
+    stack.push(node.right);
   }
-
-  dfs(root);
 
   return nums;
 }

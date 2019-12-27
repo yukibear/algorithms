@@ -11,4 +11,11 @@ test("0021. Merge Two Sorted Lists", () => {
     ),
     createSinglyLinkedListNode([1, 1, 2, 3, 4, 4])
   );
+  assertEquals(
+    mergeTwoLists(
+      createSinglyLinkedListNode([-9, 3]),
+      createSinglyLinkedListNode([5, 7])
+    ),
+    createSinglyLinkedListNode([-9, 3, 5, 7])
+  );
 });

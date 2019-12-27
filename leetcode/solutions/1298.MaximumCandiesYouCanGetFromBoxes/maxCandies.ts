@@ -5,40 +5,34 @@ export default function maxCandies(
   containedBoxes: number[][],
   initialBoxes: number[]
 ): number {
+  const gotKeys = new Set<number>();
+  const gotBoxes = new Set<number>();
+  status.forEach((v, i) => (v === 1) ? gotKeys.add(i) : "");
 
-  let sumOfCandies = 0;
-  const boxMap = new Map<number, boolean>();
-  const keySet = new Set<number>();
-  status.forEach((s, i) => s === 1 ? keySet.add(i) : '');
+  let candyCount = 0;
 
   function openBox(i: number) {
-    if (boxMap.get(i)) {
-      return;
-    }
+    candyCount += candies[i];
 
-    keySet.delete(i);
-    boxMap.set(i, true);
-    sumOfCandies += candies[i];
-    candies[i] = 0;
-
-    keys[i].forEach(boxIndex => {
-      keySet.add(boxIndex);
-
-      if (boxMap.has(boxIndex)) {
-        openBox(boxIndex);
+    keys[i].forEach(i => {
+      if (gotBoxes.has(i)) {
+        openBox(i);
+        return;
       }
+      gotKeys.add(i)
     });
 
-    containedBoxes[i].forEach(boxIndex => {
-      if (keySet.has(boxIndex)) {
-        openBox(boxIndex);
-      } else {
-        boxMap.set(boxIndex, false);
+    containedBoxes[i].forEach(i => {
+      if (gotKeys.has(i)) {
+        openBox(i);
+        return;
       }
+
+      gotBoxes.add(i);
     });
   }
 
   initialBoxes.forEach(openBox);
 
-  return sumOfCandies;
+  return candyCount;
 }

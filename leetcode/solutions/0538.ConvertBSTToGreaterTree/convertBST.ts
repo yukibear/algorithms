@@ -3,18 +3,20 @@ import { TreeNode as BST } from "../../../data_structures/TreeNode.ts";
 export default function convertBST(
   node: BST<number> | null
 ): BST<number> | null {
+  let sum = 0;
 
-  const func = (node: BST<number> | null, val: number): number => {
+  const func = (node: BST<number> | null) => {
     if (!node) {
-      return 0;
+      return;
     }
 
-    node.val += val;
-    node.val += func(node.right, 0);
-    func(node.left, node.val);
-    return node.val;
+    func(node.right);
+    node.val += sum;
+    sum = node.val;
+    func(node.left);
   }
 
-  func(node, 0);
+  func(node);
+
   return node;
 }

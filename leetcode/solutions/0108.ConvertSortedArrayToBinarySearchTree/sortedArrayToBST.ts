@@ -7,15 +7,15 @@ export default function sortedArrayToBST(
     return null;
   }
 
-  const pivotIndex = Math.floor(nums.length / 2);
+  const half = Math.floor(nums.length / 2);
   const node: BinaryTreeNode<number> = {
-    val: nums[pivotIndex],
+    val: nums[half],
     left: null,
     right: null
   };
 
-  node.left = sortedArrayToBST(nums.splice(0, pivotIndex));
-  node.right = sortedArrayToBST(nums.splice(1));
+  node.left = sortedArrayToBST(nums.slice(0, half));
+  node.right = sortedArrayToBST(nums.slice(half + 1));
 
   return node;
 }

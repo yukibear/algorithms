@@ -39,4 +39,11 @@ test("0002. Add Two Numbers", () => {
     ),
     createNode([0, 1])
   );
+  assertEquals(
+    addTwoNumbers(
+      createNode([9, 9]),
+      createNode([9])
+    ),
+    createNode([8, 0, 1])
+  );
 });

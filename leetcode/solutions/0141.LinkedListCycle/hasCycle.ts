@@ -3,12 +3,16 @@ import { SinglyLinkedListNode } from "../../../data_structures/SinglyLinkedListN
 export default function hasCycle(
   node: SinglyLinkedListNode<number> | null,
 ): boolean {
-  const nodeSet = new Set();
+  let walker = node;
+  let runner = node;
 
-  while (node) {
-    if (nodeSet.has(node)) return true;
-    nodeSet.add(node);
-    node = node.next;
+  while (walker && runner?.next) {
+    walker = walker.next;
+    runner = runner.next.next;
+
+    if (walker === runner) {
+      return true;
+    }
   }
 
   return false;

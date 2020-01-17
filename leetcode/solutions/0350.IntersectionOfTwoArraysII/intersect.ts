@@ -6,6 +6,34 @@ export default function intersect(
     [nums1, nums2] = [nums2, nums1];
   }
 
+  const sorter = (a: number, b: number) => a - b;
+  nums1 = nums1.sort(sorter);
+  nums2 = nums2.sort(sorter);
+
+  let lastFound = -1;
+
+  return nums1.filter(num => {
+
+    const tmp = nums2.indexOf(num, lastFound + 1);
+
+    if (tmp !== -1) {
+      lastFound = tmp;
+
+      return true;
+    }
+
+    return false;
+  });
+}
+
+export function intersect_BinarySearch(
+  nums1: number[],
+  nums2: number[]
+): number[] {
+  if (nums1.length > nums2.length) {
+    [nums1, nums2] = [nums2, nums1];
+  }
+
   const result: number[] = [];
   nums2 = nums2.sort((a, b) => a - b);
 

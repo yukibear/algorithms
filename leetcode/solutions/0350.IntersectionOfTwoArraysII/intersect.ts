@@ -30,7 +30,7 @@ export function intersect_BinarySearch(
   nums1: number[],
   nums2: number[]
 ): number[] {
-  if (nums1.length > nums2.length) {
+  if (nums1.length < nums2.length) {
     [nums1, nums2] = [nums2, nums1];
   }
 
@@ -41,8 +41,7 @@ export function intersect_BinarySearch(
     const i = search(nums2, num);
 
     if (i !== -1) {
-      nums2 = nums2.slice(0, i).concat(nums2.slice(i + 1));
-      result.push(num);
+      result.push(nums2.splice(i, 1)[0]);
     }
   }
 
@@ -50,6 +49,10 @@ export function intersect_BinarySearch(
 }
 
 function search(nums: number[], n: number) {
+  if (nums.length === 0) {
+    return -1;
+  }
+
   let l = 0;
   let r = nums.length - 1;
 

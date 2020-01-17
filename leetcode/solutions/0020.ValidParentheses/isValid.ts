@@ -5,10 +5,8 @@ export default function isValid(s: string): boolean {
 
   const stack: string[] = [];
 
-  for (let i = 0; i < s.length; i++) {
-    const char = s[i];
-
-    if (OPEN_BRACKET_SET.has(char)) {
+  for (const char of s) {
+    if (BRACKET_PAIR_MAP.has(char)) {
       stack.push(BRACKET_PAIR_MAP.get(char)!);
     } else if (stack.pop() !== char) {
       return false;
@@ -19,4 +17,3 @@ export default function isValid(s: string): boolean {
 }
 
 const BRACKET_PAIR_MAP = new Map([["{", "}"], ["(", ")"], ["[", "]"]]);
-const OPEN_BRACKET_SET = new Set(BRACKET_PAIR_MAP.keys());

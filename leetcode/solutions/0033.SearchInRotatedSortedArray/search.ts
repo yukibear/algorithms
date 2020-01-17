@@ -13,18 +13,18 @@ export default function search(nums: number[], target: number): number {
   }
 
   const start = l;
-  nums = nums.slice(l).concat(nums.slice(0, l));
   l = 0;
   r = nums.length - 1;
 
   while (l <= r) {
     const mid = (l + r) >>> 1;
+    const realMid = (mid + start) % nums.length;
 
-    if (nums[mid] === target) {
-      return (mid + start) % nums.length;
+    if (nums[realMid] === target) {
+      return realMid;
     }
 
-    if (nums[mid] < target) {
+    if (nums[realMid] < target) {
       l = mid + 1;
     } else {
       r = mid - 1;

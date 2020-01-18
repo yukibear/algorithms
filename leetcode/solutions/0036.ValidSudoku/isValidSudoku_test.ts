@@ -28,5 +28,5 @@ test("0036. Valid Sudoku", () => {
   ];
 
   assertEquals(isValidSudoku(board1), true);
-  assertEquals(isValidSudoku(board2), true);
+  assertEquals(isValidSudoku(board2), false);
 });

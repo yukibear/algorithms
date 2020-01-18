@@ -49,12 +49,12 @@ function colIsValid(board: string[][], col: number): boolean {
 
 function subBoardIsValid(board: string[][], subBoardIndex: number): boolean {
   const set = new Set<string>();
-  let row = Math.floor(subBoardIndex / 3) * 3;
-  let col = subBoardIndex % 3 * 3;
+  let rowStart = Math.floor(subBoardIndex / 3) * 3;
+  let colStart = subBoardIndex % 3 * 3;
 
-  for (let endRow = row + 3; row < endRow; row++) {
-    for (let endCol = col + 3; col < endCol; col++) {
-      const char = board[row][col];
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      const char = board[rowStart + i][colStart + j];
 
       if (char === DOT) {
         continue;

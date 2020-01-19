@@ -10,35 +10,18 @@ export default function removeLeafNodes(
       return true;
     }
 
-    const { left, right } = node;
-
-    if (!left && !right && node.val === target) {
-
-      return true;
-    }
-
-    let shouldSeeAgain = false;
-
-    if (dfs(left)) {
+    if (dfs(node.left)) {
       node.left = null;
-      shouldSeeAgain = true;
     }
-    if (dfs(right)) {
+    if (dfs(node.right)) {
       node.right = null;
-      shouldSeeAgain = true;
     }
 
-    if (shouldSeeAgain && !node.left && !node.right && node.val === target) {
-      return true;
-    }
-
-    return false;
+    return !node.left && !node.right && node.val === target;
   }
 
-  if (dfs(root) === true) {
-    if (root.val === target) {
+  if (dfs(root) && root.val === target) {
       return null;
-    }
   }
 
   return root;

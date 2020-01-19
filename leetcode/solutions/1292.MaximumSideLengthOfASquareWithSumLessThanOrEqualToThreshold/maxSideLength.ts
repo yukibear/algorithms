@@ -17,9 +17,15 @@ export default function maxSideLength(
       }
     }
   }
+
   return result;
 }
-const sumSquare = (mat: number[][], startI: number, startJ: number, len: number, threshold: number): number | null => {
+const sumSquare = (mat: number[][],
+  startI: number,
+  startJ: number,
+  len: number,
+  threshold: number
+): number | null => {
   let sum = 0;
   for (let i = 0; i < len; i++) {
     for (let j = 0; j < len; j++) {

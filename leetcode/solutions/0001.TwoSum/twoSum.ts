@@ -2,12 +2,19 @@ export default function twoSum(
   nums: number[],
   target: number
 ): [number, number] | null {
-  let map = [];
+  // [number, index of the number in nums]
+  const map = new Map<number, number>();
 
-  for (let i = 0; i < nums.length; ++i) {
-    let key = target - nums[i];
-    if (map[key] != null) return [map[key], i];
-    map[nums[i]] = i;
+  for (const i of nums.keys()) {
+    const current = nums[i];
+    const pair = target - current;
+
+    if (map.has(pair)) {
+      return [map.get(pair)!, i];
+    }
+
+    map.set(current, i);
   }
+
   return null;
 }

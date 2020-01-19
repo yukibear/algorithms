@@ -1,4 +1,4 @@
-import { TreeNode as BST } from "../../../data_structures/TreeNode.ts";
+import { BinaryTreeNode as BST } from "../../../data_structures/BinaryTreeNode.ts";
 
 export default function rangeSumBST(
   node: BST<number> | null,

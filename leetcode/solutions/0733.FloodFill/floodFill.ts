@@ -7,7 +7,9 @@ export default function floodFill(
   if (image[sr][sc] === newColor) {
     return image;
   }
+
   fill(image, sr, sc, image[sr][sc], newColor);
+
   return image;
 }
 

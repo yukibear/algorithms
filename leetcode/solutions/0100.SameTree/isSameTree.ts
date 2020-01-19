@@ -1,8 +1,8 @@
-import { TreeNode } from "../../../data_structures/TreeNode.ts";
+import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 export default function isSameTree(
-  tree1: TreeNode<number> | null,
-  tree2: TreeNode<number> | null
+  tree1: BinaryTreeNode<number> | null,
+  tree2: BinaryTreeNode<number> | null
 ): boolean {
   if (!tree1 || !tree2) {
     return tree1 === tree2;

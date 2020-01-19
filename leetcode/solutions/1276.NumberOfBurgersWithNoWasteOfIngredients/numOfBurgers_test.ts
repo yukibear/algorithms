@@ -8,4 +8,5 @@ test("1276. Number of Burgers with No Waste of Ingredients", () => {
   assertEquals(numOfBurgers(4, 17), []);
   assertEquals(numOfBurgers(0, 0), [0,0]);
   assertEquals(numOfBurgers(2, 1), [0,1]);
+  assertEquals(numOfBurgers(2385088, 164763), []);
 });

@@ -24,7 +24,7 @@ export default function tictactoe(
   }
 }
 
-const checkWin = (moves: number[][]) => {
+function checkWin(moves: number[][]) {
   if (moves[0] && moves[1] && moves[2]
     && (moves[0][0] && moves[1][1] && moves[2][2]
     || moves[0][2] && moves[1][1] && moves[2][0])) {

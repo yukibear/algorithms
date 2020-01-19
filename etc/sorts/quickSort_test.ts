@@ -2,7 +2,7 @@ import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import quickSort from "./quickSort.ts";
 
-test("sorts: Starlin Sort", () => {
+test("sorts: Quick Sort", () => {
   assertEquals(quickSort([]), []);
   assertEquals(quickSort([1]), [1]);
 

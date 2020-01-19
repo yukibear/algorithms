@@ -3,14 +3,14 @@ export default function maximum69Number(num: number): number {
   let restNum = num;
 
   for (let i = numOfDigits - 1; i >= 0; i--) {
-    let base = 10 ** i;
+    let digit = 10 ** i;
 
-    if (Math.floor(restNum / base)  === 6) {
-      num += 3 * base;
+    if (Math.floor(restNum / digit)  === 6) {
+      num += 3 * digit;
       break;
     }
 
-    restNum = restNum % base;
+    restNum = restNum % digit;
   }
 
   return num;

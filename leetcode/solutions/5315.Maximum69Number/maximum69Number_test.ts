@@ -1,0 +1,7 @@
+import { test } from "https://deno.land/std/testing/mod.ts";
+import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
+import maximum69Number from "./maximum69Number.ts";
+
+test("5315. Maximum 69 Number", () => {
+  assertEquals(maximum69Number(9669), 9969);
+});

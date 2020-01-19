@@ -1,5 +1,4 @@
 export default function maximum69Number(num: number): number {
-
   const n = num.toString().split("");
 
   for (let i = 0; i < n.length; i++) {

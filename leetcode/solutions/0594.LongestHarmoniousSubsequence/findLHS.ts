@@ -1,28 +1,20 @@
 export default function findLHS(nums: number[]): number {
-  let lastValue = 0;
-  let tmpCount = 0;
-  let maxCount = -Infinity;
-  const remainIndices = new Set<number>(nums.keys());
-  const iterator = remainIndices.values();
+  const valueCountMap = new Map<number, number>();
 
-  for (const start of iterator) {
-    remainIndices.delete(start);
-    lastValue = nums[start];
-    tmpCount = 1;
-
-    for (let i = 1; i < nums.length; i++) {
-      const actualIndex = (start + i) % nums.length;
-      const diff = Math.abs(nums[actualIndex] - lastValue);
-
-      if (diff <= 1) {
-        lastValue = nums[actualIndex];
-        remainIndices.delete(actualIndex);
-        tmpCount++;
-      }
-    }
-
-    maxCount = Math.max(maxCount, tmpCount);
+  for (const num of nums.values()) {
+    valueCountMap.set(num, (valueCountMap.get(num) ?? 0) + 1);
   }
 
-  return maxCount;
+  let max = 0;
+
+  for (const key of valueCountMap.keys()) {
+    if (valueCountMap.has(key + 1)) {
+      max = Math.max(
+        max,
+        valueCountMap.get(key)! + valueCountMap.get(key + 1)!
+      );
+    }
+  }
+
+  return max;
 }

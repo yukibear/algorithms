@@ -16,4 +16,8 @@ export default function isValid(s: string): boolean {
   return stack.length === 0;
 }
 
-const BRACKET_PAIR_MAP = new Map([["{", "}"], ["(", ")"], ["[", "]"]]);
+const BRACKET_PAIR_MAP = new Map([
+  ["{", "}"],
+  ["(", ")"],
+  ["[", "]"]
+]);

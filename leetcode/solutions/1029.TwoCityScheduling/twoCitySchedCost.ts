@@ -1,5 +1,5 @@
 export default function twoCitySchedCost(costs: number[][]): number {
-  costs.sort((a, b) => (a[0] - a[1]) - (b[0] - b[1]));
+  costs.sort((a, b) => a[0] - a[1] - (b[0] - b[1]));
 
   const half = costs.length / 2;
   let sum = 0;

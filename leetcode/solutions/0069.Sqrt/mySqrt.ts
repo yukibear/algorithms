@@ -21,6 +21,5 @@ export default function mySqrt(num: number): number {
     }
   }
 
-
   return r;
 }

@@ -10,16 +10,9 @@ test("0110. Balanced Binary Tree", () => {
   );
   assertEquals(
     isBalanced(createBinaryTreeNode([1, 2, 2, 3, 3, null, null, 4, 4])),
-    false);
-  assertEquals(
-    isBalanced(null),
-    true);
-  assertEquals(
-    isBalanced(createBinaryTreeNode([1])),
-    true
+    false
   );
-  assertEquals(
-    isBalanced(createBinaryTreeNode([1, 2])),
-    true
-  );
+  assertEquals(isBalanced(null), true);
+  assertEquals(isBalanced(createBinaryTreeNode([1])), true);
+  assertEquals(isBalanced(createBinaryTreeNode([1, 2])), true);
 });

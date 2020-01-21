@@ -16,19 +16,22 @@ export default function search(nums: number[], target: number): boolean {
       return true;
     }
 
-    if (nums[mid] < target) {
-      if (Math.min(nums[l], nums[mid], nums[r]) === nums[mid]) {
-        return search(nums.slice(0, mid), target)
-          || search(nums.slice(mid + 1), target);
+    if (nums[l] === nums[mid] && nums[r] === nums[mid]) {
+      l++;
+      r--;
+    } else if (nums[l] <= nums[mid]) {
+      if (nums[l] <= target && nums[mid] > target) {
+        r = mid - 1;
+      } else {
+        l = mid + 1;
       }
 
+      continue;
+    }
+
+    if (nums[mid] < target && nums[r] >= target) {
       l = mid + 1;
     } else {
-      if (Math.max(nums[l], nums[mid], nums[r]) === nums[mid]) {
-        return search(nums.slice(0, mid), target)
-          || search(nums.slice(mid + 1), target);
-      }
-
       r = mid - 1;
     }
   }

@@ -1,7 +1,4 @@
-export default function findPairs(
-  nums: number[],
-  k: number
-): number {
+export default function findPairs(nums: number[], k: number): number {
   if (k < 0) {
     return 0;
   }
@@ -17,7 +14,7 @@ export default function findPairs(
   for (const num of numMap.keys()) {
     const pair = num + k;
 
-    if (!numMap.has(pair) || num === pair && numMap.get(pair) < 2) {
+    if (!numMap.has(pair) || (num === pair && numMap.get(pair) < 2)) {
       continue;
     }
 

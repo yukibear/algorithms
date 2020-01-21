@@ -23,4 +23,3 @@ export default function rangeSumBST(
 
   return sum;
 }
-

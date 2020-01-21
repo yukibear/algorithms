@@ -5,19 +5,15 @@ import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts
 
 function createTestFunction(func: Function) {
   return () => {
-    assertEquals(
-      func(createBinaryTreeNode([])),
-      []
-    );
-    assertEquals(
-      func(createBinaryTreeNode([1, null, 2, 3])),
-      [3, 2, 1]
-    );
-    assertEquals(
-      func(createBinaryTreeNode([3, 2, 4, null, null, 1])),
-      [2, 1, 4, 3]
-    );
-  }
+    assertEquals(func(createBinaryTreeNode([])), []);
+    assertEquals(func(createBinaryTreeNode([1, null, 2, 3])), [3, 2, 1]);
+    assertEquals(func(createBinaryTreeNode([3, 2, 4, null, null, 1])), [
+      2,
+      1,
+      4,
+      3
+    ]);
+  };
 }
 
 test(

@@ -10,8 +10,10 @@ export default function gcdOfStrings(str1: string, str2: string): string {
     }
 
     const divider = str1.slice(0, dividerLength);
-    if (str1 === divider.repeat(i)
-      && str2 === divider.repeat(str2.length / dividerLength)) {
+    if (
+      str1 === divider.repeat(i) &&
+      str2 === divider.repeat(str2.length / dividerLength)
+    ) {
       return divider;
     }
   }

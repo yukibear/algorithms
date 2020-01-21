@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from '../../../data_structures/BinaryTreeNode.ts';
+import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 export default function binaryTreePaths(
   root: BinaryTreeNode<number> | null
@@ -8,7 +8,7 @@ export default function binaryTreePaths(
   const dfs = (node: BinaryTreeNode<number> | null, str: string) => {
     if (!node) return;
 
-    str = (str) ? str + "->" + node.val : "" + node.val;
+    str = str ? str + "->" + node.val : "" + node.val;
 
     if (!node.left && !node.right) {
       returnArr.push(str);
@@ -16,7 +16,7 @@ export default function binaryTreePaths(
     }
     dfs(node.left, str);
     dfs(node.right, str);
-  }
+  };
 
   dfs(root, "");
 

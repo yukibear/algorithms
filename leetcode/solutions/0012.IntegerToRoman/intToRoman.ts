@@ -20,7 +20,7 @@ export default function intToRoman(num: number): string {
     if (n === 9) {
       str += INT_ROMAN_MAP[digit] + INT_ROMAN_MAP[digit * 10];
     } else if (n >= 5) {
-      str +=  INT_ROMAN_MAP[digit * 5] + INT_ROMAN_MAP[digit].repeat(n - 5);
+      str += INT_ROMAN_MAP[digit * 5] + INT_ROMAN_MAP[digit].repeat(n - 5);
     } else if (n === 4) {
       str += INT_ROMAN_MAP[digit] + INT_ROMAN_MAP[digit * 5];
     } else {

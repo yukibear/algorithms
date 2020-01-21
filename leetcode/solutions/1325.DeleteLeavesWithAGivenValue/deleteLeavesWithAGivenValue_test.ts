@@ -5,7 +5,10 @@ import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts
 
 test("1325. Delete Leaves With a Given Value", () => {
   assertEquals(
-    deleteLeavesWithAGivenValue(createBinaryTreeNode([1, 2, 3, 2, null, 2, 4])!, 2),
+    deleteLeavesWithAGivenValue(
+      createBinaryTreeNode([1, 2, 3, 2, null, 2, 4])!,
+      2
+    ),
     createBinaryTreeNode([1, null, 3, null, 4])
   );
   assertEquals(

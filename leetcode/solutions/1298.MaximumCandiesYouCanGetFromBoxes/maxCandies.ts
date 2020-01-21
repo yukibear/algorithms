@@ -7,7 +7,7 @@ export default function maxCandies(
 ): number {
   const gotKeys = new Set<number>();
   const gotBoxes = new Set<number>();
-  status.forEach((v, i) => (v === 1) ? gotKeys.add(i) : "");
+  status.forEach((v, i) => (v === 1 ? gotKeys.add(i) : ""));
 
   let candyCount = 0;
 
@@ -19,7 +19,7 @@ export default function maxCandies(
         openBox(i);
         return;
       }
-      gotKeys.add(i)
+      gotKeys.add(i);
     });
 
     containedBoxes[i].forEach(i => {

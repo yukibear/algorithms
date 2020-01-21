@@ -27,7 +27,7 @@ export default function getCriticalRouters(
       }
     }
     return reached;
-  }
+  };
 
   let criticalPoints = new Set<number>();
 
@@ -38,7 +38,13 @@ export default function getCriticalRouters(
         if (from === skip || to === skip) continue;
         if (points.get(skip)!.size <= 1) continue;
 
-        if (!dfs(from, to, new Set<number>([skip]))) {
+        if (
+          !dfs(
+            from,
+            to,
+            new Set<number>([skip])
+          )
+        ) {
           criticalPoints.add(skip);
         }
       }

@@ -10,12 +10,9 @@ const createTestFunc = (func: Function) => {
     assertEquals(func([4, 9, 5], [9, 4, 9, 8, 4]).sort(sorter), [4, 9]);
     assertEquals(func([3, 1, 2], [1, 1]).sort(sorter), [1]);
     assertEquals(func([1, 2, 2, 1], [1, 1]).sort(sorter), [1, 1]);
-  }
-}
-test(
-  "0350. Intersection of Two Arrays II",
-  createTestFunc(intersect)
-);
+  };
+};
+test("0350. Intersection of Two Arrays II", createTestFunc(intersect));
 test(
   "0350. Intersection of Two Arrays II / Binary Search",
   createTestFunc(intersect_BinarySearch)

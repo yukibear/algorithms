@@ -1,7 +1,4 @@
-export default function myPow(
-  x: number,
-  n: number
-): number {
+export default function myPow(x: number, n: number): number {
   if (n === 0) {
     return 1;
   }

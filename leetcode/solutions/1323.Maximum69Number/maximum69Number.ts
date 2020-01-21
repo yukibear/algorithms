@@ -5,7 +5,7 @@ export default function maximum69Number(num: number): number {
   for (let i = numOfDigits - 1; i >= 0; i--) {
     let digit = 10 ** i;
 
-    if (Math.floor(restNum / digit)  === 6) {
+    if (Math.floor(restNum / digit) === 6) {
       num += 3 * digit;
       break;
     }

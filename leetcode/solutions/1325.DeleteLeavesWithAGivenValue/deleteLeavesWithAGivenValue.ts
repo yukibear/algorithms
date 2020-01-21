@@ -4,7 +4,6 @@ export default function removeLeafNodes(
   root: BinaryTreeNode<number>,
   target: number
 ): BinaryTreeNode<number> | null {
-
   function dfs(node: BinaryTreeNode<number> | null): boolean {
     if (!node) {
       return true;
@@ -21,7 +20,7 @@ export default function removeLeafNodes(
   }
 
   if (dfs(root) && root.val === target) {
-      return null;
+    return null;
   }
 
   return root;

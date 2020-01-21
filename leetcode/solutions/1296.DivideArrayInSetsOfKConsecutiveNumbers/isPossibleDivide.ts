@@ -30,7 +30,7 @@ function consecutiveNumsExist(
   length: number,
   numCountMap: Map<number, number>
 ) {
-  const lastNum =  firstNum + length - 1;
+  const lastNum = firstNum + length - 1;
 
   for (let num = firstNum; num <= lastNum; num++) {
     if (!numCountMap.has(num)) {

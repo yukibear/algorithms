@@ -4,7 +4,7 @@ export type FindFirstBadVirsion = (n: number) => number;
 export default function solution(
   isBadVersion: IsBadVersion
 ): FindFirstBadVirsion {
-  return function (n: number): number {
+  return function(n: number): number {
     let l = 1;
     let r = n;
 
@@ -19,5 +19,5 @@ export default function solution(
     }
 
     return l;
-  }
+  };
 }

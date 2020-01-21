@@ -1,7 +1,4 @@
-export default function shortestToChar(
-  str: string,
-  char: string
-): number[] {
+export default function shortestToChar(str: string, char: string): number[] {
   let rightIndex = Infinity;
   let leftIndex = -Infinity;
   let result = new Array(str.length);

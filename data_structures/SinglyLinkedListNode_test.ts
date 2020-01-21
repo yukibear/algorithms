@@ -4,7 +4,10 @@ import {
   assertStrictEq,
   assertThrows
 } from "https://deno.land/std/testing/asserts.ts";
-import { createSinglyLinkedListNode, getNthNode } from "./SinglyLinkedListNode.ts";
+import {
+  createSinglyLinkedListNode,
+  getNthNode
+} from "./SinglyLinkedListNode.ts";
 
 test("createSinglyLinkedListNode() returns a LinkedListNode by the given array", () => {
   assertEquals(createSinglyLinkedListNode([1, 2, 3, 4, 5, 6, 7]), {
@@ -89,7 +92,8 @@ test("getNthNode(node, n) throws a TypeError if the given index is not an intege
     TypeError
   );
   assertThrows(
-    () => getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -Infinity),
+    () =>
+      getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -Infinity),
     TypeError
   );
   assertThrows(

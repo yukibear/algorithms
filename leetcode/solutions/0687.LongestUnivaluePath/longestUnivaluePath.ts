@@ -22,8 +22,8 @@ function dfs(node: BinaryTreeNode<number> | null, max: [number]): number {
   let leftLen = dfs(left, max);
   let rightLen = dfs(right, max);
 
-  leftLen = (left && left.val === node.val) ? leftLen + 1 : 0;
-  rightLen = (right && right.val === node.val) ? rightLen + 1 : 0;
+  leftLen = left && left.val === node.val ? leftLen + 1 : 0;
+  rightLen = right && right.val === node.val ? rightLen + 1 : 0;
 
   max[0] = Math.max(max[0], leftLen + rightLen);
 

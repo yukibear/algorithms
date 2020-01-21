@@ -14,7 +14,7 @@ export default function mincostTickets(
       continue;
     }
 
-    dp[i] = Math.min(dp[i-1] + c1, dp[i-7] + c7, dp[i-30] + c30);
+    dp[i] = Math.min(dp[i - 1] + c1, dp[i - 7] + c7, dp[i - 30] + c30);
   }
 
   return dp[dp.length - 1];

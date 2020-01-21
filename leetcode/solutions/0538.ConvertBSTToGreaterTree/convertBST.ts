@@ -14,7 +14,7 @@ export default function convertBST(
     node.val += sum;
     sum = node.val;
     func(node.left);
-  }
+  };
 
   func(node);
 

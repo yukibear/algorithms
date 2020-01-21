@@ -5,8 +5,7 @@ export default function maxSideLength(
   let max = Math.min(mat.length, mat[0].length);
   let result = 0;
 
-  len_loop:
-  for (let len = 1; len <= max; len++) {
+  len_loop: for (let len = 1; len <= max; len++) {
     for (let i = 0; i <= mat.length - len; i++) {
       for (let j = 0; j <= mat[0].length - len; j++) {
         let sum = sumSquare(mat, i, j, len, threshold);
@@ -20,7 +19,8 @@ export default function maxSideLength(
 
   return result;
 }
-const sumSquare = (mat: number[][],
+const sumSquare = (
+  mat: number[][],
   startI: number,
   startJ: number,
   len: number,
@@ -36,4 +36,4 @@ const sumSquare = (mat: number[][],
     }
   }
   return sum;
-}
+};

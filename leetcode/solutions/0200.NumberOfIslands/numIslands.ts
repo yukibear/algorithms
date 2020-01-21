@@ -10,11 +10,7 @@ export default function numIslands(grid: string[][]): number {
     destroyIsland(i, j + 1);
   }
 
-  function searchAndDestroyIsland(
-    i: number,
-    j: number,
-    count: number
-  ): number {
+  function searchAndDestroyIsland(i: number, j: number, count: number): number {
     if (!grid[i] || !grid[i][j]) {
       return count;
     }

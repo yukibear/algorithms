@@ -1,27 +1,9 @@
 export default function canJump(nums: number[]): boolean {
-  let pos = 0;
+  let i = 0
 
-  while (pos < nums.length) {
-    const jump = nums[pos];
-
-    if (pos + jump >= nums.length - 1) {
-      return true;
-    }
-
-    let nextPos = pos;
-
-    for (let tmpNextPos = pos + jump; tmpNextPos > pos; tmpNextPos--) {
-      if (nextPos + nums[nextPos] < tmpNextPos + nums[tmpNextPos]) {
-        nextPos = tmpNextPos;
-      }
-    }
-
-    if (nextPos === pos) {
-      return false;
-    }
-
-    pos = nextPos;
+  for (let pos = 0; i < nums.length && i <= pos; i++) {
+    pos = Math.max(pos, i + nums[i]);
   }
 
-  return true;
+  return i === nums.length;
 }

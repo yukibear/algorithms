@@ -6,8 +6,10 @@ export default function isValid(s: string): boolean {
   const stack: string[] = [];
 
   for (const char of s) {
-    if (BRACKET_PAIR_MAP.has(char)) {
-      stack.push(BRACKET_PAIR_MAP.get(char)!);
+    const pair = BRACKET_PAIR_MAP.get(char);
+
+    if (pair != null) {
+      stack.push(pair);
     } else if (stack.pop() !== char) {
       return false;
     }

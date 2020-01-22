@@ -7,12 +7,11 @@ export default function findLHS(nums: number[]): number {
 
   let max = 0;
 
-  for (const key of valueCountMap.keys()) {
-    if (valueCountMap.has(key + 1)) {
-      max = Math.max(
-        max,
-        valueCountMap.get(key)! + valueCountMap.get(key + 1)!
-      );
+  for (const [num, count] of valueCountMap) {
+    const nextCount = valueCountMap.get(num + 1);
+
+    if (nextCount != null) {
+      max = Math.max(max, count + nextCount);
     }
   }
 

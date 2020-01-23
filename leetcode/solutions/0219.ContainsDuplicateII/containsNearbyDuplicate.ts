@@ -2,13 +2,11 @@ export default function containsNearbyDuplicate(
   nums: number[],
   k: number
 ): boolean {
-  // map form: [value in nums, index of value]
+  // map form: [nums[i], i]
   const lastIndices = new Map<number, number>();
 
-  for (const i of nums.keys()) {
-    const num = nums[i];
-
-    if (lastIndices.has(num) && i - lastIndices.get(num)! <= k) {
+  for (const [i, num] of nums.entries()) {
+    if ((lastIndices.get(num) || -Infinity) >= i - k) {
       return true;
     }
 

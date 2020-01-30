@@ -37,5 +37,5 @@ function multiply(x: number, y: number) {
     leverageY *= 10;
   }
 
-  return x * y / leverageX / leverageY;
+  return (x * y) / leverageX / leverageY;
 }

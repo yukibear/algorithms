@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func Test_0119_PascalsTriangleII(t *testing.T) {
+func Test_0198_HouseRobber(t *testing.T) {
 
 	result := rob([]int{1, 2, 3, 1})
 	expected := 4

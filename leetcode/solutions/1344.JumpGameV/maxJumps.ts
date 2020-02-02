@@ -1,12 +1,5 @@
 export default function maxJumps(arr: number[], d: number): number {
-  const indices: number[] = [...arr].map((n, i) => [n, i])
-    .sort(([a,], [b,]) => b - a).map(([, i]) => i);
   const dp: number[] = new Array(arr.length);
-  let result = 0;
-
-  for (const i of indices) {
-    result = Math.max(result, dfs(i));
-  }
 
   function dfs(i: number): number {
     if (dp[i]) {
@@ -37,6 +30,12 @@ export default function maxJumps(arr: number[], d: number): number {
     return dp[i];
   }
 
+  let result = 0;
+
+  for (const i of arr.keys()) {
+    result = Math.max(result, dfs(i));
+  }
+
   return result;
 }
 
@@ -45,18 +44,14 @@ function jumpable(nums: number[], i: number, j: number) {
     return false;
   }
 
-  if (nums[i] === nums[j]) {
-    return false;
-  }
-
   if (i < j) {
-    for (let k = i + 1; k <= j; k++) {
+    for (let k = j; k > i; k--) {
       if (nums[i] <= nums[k]) {
         return false;
       }
     }
   } else {
-    for (let k = i - 1; k >= j; k--) {
+    for (let k = j; k < i; k++) {
       if (nums[i] <= nums[k]) {
         return false;
       }

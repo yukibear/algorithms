@@ -1,41 +1,27 @@
 import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 export default function maxProduct(root: BinaryTreeNode<number>): number {
-  const nums: number[] = [];
-  let sum = 0;
+  const sums: number[] = [];
 
   function dfs(node: BinaryTreeNode<number> | null): number {
     if (!node) {
       return 0;
     }
 
-    sum += node.val;
+    const sum = dfs(node.left) + dfs(node.right) + node.val;
+    sums.push(sum);
 
-    const { left, right } = node;
-
-    if (!left && !right) {
-      // console.log('leaf', node.vsal);
-
-      nums.push(node.val);
-      return node.val;
-    } else {
-      const sum = dfs(left) + dfs(right) + node.val;
-      // console.log('hoge', sum);
-      nums.push(sum);
-      return sum;
-    }
+    return sum;
   }
 
   dfs(root);
 
-  let max = -Infinity;
+  let max = 0;
+  let totalSum = sums.pop() || 0;
 
-  for (let i = 0; i < nums.length - 1; i++) {
-    max = Math.max(max, nums[i] * (sum - nums[i]));
+  for (const sum of sums) {
+    max = Math.max(max, sum * (totalSum - sum));
   }
 
-  console.log(nums);
-  console.log(sum);
-
-  return max;
+  return max % (Math.pow(10, 9) + 7);;
 }

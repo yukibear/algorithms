@@ -1,18 +1,20 @@
 export default function minSetSize(arr: number[]): number {
-  const map = new Map<number, number>();
+  const numCountMap = new Map<number, number>();
 
   for (const num of arr) {
-    map.set(num, (map.get(num) || 0) + 1);
+    numCountMap.set(num, (numCountMap.get(num) || 0) + 1);
   }
 
-  const keys = [...map.entries()].sort(([, a], [, b]) => b - a);
+  const sortedCounts = [...numCountMap.entries()].sort(([, a], [, b]) => b - a);
+
   let count = 0;
-  const half = Math.ceil(arr.length / 2);
-  let sum = 0;
-  for (const [i, val] of keys) {
-    sum += map.get(i)!;
+  let half = Math.ceil(arr.length / 2);
+
+  for (const [i] of sortedCounts) {
+    half -= numCountMap.get(i)!;
     count++;
-    if (sum >= half) {
+
+    if (half <= 0) {
       break;
     }
   }

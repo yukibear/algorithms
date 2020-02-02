@@ -3,12 +3,18 @@ import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import maxProduct from "./maxProduct.ts";
 import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 test("1343. Maximum Product of Splitted Binary Tree", () => {
-  //   assertEquals(maxProduct(createBinaryTreeNode([1,2,3,4,5,6])!), 110);
-  //   assertEquals(maxProduct(createBinaryTreeNode([1,null,2,3,4,null,null,5,6])!), 90);
+  assertEquals(maxProduct(createBinaryTreeNode([1, 2, 3, 4, 5, 6])!), 110);
+  assertEquals(
+    maxProduct(createBinaryTreeNode([1, null, 2, 3, 4, null, null, 5, 6])!),
+    90
+  );
 
-  // assertEquals(maxProduct(createBinaryTreeNode([2,3,9,10,7,8,6,5,4,11,1])!), 1025);
+  assertEquals(
+    maxProduct(createBinaryTreeNode([2, 3, 9, 10, 7, 8, 6, 5, 4, 11, 1])!),
+    1025
+  );
 
-  // assertEquals(maxProduct(createBinaryTreeNode([1,1])!), 1);
+  assertEquals(maxProduct(createBinaryTreeNode([1, 1])!), 1);
   assertEquals(
     maxProduct(
       createBinaryTreeNode([

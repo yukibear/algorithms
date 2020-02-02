@@ -8,7 +8,9 @@ export default function kWeakestRows(mat: number[][], k: number): number[] {
     soldirCountMap.set(count, counts);
   }
 
-  const sortedSoldirCuonts = [...soldirCountMap.entries()].sort(([a,], [b,]) => a - b);
+  const sortedSoldirCuonts = [...soldirCountMap.entries()].sort(
+    ([a], [b]) => a - b
+  );
   const res: number[] = [];
 
   for (const [, indices] of sortedSoldirCuonts) {

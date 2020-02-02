@@ -12,7 +12,7 @@ export default function myPow(x: number, n: number): number {
   if (n > 0) {
     let res = myPow(multiply(x, x), Math.floor(n / 2));
 
-    if (n % 2 === 1) {
+    if (n % 2 !== 0) {
       return multiply(x, res);
     }
 

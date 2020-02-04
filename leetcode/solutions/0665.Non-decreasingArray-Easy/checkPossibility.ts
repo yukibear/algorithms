@@ -16,7 +16,8 @@ export default function checkPossibility(nums: number[]): boolean {
 
     if (
       nums[i - 1] > nums[i + 1] &&
-      nums[i - 2] != null && nums[i - 2] > nums[i]
+      nums[i - 2] != null &&
+      nums[i - 2] > nums[i]
     ) {
       return false;
     }

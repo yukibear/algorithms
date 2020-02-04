@@ -13,7 +13,10 @@ export default function letterCasePermutation(S: string): string[] {
     const charCode = s.charCodeAt(i);
 
     // check if charCode is in either A(65) to Z(90) or a(97) to z(122) range
-    if (charCode >= 65 && charCode <= 90 || charCode >= 97 && charCode <= 122) {
+    if (
+      (charCode >= 65 && charCode <= 90) ||
+      (charCode >= 97 && charCode <= 122)
+    ) {
       s = s.substring(0, i) + PAIR.get(s[i]) + s.substring(i + 1);
 
       dfs(s, i + 1);

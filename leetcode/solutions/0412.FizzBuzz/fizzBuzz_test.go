@@ -35,16 +35,16 @@ func Test_0412_FizzBuzz(t *testing.T) {
 		},
 	}
 
-	for _, tt := range tests {
-		tt := tt
+	for i, tt := range tests {
+		i, tt := i, tt
 
 		t.Run("Test", func(t *testing.T) {
 			t.Parallel()
 
-			result := fizzBuzz(tt.in)
+			got := fizzBuzz(tt.in)
 
-			if !cmp.Equal(result, tt.out) {
-				t.Errorf("Error")
+			if !cmp.Equal(got, tt.out) {
+				t.Errorf("\n#%02d\ngot: %#v\nwant: %#v", i, got, tt.out)
 			}
 		})
 	}

@@ -1,6 +1,10 @@
 package datastructures
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/google/go-cmp/cmp"
+)
 
 func Test_CreateBinaryTreeNode(t *testing.T) {
 	t.Parallel()
@@ -44,7 +48,7 @@ func Test_CreateBinaryTreeNode(t *testing.T) {
 
 			got := createBinaryTreeNode(tt.in)
 
-			if got != tt.out {
+			if !cmp.Equal(got, tt.out) {
 				t.Errorf("\n#%02d\ngot: %#v\nwant: %#v", i, got, tt.out)
 			}
 		})

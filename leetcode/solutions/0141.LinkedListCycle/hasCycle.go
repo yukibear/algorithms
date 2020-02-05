@@ -6,12 +6,10 @@ type ListNode struct {
 }
 
 func hasCycle(head *ListNode) bool {
-	walker := head
-	runner := head
+	walker, runner := head, head
 
 	for walker != nil && runner != nil && runner.Next != nil {
-		walker = walker.Next
-		runner = runner.Next.Next
+		walker, runner = walker.Next, runner.Next.Next
 
 		if walker == runner {
 			return true

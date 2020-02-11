@@ -1,9 +1,15 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import minChange from "./minChange.ts";
+import { minChange_DP, minChange_DFS } from "./minChange.ts";
 
-test("0002. Coin Exchange", () => {
-  assertEquals(minChange([1, 2, 4, 8, 16, 32], 63), 6);
-  assertEquals(minChange([1, 5, 10, 50, 100, 500], 324), 9);
-  assertEquals(minChange([1, 4, 9], 17), 3);
-});
+const createTestFunc = (func: Function) => {
+  return () => {
+    assertEquals(func([1, 4], 3), 3);
+    assertEquals(func([1, 2, 4, 8, 16, 32], 63), 6);
+    assertEquals(func([1, 5, 10, 50, 100, 500], 324), 9);
+    assertEquals(func([1, 4, 9], 17), 3);
+  };
+};
+
+test("0002. Coin Exchange / DP", createTestFunc(minChange_DP));
+test("0002. Coin Exchange / DFS", createTestFunc(minChange_DFS));

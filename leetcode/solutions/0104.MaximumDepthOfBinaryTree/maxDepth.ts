@@ -1,8 +1,6 @@
 import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
-export default function maxDepth(
-  root: BinaryTreeNode<number>
-): number {
+export default function maxDepth(root: BinaryTreeNode<number>): number {
   function dfs(node: BinaryTreeNode<number> | null, depth: number): number {
     if (!node) {
       return depth;

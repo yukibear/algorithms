@@ -18,7 +18,6 @@ func Test_0198_HouseRobber(t *testing.T) {
 
 	if result != expected {
 		t.Errorf("TEST FAILED! got: %#v, want: %#v.", result, expected)
-
 	}
 
 }

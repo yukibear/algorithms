@@ -1,14 +1,16 @@
-export default function lengthOfLongestSubstring(s: string): number {
+export default function lengthOfLongestSubstring(str: string): number {
   let max = 0;
+  let lastRange = "";
 
-  for (let i = 0; i < s.length && i + max < s.length; i++) {
-    const charSet = new Set<string>();
+  for (let i = 0; i < str.length; i++) {
+    const nextChar = str[i + 1];
+    lastRange += str[i];
 
-    for (let j = i; j < s.length && !charSet.has(s[j]); j++) {
-      charSet.add(s[j]);
+    // if there is the next char in the range, shurink it.
+    if (!nextChar || lastRange.includes(nextChar)) {
+      max = Math.max(max, lastRange.length);
+      lastRange = lastRange.slice(lastRange.indexOf(nextChar) + 1);
     }
-
-    max = Math.max(max, charSet.size);
   }
 
   return max;

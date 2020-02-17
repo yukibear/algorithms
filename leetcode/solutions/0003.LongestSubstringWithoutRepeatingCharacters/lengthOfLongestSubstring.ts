@@ -6,7 +6,7 @@ export default function lengthOfLongestSubstring(str: string): number {
     const nextChar = str[i + 1];
     lastRange += str[i];
 
-    // if there is the next char in the range, shurink it.
+    // if there exists the next char in the range, shrink it.
     if (!nextChar || lastRange.includes(nextChar)) {
       max = Math.max(max, lastRange.length);
       lastRange = lastRange.slice(lastRange.indexOf(nextChar) + 1);

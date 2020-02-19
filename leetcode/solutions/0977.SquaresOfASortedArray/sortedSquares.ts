@@ -5,30 +5,26 @@ export default function sortedSquares(A: number[]): number[] {
   for (let i = 0; i < A.length; i++) {
     const num = A[i];
 
-    if (num < 0) {
-      arr1.unshift(num * num);
+    if (num >= 0) {
+      arr1.push(num ** 2);
     } else {
-      arr2.push(num * num);
+      arr2.push(num ** 2);
     }
   }
 
-  if (arr1.length < arr2.length) {
-    [arr1, arr2] = [arr2, arr1];
-  }
+  let j = arr2.length - 1;
 
-  let j = 0;
-
-  for (let i = 0; i < arr1.length && j < arr2.length; i++) {
+  for (let i = 0; i < arr1.length && j >= 0; i++) {
     while (arr1[i] <= arr2[j]) {
       i++;
     }
 
     arr1.splice(i, 0, arr2[j]);
-    j++;
+    j--;
   }
 
-  if (j < arr2.length) {
-    return arr1.concat(arr2.slice(j));
+  for (; j >= 0; j--) {
+    arr1.push(arr2[j]);
   }
 
   return arr1;

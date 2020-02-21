@@ -7,34 +7,20 @@ export default function lowestCommonAncestor(
 ): BinaryTreeNode<number> {
   let result: BinaryTreeNode<number> = { val: -1, left: null, right: null };
 
-  function dfs(node: BinaryTreeNode<number> | null, t1: number, t2: number): number {
+  function dfs(node: BinaryTreeNode<number> | null): number {
     if (!node) {
       return 0;
     }
 
-    if (node.val === t1) {
-      if (dfs(node.left, t1, t2) + dfs(node.right, t1, t2) === 1) {
-        result = node;
+    let sum = 0;
 
-        return 0;
-      }
-
-      return 2;
+    if (node === p || node === q) {
+      sum = 1;
     }
 
-    if (node.val === t2) {
-      if (dfs(node.left, t1, t2) + dfs(node.right, t1, t2) === 2) {
-        result = node;
+    sum += dfs(node.left) + dfs(node.right);
 
-        return 0;
-      }
-
-      return 1;
-    }
-
-    const sum = dfs(node.left, t1, t2) + dfs(node.right, t1, t2);
-
-    if (sum === 3) {
+    if (sum === 2) {
       result = node;
 
       return 0;
@@ -43,7 +29,7 @@ export default function lowestCommonAncestor(
     return sum;
   }
 
-  dfs(root, p.val, q.val);
+  dfs(root);
 
   return result;
 }

@@ -1,16 +1,14 @@
-export default function isValid(s: string): boolean {
-  if (s.length % 2 !== 0) {
-    return false;
-  }
-
+export default function isValid(str: string): boolean {
   const stack: string[] = [];
 
-  for (const char of s) {
-    const pair = BRACKET_PAIR_MAP.get(char);
+  for (const char of str) {
+    if (!CLOSING_BRACKET_PAIR_MAP.has(char)) {
+      stack.push(char);
 
-    if (pair != null) {
-      stack.push(pair);
-    } else if (stack.pop() !== char) {
+      continue;
+    }
+
+    if (stack.pop() !== CLOSING_BRACKET_PAIR_MAP.get(char)) {
       return false;
     }
   }
@@ -18,8 +16,8 @@ export default function isValid(s: string): boolean {
   return stack.length === 0;
 }
 
-const BRACKET_PAIR_MAP = new Map([
-  ["{", "}"],
-  ["(", ")"],
-  ["[", "]"]
+const CLOSING_BRACKET_PAIR_MAP = new Map([
+  ["}", "{"],
+  [")", "("],
+  ["]", "["]
 ]);

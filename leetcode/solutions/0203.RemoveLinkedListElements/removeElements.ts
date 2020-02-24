@@ -4,10 +4,6 @@ export default function removeElements(
   head: SinglyLinkedListNode<number> | null,
   val: number
 ): SinglyLinkedListNode<number> | null {
-  if (head === null) {
-    return null;
-  }
-
   while (head?.val === val) {
     head = head.next;
   }

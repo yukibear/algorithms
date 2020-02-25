@@ -1,4 +1,3 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import postorderTraversal from "./postorderTraversal.ts";
 import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
@@ -16,7 +15,7 @@ function createTestFunction(func: Function) {
   };
 }
 
-test(
+Deno.test(
   "0145. Binary Tree Postorder Traversal",
   createTestFunction(postorderTraversal)
 );

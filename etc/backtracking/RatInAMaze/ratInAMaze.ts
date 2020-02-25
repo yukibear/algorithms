@@ -1,8 +1,9 @@
 // This is a backtracking problem referring to the following URL
 // https://www.geeksforgeeks.org/rat-in-a-maze-backtracking-2/
 export default function ratInAMaze(maze: number[][]): number[][] {
-  const result: number[][] = Array.from({ length: maze.length }, () =>
-    Array.from({ length: maze[0].length }, () => 0)
+  const result: number[][] = Array.from(
+    { length: maze.length },
+    () => Array.from({ length: maze[0].length }, () => 0)
   );
 
   function dfs(i: number, j: number) {

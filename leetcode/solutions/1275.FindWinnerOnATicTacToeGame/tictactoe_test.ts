@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import tictactoe from "./tictactoe.ts";
 
-test("1275. Find Winner on a Tic Tac Toe Game", () => {
+Deno.test("1275. Find Winner on a Tic Tac Toe Game", () => {
   assertEquals(
     tictactoe([
       [0, 0],

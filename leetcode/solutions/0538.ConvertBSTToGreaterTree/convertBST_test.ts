@@ -1,9 +1,9 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import convertBST from "./convertBST.ts";
-import { BinaryTreeNode as BST } from "../../../data_structures/BinaryTreeNode.ts";
+import { BinaryTreeNode
+  as BST } from "../../../data_structures/BinaryTreeNode.ts";
 
-test("0538. Convert BST to Greater Tree", () => {
+Deno.test("0538. Convert BST to Greater Tree", () => {
   let tree: BST<number> = {
     val: 5,
     left: { val: 2, left: null, right: null },

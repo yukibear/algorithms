@@ -1,4 +1,3 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import hasPathSum_DFS from "./hasPathSum_DFS.ts";
 import hasPathSum_BFS from "./hasPathSum_BFS.ts";
@@ -33,5 +32,5 @@ const createTestFunction = (func: Function) => {
   };
 };
 
-test("0112. Path Sum / DFS", createTestFunction(hasPathSum_DFS));
-test("0112. Path Sum / BFS", createTestFunction(hasPathSum_BFS));
+Deno.test("0112. Path Sum / DFS", createTestFunction(hasPathSum_DFS));
+Deno.test("0112. Path Sum / BFS", createTestFunction(hasPathSum_BFS));

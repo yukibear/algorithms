@@ -7,7 +7,11 @@ export default function lowestCommonAncestor(
 ): BinaryTreeNode<number> {
   let result: BinaryTreeNode<number> = { val: -1, left: null, right: null };
 
-  function dfs(node: BinaryTreeNode<number> | null, t1: number, t2: number): number {
+  function dfs(
+    node: BinaryTreeNode<number> | null,
+    t1: number,
+    t2: number
+  ): number {
     if (!node) {
       return 0;
     }

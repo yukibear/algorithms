@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import nQueenProblem, { inLeftRange } from "./nQueenProblem.ts";
 
-test("inRange", () => {
+Deno.test("inRange", () => {
   const arr = [
     [1, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
@@ -23,7 +22,7 @@ test("inRange", () => {
   assertEquals(inLeftRange(arr, 1, 2), true);
 });
 
-test("N Queen Problem", () => {
+Deno.test("N Queen Problem", () => {
   const result = [
     [1, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 1, 0],

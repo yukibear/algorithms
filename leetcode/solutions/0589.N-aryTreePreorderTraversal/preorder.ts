@@ -1,6 +1,6 @@
 export interface Node {
   val: number;
-  children: Node[]
+  children: Node[];
 }
 
 export default function preorder(

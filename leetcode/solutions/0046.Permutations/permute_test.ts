@@ -1,4 +1,3 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import { permute_DFS, permute_BFS } from "./permute.ts";
 
@@ -12,7 +11,7 @@ const createTest = (func: Function) => {
       }
 
       return 0;
-    }
+    };
 
     const result = func([1, 2, 3]);
     result.sort(sorter);
@@ -28,8 +27,8 @@ const createTest = (func: Function) => {
     expected.sort(sorter);
 
     assertEquals(result, expected);
-  }
-}
+  };
+};
 
-test("0046. Permutations / DFS", createTest(permute_DFS));
-test("0046. Permutations / BFS", createTest(permute_BFS));
+Deno.test("0046. Permutations / DFS", createTest(permute_DFS));
+Deno.test("0046. Permutations / BFS", createTest(permute_BFS));

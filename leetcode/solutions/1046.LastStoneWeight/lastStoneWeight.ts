@@ -2,7 +2,7 @@ export default function lastStoneWeight(stones: number[]): number {
   stones.sort((a, b) => a - b);
 
   while (stones.length > 1) {
-    const rest = stones.pop() - stones.pop();
+    const rest = stones.pop()! - stones.pop()!;
 
     if (rest !== 0) {
       insertStone(rest, stones);

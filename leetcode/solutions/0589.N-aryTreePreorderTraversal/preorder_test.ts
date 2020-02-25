@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import preorder, { Node } from "./preorder.ts";
 
-test("0589. N-ary Tree Preorder Traversal", () => {
+Deno.test("0589. N-ary Tree Preorder Traversal", () => {
   const node: Node = {
     val: 1,
     children: [

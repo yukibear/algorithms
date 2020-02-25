@@ -19,7 +19,6 @@ export function permute_BFS(nums: number[]): number[][] {
 
       queue.push([tmpArr, nums.filter((_, index) => index !== i)]);
     }
-
   }
 
   return result;

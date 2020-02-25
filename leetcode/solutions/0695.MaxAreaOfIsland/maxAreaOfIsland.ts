@@ -12,7 +12,7 @@ export default function maxAreaOfIsland(grid: number[][]): number {
   return max;
 }
 
-function countIsland(grid: number[][], i: number, j: number) {
+function countIsland(grid: number[][], i: number, j: number): number {
   if (!grid[i] || !grid[i][j]) {
     return 0;
   }

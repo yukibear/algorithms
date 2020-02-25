@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import MyHashSet from "./MyHashSet.ts";
 
-test("0705. Design HashSet", () => {
+Deno.test("0705. Design HashSet", () => {
   const hashSet = new MyHashSet();
 
   hashSet.add(1);

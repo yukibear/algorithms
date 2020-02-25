@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import maxCandies from "./maxCandies.ts";
 
-test("1298. Maximum Candies You Can Get from Boxes", () => {
+Deno.test("1298. Maximum Candies You Can Get from Boxes", () => {
   assertEquals(
     maxCandies(
       [1, 0, 1, 0],

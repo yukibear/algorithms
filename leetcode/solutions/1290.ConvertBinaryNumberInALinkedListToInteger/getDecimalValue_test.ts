@@ -1,9 +1,8 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import getDecimalValue from "./getDecimalValue.ts";
 import { createSinglyLinkedListNode } from "../../../data_structures/SinglyLinkedListNode.ts";
 
-test("1290. Convert Binary Number in a Linked List to Integer", () => {
+Deno.test("1290. Convert Binary Number in a Linked List to Integer", () => {
   assertEquals(getDecimalValue(createSinglyLinkedListNode([1, 0, 1])), 5);
   assertEquals(getDecimalValue(createSinglyLinkedListNode([0])), 0);
   assertEquals(getDecimalValue(createSinglyLinkedListNode([1])), 1);

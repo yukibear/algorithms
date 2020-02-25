@@ -10,7 +10,8 @@ export default function quickSort(nums: number[]): number[] {
   const pivot = Math.max(nums[0], nums[1]);
   let r = nums.length - 1;
 
-  main_loop: for (let l = 0; l != r; l++) {
+  main_loop:
+  for (let l = 0; l != r; l++) {
     if (nums[l] < pivot) {
       continue;
     }

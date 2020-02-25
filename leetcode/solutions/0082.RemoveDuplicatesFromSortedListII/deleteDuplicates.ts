@@ -3,7 +3,7 @@ import { SinglyLinkedListNode } from "../../../data_structures/SinglyLinkedListN
 export default function deleteDuplicates(
   head: SinglyLinkedListNode<number> | null
 ): SinglyLinkedListNode<number> | null {
-  let prev: SinglyLinkedListNode<number>;
+  let prev = head;
 
   // advance the head pointer to non-duplicated value
   while (head && (head.val === prev?.val || head.val === head.next?.val)) {

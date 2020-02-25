@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import sequentialDigits from "./sequentialDigits.ts";
 
-test("1291. Sequential Digits", () => {
+Deno.test("1291. Sequential Digits", () => {
   assertEquals(sequentialDigits(100, 300), [123, 234]);
   assertEquals(sequentialDigits(1000, 13000), [
     1234,

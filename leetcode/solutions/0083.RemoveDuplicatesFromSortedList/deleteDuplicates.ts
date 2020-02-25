@@ -17,7 +17,7 @@ export default function deleteDuplicates(
       continue;
     }
 
-    node.next = { val: head.val, next: {val: -1, next: null } };
+    node.next = { val: head.val, next: { val: -1, next: null } };
     node = node.next;
     head = head.next;
   }

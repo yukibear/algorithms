@@ -14,8 +14,7 @@ export default function shiftGrid(grid: number[][], k: number): number[][] {
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < m; j++) {
       let nextJ = j + k;
-      let x = i,
-        y = j;
+      let x = i, y = j;
 
       if (nextJ >= m) {
         y = nextJ % m;

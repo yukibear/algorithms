@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import lemonadeChange from "./lemonadeChange.ts";
 
-test("0860. Lemonade Change", () => {
+Deno.test("0860. Lemonade Change", () => {
   // assertEquals(lemonadeChange([5, 5, 5, 10, 20]), true);
   // assertEquals(lemonadeChange([5, 5, 10]), true);
   // assertEquals(lemonadeChange([10, 10]), false);

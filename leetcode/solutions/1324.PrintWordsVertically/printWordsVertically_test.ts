@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import printVertically from "./printWordsVertically.ts";
 
-test("1324. Print Words Vertically", () => {
+Deno.test("1324. Print Words Vertically", () => {
   assertEquals(printVertically("TO BE OR NOT TO BE"), [
     "TBONTB",
     "OEROOE",

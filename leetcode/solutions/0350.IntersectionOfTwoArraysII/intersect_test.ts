@@ -1,4 +1,3 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import intersect, { intersect_BinarySearch } from "./intersect.ts";
 
@@ -12,8 +11,8 @@ const createTestFunc = (func: Function) => {
     assertEquals(func([1, 2, 2, 1], [1, 1]).sort(sorter), [1, 1]);
   };
 };
-test("0350. Intersection of Two Arrays II", createTestFunc(intersect));
-test(
+Deno.test("0350. Intersection of Two Arrays II", createTestFunc(intersect));
+Deno.test(
   "0350. Intersection of Two Arrays II / Binary Search",
   createTestFunc(intersect_BinarySearch)
 );

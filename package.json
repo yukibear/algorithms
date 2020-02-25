@@ -1,10 +1,10 @@
 {
   "devDependencies": {
-    "typescript": "^3.7.4",
+    "typescript": "^3.7.5",
     "typescript-deno-plugin": "^1.2.7"
   },
   "scripts": {
-    "test-leetcode": "deno test --allow-net leetcode/solutions",
-    "test-etc": "deno test --allow-net etc"
+    "test-leetcode": "deno test --allow-net --allow-env --allow-write leetcode/solutions",
+    "test-etc": "deno test --allow-net --allow-net --allow-env --allow-write etc"
   }
 }

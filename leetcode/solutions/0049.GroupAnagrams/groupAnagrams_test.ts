@@ -1,7 +1,5 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import groupAnagrams from "./groupAnagrams.ts";
-import { reset } from "../../../../../../Library/Caches/deno/deps/https/deno.land/std/fmt/colors.ts";
 
 const sorter = (arr1: string[], arr2: string[]) => {
   arr1.sort();
@@ -10,7 +8,6 @@ const sorter = (arr1: string[], arr2: string[]) => {
   if (arr1.length !== arr2.length) {
     return arr1.length - arr2.length;
   }
-
 
   for (const [i, str1] of arr1.entries()) {
     const str2 = arr2[i];
@@ -25,7 +22,7 @@ const sorter = (arr1: string[], arr2: string[]) => {
   return 0;
 };
 
-test("0049. Group Anagrams", () => {
+Deno.test("0049. Group Anagrams", () => {
   const result = groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]);
   result.sort(sorter);
 

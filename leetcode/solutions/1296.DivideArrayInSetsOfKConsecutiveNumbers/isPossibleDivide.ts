@@ -1,4 +1,7 @@
-export default function isPossibleDivide(nums: number[], len: number): boolean {
+export default function isPossibleDivide(
+  nums: number[],
+  len: number
+): boolean {
   if (nums.length === 0 || nums.length % len !== 0) {
     return false;
   }

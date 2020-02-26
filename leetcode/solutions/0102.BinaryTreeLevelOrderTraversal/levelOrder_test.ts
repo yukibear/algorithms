@@ -1,4 +1,3 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import { levelOrder_DFS, levelOrder_BFS } from "./levelOrder.ts";
 import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
@@ -18,7 +17,7 @@ const sorter = (arr1: number[], arr2: number[]) => {
   }
 
   return 0;
-}
+};
 
 const createTestFunc = (func: Function) => {
   return () => {
@@ -26,8 +25,14 @@ const createTestFunc = (func: Function) => {
       func(createBinaryTreeNode([3, 9, 20, null, null, 15, 7])!).sort(sorter),
       [[3], [9, 20], [15, 7]].sort(sorter)
     );
-  }
-}
+  };
+};
 
-test("0102. Binary Tree Level Order Traversal / DFS", createTestFunc(levelOrder_DFS));
-test("0102. Binary Tree Level Order Traversal / BFS", createTestFunc(levelOrder_BFS));
+Deno.test(
+  "0102. Binary Tree Level Order Traversal / DFS",
+  createTestFunc(levelOrder_DFS)
+);
+Deno.test(
+  "0102. Binary Tree Level Order Traversal / BFS",
+  createTestFunc(levelOrder_BFS)
+);

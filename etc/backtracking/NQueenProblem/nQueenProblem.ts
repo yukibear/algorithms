@@ -1,6 +1,7 @@
 export default function nQueenProblem(): number[][] {
-  const res: number[][] = Array.from({ length: 8 }, () =>
-    Array.from({ length: 8 }, () => 0)
+  const res: number[][] = Array.from(
+    { length: 8 },
+    () => Array.from({ length: 8 }, () => 0)
   );
 
   function dfs(i: number, j: number) {

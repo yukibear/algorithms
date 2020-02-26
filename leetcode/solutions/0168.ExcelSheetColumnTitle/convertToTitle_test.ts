@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import convertToTitle from "./convertToTitle.ts";
 
-test("0168. Excel Sheet Column Title", () => {
+Deno.test("0168. Excel Sheet Column Title", () => {
   assertEquals(convertToTitle(1), "A");
   assertEquals(convertToTitle(28), "AB");
   assertEquals(convertToTitle(701), "ZY");

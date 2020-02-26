@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import subsets from "./subsets.ts";
 
-test("0078. Subsets", () => {
+Deno.test("0078. Subsets", () => {
   const sorter = (arr1: number[], arr2: number[]) => {
     if (arr1.length !== arr2.length) {
       return arr1.length - arr2.length;

@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import ProductOfNumbers from "./ProductOfNumbers.ts";
 
-test("1352. Product of the Last K Numbers", () => {
+Deno.test("1352. Product of the Last K Numbers", () => {
   const productOfNumbers = new ProductOfNumbers();
   productOfNumbers.add(3);
   productOfNumbers.add(0);

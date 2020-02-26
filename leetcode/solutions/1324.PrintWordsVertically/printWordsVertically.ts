@@ -1,13 +1,6 @@
 export default function printVertically(s: string): string[] {
   const strs = s.split(" ");
-
-  let maxLen = 0;
-  strs.forEach(s => {
-    if (maxLen < s.length) {
-      maxLen = s.length;
-    }
-  });
-
+  const maxLen = Math.max(...strs.map(s => s.length));
   const result: string[] = Array.from({ length: maxLen }, _ => "");
 
   for (let i = maxLen - 1; i >= 0; i--) {

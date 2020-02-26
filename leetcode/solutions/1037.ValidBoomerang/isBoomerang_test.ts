@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import isBoomerang from "./isBoomerang.ts";
 
-test("1037. Valid Boomerang", () => {
+Deno.test("1037. Valid Boomerang", () => {
   assertEquals(
     isBoomerang([
       [1, 1],

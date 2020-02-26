@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import minTaps from "./minTaps.ts";
 
-test("1326. Minimum Number of Taps to Open to Water a Garden", () => {
+Deno.test("1326. Minimum Number of Taps to Open to Water a Garden", () => {
   assertEquals(minTaps(5, [3, 4, 1, 1, 0, 0]), 1);
   assertEquals(minTaps(3, [0, 0, 0, 0]), -1);
   assertEquals(minTaps(7, [1, 2, 1, 0, 2, 1, 0, 1]), 3);

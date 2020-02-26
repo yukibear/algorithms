@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import findSolution from "./findSolution.ts";
 
-test("1237. Find Positive Integer Solution for a Given Equation", () => {
+Deno.test("1237. Find Positive Integer Solution for a Given Equation", () => {
   const sorter = (a: [number, number], b: [number, number]) => a[0] - b[0];
 
   const func1 = { f: (x: number, y: number) => x + y };

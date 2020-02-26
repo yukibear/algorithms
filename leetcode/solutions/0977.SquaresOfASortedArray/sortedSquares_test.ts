@@ -1,4 +1,3 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import sortedSquares, { sortedSquares_OneLiner } from "./sortedSquares.ts";
 
@@ -53,7 +52,13 @@ const createTestFunc = (func: Function) => {
       ]
     );
   };
-}
+};
 
-test("0977. Squares of a Sorted Array / One-Liner", createTestFunc(sortedSquares_OneLiner));
-test("0977. Squares of a Sorted Array / Another way", createTestFunc(sortedSquares));
+Deno.test(
+  "0977. Squares of a Sorted Array / One-Liner",
+  createTestFunc(sortedSquares_OneLiner)
+);
+Deno.test(
+  "0977. Squares of a Sorted Array / Another way",
+  createTestFunc(sortedSquares)
+);

@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import maxDepth, { Node } from "./maxDepth.ts";
 
-test("0559. Maximum Depth of N-ary Tree", () => {
+Deno.test("0559. Maximum Depth of N-ary Tree", () => {
   const node1: Node<number> = {
     val: 1,
     children: [

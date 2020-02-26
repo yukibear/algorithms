@@ -9,7 +9,7 @@ export default function shortestToChar(str: string, target: string): number[] {
 
   for (let i = 1; i < str.length; i++) {
     if (str[i] !== target) {
-      result[i] = result[i-1] + 1;
+      result[i] = result[i - 1] + 1;
 
       continue;
     }

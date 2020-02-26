@@ -1,4 +1,3 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import zigzagLevelOrder from "./zigzagLevelOrder.ts";
 import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
@@ -13,7 +12,7 @@ const createTestFunc = (func: Function) => {
   };
 };
 
-test(
+Deno.test(
   "0103. Binary Tree Zigzag Level Order Traversal",
   createTestFunc(zigzagLevelOrder)
 );

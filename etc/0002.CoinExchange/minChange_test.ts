@@ -1,4 +1,3 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import { minChange_DP, minChange_DFS } from "./minChange.ts";
 
@@ -11,5 +10,5 @@ const createTestFunc = (func: Function) => {
   };
 };
 
-test("0002. Coin Exchange / DP", createTestFunc(minChange_DP));
-test("0002. Coin Exchange / DFS", createTestFunc(minChange_DFS));
+Deno.test("0002. Coin Exchange / DP", createTestFunc(minChange_DP));
+Deno.test("0002. Coin Exchange / DFS", createTestFunc(minChange_DFS));

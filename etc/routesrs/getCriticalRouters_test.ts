@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import getCriticalRouters from "./getCriticalRouters.ts";
 
-test("Routes", () => {
+Deno.test("Routes", () => {
   let routers: [number, number][] = [
     [0, 1],
     [1, 2],

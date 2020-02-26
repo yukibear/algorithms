@@ -23,5 +23,5 @@ export default function maxProduct(root: BinaryTreeNode<number>): number {
     max = Math.max(max, sum * (totalSum - sum));
   }
 
-  return max % (Math.pow(10, 9) + 7);;
+  return max % (Math.pow(10, 9) + 7);
 }

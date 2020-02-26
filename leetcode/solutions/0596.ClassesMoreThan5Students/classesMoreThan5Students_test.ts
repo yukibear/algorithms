@@ -1,9 +1,8 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import classesMoreThan5Students from "./classesMoreThan5Students.ts";
 import { open, DB } from "https://deno.land/x/sqlite/mod.ts";
 
-test("0596. Classes More Than 5 Students", async () => {
+Deno.test("0596. Classes More Than 5 Students", async () => {
   const db: DB = await open("leetcode.db");
 
   setupData(db, []);
@@ -89,8 +88,7 @@ const setupData = (db: DB, data: Affiliation[]) => {
   data.forEach(({ student, cource }) => {
     db.query(
       "INSERT INTO courses (student, class) VALUES (?, ?)",
-      student,
-      cource
+      [student, cource]
     );
   });
 };

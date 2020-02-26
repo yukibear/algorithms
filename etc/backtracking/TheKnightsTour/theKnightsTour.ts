@@ -1,8 +1,9 @@
 // This is a backtracking problem referring to the following URL
 // https://www.geeksforgeeks.org/the-knights-tour-problem-backtracking-1/
 export default function theKnightsTour(): number[][] {
-  const arr: number[][] = Array.from({ length: 8 }, () =>
-    Array.from({ length: 8 }, () => -1)
+  const arr: number[][] = Array.from(
+    { length: 8 },
+    () => Array.from({ length: 8 }, () => -1)
   );
 
   function dfs(i: number, j: number, count: number): boolean {

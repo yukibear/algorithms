@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import isPossibleDivide from "./isPossibleDivide.ts";
 
-test("1296. Divide Array in Sets of K Consecutive Numbers", () => {
+Deno.test("1296. Divide Array in Sets of K Consecutive Numbers", () => {
   assertEquals(
     isPossibleDivide([3, 2, 1, 2, 3, 4, 3, 4, 5, 9, 10, 11], 3),
     true

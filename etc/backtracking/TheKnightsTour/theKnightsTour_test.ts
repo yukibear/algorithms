@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import theKnightsTour from "./theKnightsTour.ts";
 
-test("The Knights Tour", () => {
+Deno.test("The Knights Tour", () => {
   const result = [
     [0, 59, 38, 33, 30, 17, 8, 63],
     [37, 34, 31, 60, 9, 62, 29, 16],

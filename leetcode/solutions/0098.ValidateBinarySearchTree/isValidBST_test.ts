@@ -1,9 +1,8 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import isValidBST from "./isValidBST.ts";
 import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
-test("0098. Validate Binary Search Tree", () => {
+Deno.test("0098. Validate Binary Search Tree", () => {
   assertEquals(isValidBST(createBinaryTreeNode([2, 1, 3]))!, true);
   assertEquals(
     isValidBST(createBinaryTreeNode([5, 1, 4, null, null, 3, 6]))!,

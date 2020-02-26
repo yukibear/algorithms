@@ -1,4 +1,4 @@
-export default class ProductOfNumbers{
+export default class ProductOfNumbers {
   products: number[] = [];
   lastZeroIndex = -1;
 
@@ -19,13 +19,14 @@ export default class ProductOfNumbers{
     } else {
       this.products.push(prevNum * num);
     }
-  };
+  }
 
   getProduct(k: number): number {
     if (this.products.length - k <= this.lastZeroIndex) {
       return 0;
     }
 
-    return this.products[this.products.length - 1] / (this.products[this.products.length - k - 1] || 1);
-  };
+    return this.products[this.products.length - 1] /
+      (this.products[this.products.length - k - 1] || 1);
+  }
 }

@@ -13,5 +13,6 @@ export default function isValidBST(
     return false;
   }
 
-  return isValidBST(root.left, minVal, root.val) && isValidBST(root.right, root.val, maxVal);
+  return isValidBST(root.left, minVal, root.val) &&
+    isValidBST(root.right, root.val, maxVal);
 }

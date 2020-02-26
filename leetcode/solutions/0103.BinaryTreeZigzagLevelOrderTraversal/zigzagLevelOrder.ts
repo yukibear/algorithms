@@ -15,7 +15,7 @@ export default function zigzagLevelOrder(
 
     if (!result[i]) {
       result[i] = [node.val];
-    } else if(i % 2 === 1) {
+    } else if (i % 2 === 1) {
       result[i].unshift(node.val);
     } else {
       result[i].push(node.val);

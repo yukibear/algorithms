@@ -1,9 +1,8 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import deleteLeavesWithAGivenValue from "./deleteLeavesWithAGivenValue.ts";
 import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
-test("1325. Delete Leaves With a Given Value", () => {
+Deno.test("1325. Delete Leaves With a Given Value", () => {
   assertEquals(
     deleteLeavesWithAGivenValue(
       createBinaryTreeNode([1, 2, 3, 2, null, 2, 4])!,

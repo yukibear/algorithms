@@ -2,7 +2,12 @@ name: LeetCode
 on:
   push:
     branches:
-      - "*"
+      - "master"
+    paths:
+      - "leetcode/solutions/**"
+  pull_request:
+    branches:
+      - "master"
     paths:
       - "leetcode/solutions/**"
 jobs:

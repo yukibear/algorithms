@@ -2,9 +2,14 @@ name: etc
 on:
   push:
     branches:
-      - "*"
+      - "master"
     paths:
       - "etc/**"
+  pull_request:
+    branches:
+      - "master"
+    paths:
+      - "leetcode/solutions/**"
 jobs:
   test:
     name: Test etc

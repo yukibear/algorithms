@@ -6,7 +6,7 @@ export default function containsNearbyDuplicate(
   const lastIndices = new Map<number, number>();
 
   for (const [i, num] of nums.entries()) {
-    if ((lastIndices.get(num) || -Infinity) >= i - k) {
+    if (i - (lastIndices.get(num) ?? -Infinity) <= k) {
       return true;
     }
 

@@ -86,10 +86,9 @@ const setupData = (db: DB, data: Affiliation[]) => {
   db.query(`DELETE FROM courses`);
 
   data.forEach(({ student, cource }) => {
-    // db.query(
-    //   "INSERT INTO courses (student, class) VALUES (?, ?)",
-    //   student,
-    //   cource
-    // );
+    db.query(
+      "INSERT INTO courses (student, class) VALUES (?, ?)",
+      [student, cource]
+    );
   });
 };

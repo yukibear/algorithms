@@ -5,24 +5,18 @@ import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 // checking if a difference(target - node.var) exists in the Set.
 export default function findTarget(
   root: BinaryTreeNode<number> | null,
-  k: number
+  k: number,
+  foundNums = new Set<number>()
 ): boolean {
-  return dfs(root, new Set<number>(), k);
-}
-
-function dfs(
-  node: BinaryTreeNode<number> | null,
-  foundNums: Set<number>,
-  k: number
-): boolean {
-  if (!node) {
+  if (!root) {
     return false;
   }
-  if (foundNums.has(k - node.val)) {
+  if (foundNums.has(k - root.val)) {
     return true;
   }
 
-  foundNums.add(node.val);
+  foundNums.add(root.val);
 
-  return dfs(node.left, foundNums, k) || dfs(node.right, foundNums, k);
+  return findTarget(root.left, k, foundNums) ||
+    findTarget(root.right, k, foundNums);
 }

@@ -20,6 +20,7 @@ Deno.test("0733. Flood Fill", () => {
     [0, 0, 0]
   ];
 
+
     (sr = 0),
     (sc = 0),
     (newColor = 2)
@@ -34,6 +35,7 @@ Deno.test("0733. Flood Fill", () => {
     [0, 0, 0],
     [0, 1, 1]
   ];
+
 
     (sr = 1),
     (sc = 1),

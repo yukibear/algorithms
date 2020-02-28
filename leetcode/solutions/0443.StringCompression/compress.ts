@@ -1,28 +1,26 @@
-/**
- * @param {character[]} chars
- * @return {number}
- */
 export default function compress(
   chars: string[]
-): string[] {
+): number {
+  let count = 0;
+  let cursor = 0;
 
-  let count = 1;
+  for (const [i, char] of chars.entries()) {
+    count++;
 
-  for (let i = 0; i < chars.length; ++i) {
-    if (chars[i] === chars[i+1]) {
-      count += 1;
-      continue;
+    if (i === chars.length - 1 || char !== chars[i + 1]) {
+      chars[cursor] = char;
+      cursor++;
+
+      if (count !== 1) {
+        count.toString().split("").forEach(c => {
+          chars[cursor] = c;
+          cursor++;
+        });
+      }
+
+      count = 0;
     }
-
-    chars.push(chars[i])
-
-    if (count !== 1) {
-      chars.push(...(count.toString().split("")));
-    }
-    count = 1;
   }
-  chars.splice(0, chars.indexOf("-1"));
 
-  return chars;
+  return cursor;
 }
-

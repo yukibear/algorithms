@@ -1,9 +1,31 @@
 import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
+// DFS solution: O(n) Time and Space Complexity.
+// This solution is to build a Set of TreeNode values
+// checking if a difference(target - node.var) exists in the Set.
+export function findTarget_DFS(
+  root: BinaryTreeNode<number> | null,
+  k: number,
+  foundNums = new Set<number>()
+): boolean {
+  if (!root) {
+    return false;
+  }
+  if (foundNums.has(k - root.val)) {
+    return true;
+  }
+
+  foundNums.add(root.val);
+
+  return findTarget_DFS(root.left, k, foundNums) ||
+    findTarget_DFS(root.right, k, foundNums);
+}
+
+
 // Inorder array of numbers solution: O(n) Time and Space Complexity.
 // This solution makes the array sorted in ascending order first,
 // and then searchs a pair of numbers in it.
-export default function findTarget(
+export function findTarget_SortedArray(
   root: BinaryTreeNode<number> | null,
   k: number
 ): boolean {

@@ -1,6 +1,5 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import findTarget_DFS from "./findTarget_DFS.ts";
-import findTarget_SortedArray from "./findTarget_SortedArray.ts";
+import { findTarget_DFS, findTarget_SortedArray } from "./findTarget.ts";
 import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
 function createTest(func: Function) {

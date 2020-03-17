@@ -1,7 +1,7 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import CustomStack from "./CustomStack.ts";
 
-Deno.test("5357. Design a Stack With Increment Operation", () => {
+Deno.test("1381. Design a Stack With Increment Operation", () => {
   const customStack = new CustomStack(3);
   customStack.push(1);
   customStack.push(2);

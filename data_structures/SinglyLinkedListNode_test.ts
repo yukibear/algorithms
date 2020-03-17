@@ -1,12 +1,14 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import {
   assertEquals,
   assertStrictEq,
   assertThrows
 } from "https://deno.land/std/testing/asserts.ts";
-import { createSinglyLinkedListNode, getNthNode } from "./SinglyLinkedListNode.ts";
+import {
+  createSinglyLinkedListNode,
+  getNthNode
+} from "./SinglyLinkedListNode.ts";
 
-test("createSinglyLinkedListNode() returns a LinkedListNode by the given array", () => {
+Deno.test("createSinglyLinkedListNode() returns a LinkedListNode by the given array", () => {
   assertEquals(createSinglyLinkedListNode([1, 2, 3, 4, 5, 6, 7]), {
     val: 1,
     next: {
@@ -35,11 +37,11 @@ test("createSinglyLinkedListNode() returns a LinkedListNode by the given array",
   });
 });
 
-test("createSinglyLinkedListNode() returns null if the given array is empty", () => {
+Deno.test("createSinglyLinkedListNode() returns null if the given array is empty", () => {
   assertStrictEq(createSinglyLinkedListNode([]), null);
 });
 
-test("getNthNode(node, n) returns the n-th node", () => {
+Deno.test("getNthNode(node, n) returns the n-th node", () => {
   assertStrictEq(
     getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, 0).val,
     0
@@ -58,7 +60,7 @@ test("getNthNode(node, n) returns the n-th node", () => {
   );
 });
 
-test("getNthNode(node, n) doesn't mutates the given linked list", () => {
+Deno.test("getNthNode(node, n) doesn't mutates the given linked list", () => {
   const head = createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!;
 
   getNthNode(head, 1);
@@ -68,7 +70,7 @@ test("getNthNode(node, n) doesn't mutates the given linked list", () => {
   assertStrictEq(getNthNode(head, 2).val, 2);
 });
 
-test("getNthNode(node, n) throws an Error if the given index is out of bounds", () => {
+Deno.test("getNthNode(node, n) throws an Error if the given index is out of bounds", () => {
   assertThrows(
     () => getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, 7),
     Error
@@ -79,7 +81,7 @@ test("getNthNode(node, n) throws an Error if the given index is out of bounds", 
   );
 });
 
-test("getNthNode(node, n) throws a TypeError if the given index is not an integer", () => {
+Deno.test("getNthNode(node, n) throws a TypeError if the given index is not an integer", () => {
   assertThrows(
     () => getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, 1.1),
     TypeError
@@ -89,7 +91,8 @@ test("getNthNode(node, n) throws a TypeError if the given index is not an intege
     TypeError
   );
   assertThrows(
-    () => getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -Infinity),
+    () =>
+      getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -Infinity),
     TypeError
   );
   assertThrows(

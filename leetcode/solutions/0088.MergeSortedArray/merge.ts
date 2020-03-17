@@ -15,7 +15,7 @@ export default function merge(
     } else {
       nums1[k] = nums2[j];
       j--;
-    };
+    }
   }
 
   while (j >= 0) {

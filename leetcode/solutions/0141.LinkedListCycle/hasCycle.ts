@@ -1,7 +1,7 @@
 import { SinglyLinkedListNode } from "../../../data_structures/SinglyLinkedListNode.ts";
 
 export default function hasCycle(
-  node: SinglyLinkedListNode<number> | null,
+  node: SinglyLinkedListNode<number> | null
 ): boolean {
   let walker = node;
   let runner = node;

@@ -11,6 +11,7 @@ export default function isSameTree(
     return false;
   }
 
-  return isSameTree(tree1.left, tree2.left) && isSameTree(tree1.right, tree2.right);
+  return (
+    isSameTree(tree1.left, tree2.left) && isSameTree(tree1.right, tree2.right)
+  );
 }
-

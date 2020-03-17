@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import isValidSudoku from "./isValidSudoku.ts";
 
-test("0036. Valid Sudoku", () => {
+Deno.test("0036. Valid Sudoku", () => {
   const board1 = [
     ["5", "3", ".", ".", "7", ".", ".", ".", "."],
     ["6", ".", ".", "1", "9", "5", ".", ".", "."],

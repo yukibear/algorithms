@@ -3,7 +3,7 @@ export default function longestCommonPrefix(strs: string[]): string {
     return "";
   }
 
-  let prefix = strs.reduce((p, n) => p.length < n.length ? p : n);
+  let prefix = strs.reduce((p, n) => (p.length < n.length ? p : n));
 
   for (const str of strs) {
     for (let i = prefix.length; i >= 0 && prefix !== ""; i--) {

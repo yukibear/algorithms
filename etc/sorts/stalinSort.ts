@@ -1,6 +1,4 @@
-export default function stalinSort(
-  nums: number[]
-): number[] {
+export default function stalinSort(nums: number[]): number[] {
   if (nums.length === 0) return [];
 
   let prev = nums[0];

@@ -1,6 +1,4 @@
-export default function longestPalindrome(
-  str: string
-): number {
+export default function longestPalindrome(str: string): number {
   let length = 0;
   const set = new Set<string>();
   for (const s of str) {

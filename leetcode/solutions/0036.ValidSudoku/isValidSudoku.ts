@@ -11,8 +11,8 @@ export default function isValidSudoku(board: string[][]): boolean {
 
       const rowKey = `${char} in row ${i.toString()}`;
       const colKey = `${char} in column ${j.toString()}`;
-      const blockKey = `${char} in block `
-        + Math.floor(i / 3) + "-" + Math.floor(j / 3);
+      const blockKey = `${char} in block ` + Math.floor(i / 3) + "-" +
+        Math.floor(j / 3);
 
       if (seen.has(rowKey) || seen.has(colKey) || seen.has(blockKey)) {
         return false;

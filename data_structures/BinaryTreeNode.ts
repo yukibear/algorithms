@@ -12,7 +12,10 @@ export function createBinaryTreeNode<T>(
   if (values.length === 0) return null;
 
   const root = createSingleNode(values[0]);
-  let queue: [BinaryTreeNode<T>, isLeft][] = [[root!, true], [root!, false]];
+  let queue: [BinaryTreeNode<T>, isLeft][] = [
+    [root!, true],
+    [root!, false]
+  ];
 
   for (let i = 1; i < values.length; i++) {
     const [node, isLeft] = queue.shift()!;
@@ -30,8 +33,6 @@ export function createBinaryTreeNode<T>(
   return root;
 }
 
-function createSingleNode<T>(
-  value: T | null
-): BinaryTreeNode<T> | null {
-  return (value === null) ? null : { val: value, left: null, right: null };
-};
+function createSingleNode<T>(value: T | null): BinaryTreeNode<T> | null {
+  return value === null ? null : { val: value, left: null, right: null };
+}

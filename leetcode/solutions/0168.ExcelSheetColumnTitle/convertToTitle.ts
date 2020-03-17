@@ -16,7 +16,5 @@ export default function convertToTitle(n: number): string {
 }
 
 function numToAlphabet(n: number): string {
-  return String.fromCharCode(
-    Number.parseInt((n + 64).toString(16), 16)
-  );
+  return String.fromCharCode(Number.parseInt((n + 64).toString(16), 16));
 }

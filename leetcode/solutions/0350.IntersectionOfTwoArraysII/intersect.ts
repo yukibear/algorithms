@@ -1,7 +1,4 @@
-export default function intersect(
-  nums1: number[],
-  nums2: number[]
-): number[] {
+export default function intersect(nums1: number[], nums2: number[]): number[] {
   if (nums1.length > nums2.length) {
     [nums1, nums2] = [nums2, nums1];
   }
@@ -13,7 +10,6 @@ export default function intersect(
   let lastFound = -1;
 
   return nums1.filter(num => {
-
     const tmp = nums2.indexOf(num, lastFound + 1);
 
     if (tmp !== -1) {

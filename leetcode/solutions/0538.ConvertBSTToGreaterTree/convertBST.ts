@@ -1,4 +1,5 @@
-import { BinaryTreeNode as BST } from "../../../data_structures/BinaryTreeNode.ts";
+import { BinaryTreeNode
+  as BST } from "../../../data_structures/BinaryTreeNode.ts";
 
 export default function convertBST(
   node: BST<number> | null
@@ -14,7 +15,7 @@ export default function convertBST(
     node.val += sum;
     sum = node.val;
     func(node.left);
-  }
+  };
 
   func(node);
 

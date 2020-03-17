@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+FILES=$(git diff --cached --name-only -- '*.ts')
+
+if [ -z "$FILES" ]; then
+  exit 0
+fi
+
+deno fmt -L debug --check $FILES
+
+if [ $? -ne 0 ]; then
+  echo $FILES > .files_to_be_formatted
+fi

@@ -6,5 +6,5 @@ export default function isPerfectSquare(num: number): boolean {
     i += 2;
   }
 
-  return num === 0
+  return num === 0;
 }

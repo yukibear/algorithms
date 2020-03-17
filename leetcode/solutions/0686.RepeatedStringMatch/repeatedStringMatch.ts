@@ -4,7 +4,7 @@ export default function repeatedStringMatch(A: string, B: string): number {
       return 1;
     }
 
-    return (A.repeat(2).indexOf(B) === -1) ? -1 : 2;
+    return A.repeat(2).indexOf(B) === -1 ? -1 : 2;
   }
 
   let repatTimes = Math.ceil(B.length / A.length);

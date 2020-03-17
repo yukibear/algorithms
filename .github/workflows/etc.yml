@@ -2,16 +2,30 @@ name: etc
 on:
   push:
     branches:
-      - "*"
+      - "master"
+    paths:
+      - "etc/**"
+  pull_request:
+    branches:
+      - "master"
     paths:
       - "etc/**"
 jobs:
-  test:
-    name: Test etc
+  format:
+    name: Formatting
     runs-on: ubuntu-latest
     env:
       DENO_INSTALL: ~/.local
     steps:
       - uses: actions/checkout@master
       - run: curl -fsSL https://deno.land/x/install/install.sh | sh
-      - run: $DENO_INSTALL/bin/deno test --allow-net --allow-env --allow-write leetcode/etc
+      - run: $DENO_INSTALL/bin/deno fmt -L debug --check etc
+  test:
+    name: Testing
+    runs-on: ubuntu-latest
+    env:
+      DENO_INSTALL: ~/.local
+    steps:
+      - uses: actions/checkout@master
+      - run: curl -fsSL https://deno.land/x/install/install.sh | sh
+      - run: $DENO_INSTALL/bin/deno test --allow-net --allow-env --allow-write etc

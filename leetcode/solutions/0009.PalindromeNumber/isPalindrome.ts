@@ -13,7 +13,7 @@ export default function isPalindrome(x: number): boolean {
       return false;
     }
 
-    x = Math.floor(x % tmp / 10);
+    x = Math.floor((x % tmp) / 10);
   }
 
   return true;

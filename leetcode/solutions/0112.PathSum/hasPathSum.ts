@@ -1,6 +1,21 @@
 import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
 
-export default function hasPathSum(
+export function hasPathSum_DFS(
+  node: BinaryTreeNode<number> | null,
+  sum: number
+): boolean {
+  if (!node) return false;
+
+  sum -= node.val;
+
+  if (!node.left && !node.right) {
+    return sum === 0;
+  }
+
+  return hasPathSum_DFS(node.left!, sum) || hasPathSum_DFS(node.right!, sum);
+}
+
+export function hasPathSum_BFS(
   root: BinaryTreeNode<number> | null,
   sum: number
 ): boolean {

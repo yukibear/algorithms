@@ -12,7 +12,7 @@ on:
       - "leetcode/solutions/**"
 jobs:
   format:
-    name: Formatting
+    name: Check Code Format
     runs-on: ubuntu-latest
     env:
       DENO_INSTALL: ~/.local

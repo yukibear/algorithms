@@ -11,8 +11,17 @@ on:
     paths:
       - "etc/**"
 jobs:
+  format:
+    name: Formatting
+    runs-on: ubuntu-latest
+    env:
+      DENO_INSTALL: ~/.local
+    steps:
+      - uses: actions/checkout@master
+      - run: curl -fsSL https://deno.land/x/install/install.sh | sh
+      - run: $DENO_INSTALL/bin/deno fmt -L debug --check etc
   test:
-    name: Test etc
+    name: Testing
     runs-on: ubuntu-latest
     env:
       DENO_INSTALL: ~/.local

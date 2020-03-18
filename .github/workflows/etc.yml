@@ -12,12 +12,12 @@ on:
       - "etc/**"
 jobs:
   format:
-    name: Formatting
+    name: Check Code Format
     runs-on: ubuntu-latest
     env:
       DENO_INSTALL: ~/.local
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - run: curl -fsSL https://deno.land/x/install/install.sh | sh
       - run: $DENO_INSTALL/bin/deno fmt -L debug --check etc
   test:
@@ -26,6 +26,6 @@ jobs:
     env:
       DENO_INSTALL: ~/.local
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - run: curl -fsSL https://deno.land/x/install/install.sh | sh
       - run: $DENO_INSTALL/bin/deno test --allow-net --allow-env --allow-write etc

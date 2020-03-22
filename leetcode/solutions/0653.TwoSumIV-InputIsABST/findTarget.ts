@@ -17,10 +17,11 @@ export function findTarget_DFS(
 
   foundNums.add(root.val);
 
-  return findTarget_DFS(root.left, k, foundNums) ||
-    findTarget_DFS(root.right, k, foundNums);
+  return (
+    findTarget_DFS(root.left, k, foundNums) ||
+    findTarget_DFS(root.right, k, foundNums)
+  );
 }
-
 
 // Inorder array of numbers solution: O(n) Time and Space Complexity.
 // This solution makes the array sorted in ascending order first,

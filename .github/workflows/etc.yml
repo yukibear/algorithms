@@ -1,8 +1,5 @@
 name: etc
 on:
-  push:
-    paths:
-      - "etc/**.ts"
   pull_request:
     paths:
       - "etc/**.ts"

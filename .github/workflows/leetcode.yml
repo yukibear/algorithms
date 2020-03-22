@@ -1,8 +1,5 @@
 name: LeetCode
 on:
-  push:
-    paths:
-      - "leetcode/solutions/**.ts"
   pull_request:
     paths:
       - "leetcode/solutions/**.ts"

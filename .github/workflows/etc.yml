@@ -15,4 +15,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: curl -fsSL https://deno.land/x/install/install.sh | sh
-      - run: $DENO_INSTALL/bin/deno test --allow-net --allow-env --allow-write etc
+      - run: $DENO_INSTALL/bin/deno test --allow-net --allow-env --allow-write etc/*

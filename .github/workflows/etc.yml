@@ -1,31 +1,18 @@
 name: etc
 on:
   push:
-    branches:
-      - "master"
     paths:
-      - "etc/**"
+      - "etc/**.ts"
   pull_request:
-    branches:
-      - "master"
     paths:
-      - "etc/**"
+      - "etc/**.ts"
 jobs:
-  format:
-    name: Check Code Format
-    runs-on: ubuntu-latest
-    env:
-      DENO_INSTALL: ~/.local
-    steps:
-      - uses: actions/checkout@v2
-      - run: curl -fsSL https://deno.land/x/install/install.sh | sh
-      - run: $DENO_INSTALL/bin/deno fmt -L debug --check etc
   test:
-    name: Testing
+    name: Test TypeScript Files
     runs-on: ubuntu-latest
     env:
       DENO_INSTALL: ~/.local
     steps:
       - uses: actions/checkout@v2
       - run: curl -fsSL https://deno.land/x/install/install.sh | sh
-      - run: $DENO_INSTALL/bin/deno test --allow-net --allow-env --allow-write etc
+      - run: $DENO_INSTALL/bin/deno test --allow-net --allow-env --allow-write etc/*

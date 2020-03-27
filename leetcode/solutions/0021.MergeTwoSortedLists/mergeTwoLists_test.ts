@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import mergeTwoLists from "./mergeTwoLists.ts";
-import { createSinglyLinkedListNode } from "../../../data_structures/SinglyLinkedListNode.ts";
+import { createSinglyLinkedListNode } from "../../../datastructure/SinglyLinkedListNode.ts";
 
 Deno.test("0021. Merge Two Sorted Lists", () => {
   assertEquals(

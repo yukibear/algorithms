@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
+import { BinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
 // DFS solution: O(n) Time and Space Complexity.
 // This solution is to build a Set of TreeNode values

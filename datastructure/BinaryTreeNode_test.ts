@@ -9,7 +9,7 @@ Deno.test("createTreeNode", () => {
   expected = {
     val: 1,
     left: { val: 2, left: null, right: null },
-    right: { val: 3, left: null, right: null }
+    right: { val: 3, left: null, right: null },
   };
   assertEquals(createBinaryTreeNode([1, 2, 3]), expected);
 
@@ -19,8 +19,8 @@ Deno.test("createTreeNode", () => {
     right: {
       val: 2,
       left: null,
-      right: { val: 3, left: null, right: null }
-    }
+      right: { val: 3, left: null, right: null },
+    },
   };
   assertEquals(createBinaryTreeNode([1, null, 2, null, 3]), expected);
 
@@ -29,20 +29,20 @@ Deno.test("createTreeNode", () => {
     left: {
       val: 2,
       left: null,
-      right: { val: 4, left: null, right: null }
+      right: { val: 4, left: null, right: null },
     },
     right: {
       val: 3,
       left: null,
-      right: null
-    }
+      right: null,
+    },
   };
   assertEquals(createBinaryTreeNode([1, 2, 3, null, 4]), expected);
 
   expected = {
     val: 1,
     left: null,
-    right: { val: 2, left: null, right: null }
+    right: { val: 2, left: null, right: null },
   };
   assertEquals(createBinaryTreeNode([1, null, 2]), expected);
 
@@ -51,9 +51,9 @@ Deno.test("createTreeNode", () => {
     left: {
       val: 2,
       left: { val: 4, left: null, right: null },
-      right: { val: 5, left: null, right: null }
+      right: { val: 5, left: null, right: null },
     },
-    right: { val: 3, left: null, right: null }
+    right: { val: 3, left: null, right: null },
   };
   assertEquals(createBinaryTreeNode([1, 2, 3, 4, 5]), expected);
 
@@ -65,10 +65,10 @@ Deno.test("createTreeNode", () => {
       left: {
         val: 3,
         left: { val: 4, left: null, right: null },
-        right: null
+        right: null,
       },
-      right: null
-    }
+      right: null,
+    },
   };
   assertEquals(createBinaryTreeNode([1, null, 2, 3, null, 4]), expected);
 });

@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import { levelOrder_DFS, levelOrder_BFS } from "./levelOrder.ts";
-import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
+import { createBinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
 const sorter = (arr1: number[], arr2: number[]) => {
   arr1.sort();

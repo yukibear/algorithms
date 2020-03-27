@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import removeElements from "./removeElements.ts";
-import { createSinglyLinkedListNode } from "../../../data_structures/SinglyLinkedListNode.ts";
+import { createSinglyLinkedListNode } from "../../../datastructure/SinglyLinkedListNode.ts";
 
 Deno.test("0203. Remove Linked List Elements", () => {
   assertEquals(

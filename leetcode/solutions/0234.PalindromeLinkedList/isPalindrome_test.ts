@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import isPalindrome from "./isPalindrome.ts";
-import { createSinglyLinkedListNode } from "../../../data_structures/SinglyLinkedListNode.ts";
+import { createSinglyLinkedListNode } from "../../../datastructure/SinglyLinkedListNode.ts";
 
 Deno.test("0234. Palindrome Linked List", () => {
   assertEquals(isPalindrome(createSinglyLinkedListNode([1, 2])), false);

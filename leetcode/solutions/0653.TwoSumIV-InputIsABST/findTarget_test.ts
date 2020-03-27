@@ -1,13 +1,10 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import { findTarget_DFS, findTarget_SortedArray } from "./findTarget.ts";
-import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
+import { createBinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
 function createTest(func: Function) {
   return () => {
-    assertEquals(
-      func(createBinaryTreeNode([5, 3, 6, 2, 4, null, 7]), 9),
-      true
-    );
+    assertEquals(func(createBinaryTreeNode([5, 3, 6, 2, 4, null, 7]), 9), true);
     assertEquals(
       func(createBinaryTreeNode([5, 3, 6, 2, 4, null, 7]), 28),
       false

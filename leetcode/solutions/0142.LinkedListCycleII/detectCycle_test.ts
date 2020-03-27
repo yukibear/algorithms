@@ -1,9 +1,9 @@
 import {
   assertNotEquals,
-  assertStrictEq
+  assertStrictEq,
 } from "https://deno.land/std/testing/asserts.ts";
 import detectCycle from "./detectCycle.ts";
-import { createSinglyLinkedListNode } from "../../../data_structures/SinglyLinkedListNode.ts";
+import { createSinglyLinkedListNode } from "../../../datastructure/SinglyLinkedListNode.ts";
 
 Deno.test("0142. Linked List Cycle II", () => {
   const head1 = createSinglyLinkedListNode([3, 2, 0, 4]);

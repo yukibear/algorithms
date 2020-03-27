@@ -14,7 +14,7 @@ export function createBinaryTreeNode<T>(
   const root = createSingleNode(values[0]);
   let queue: [BinaryTreeNode<T>, isLeft][] = [
     [root!, true],
-    [root!, false]
+    [root!, false],
   ];
 
   for (let i = 1; i < values.length; i++) {

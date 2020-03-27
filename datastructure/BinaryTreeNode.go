@@ -1,4 +1,4 @@
-package datastructures
+package datastructure
 
 import (
 	"strconv"
@@ -11,7 +11,7 @@ type BinaryTreeNode struct {
 	Right *BinaryTreeNode
 }
 
-func createBinaryTreeNode(numStrings []string) BinaryTreeNode {
+func CreateBinaryTreeNodeFromString(numStrings []string) BinaryTreeNode {
 	if len(numStrings) == 0 {
 		return BinaryTreeNode{0, nil, nil}
 	}

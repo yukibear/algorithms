@@ -52,10 +52,10 @@ export function popMinHeap(nums: number[]) {
 
 export function pushMaxHeap(nums: number[], num: number) {
   nums.push(num);
-  buildHeap(nums, maxHeapCompairer)
+  buildHeap(nums, maxHeapCompairer);
 }
 
 export function pushMinHeap(nums: number[], num: number) {
   nums.push(num);
-  buildHeap(nums, minHeapCompairer)
+  buildHeap(nums, minHeapCompairer);
 }

@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
+import { BinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
 export default function sortedArrayToBST(
   nums: number[]
@@ -11,7 +11,7 @@ export default function sortedArrayToBST(
   const node: BinaryTreeNode<number> = {
     val: nums[half],
     left: null,
-    right: null
+    right: null,
   };
 
   node.left = sortedArrayToBST(nums.slice(0, half));

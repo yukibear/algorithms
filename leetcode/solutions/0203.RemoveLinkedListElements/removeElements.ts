@@ -1,4 +1,4 @@
-import { SinglyLinkedListNode } from "../../../data_structures/SinglyLinkedListNode.ts";
+import { SinglyLinkedListNode } from "../../../datastructure/SinglyLinkedListNode.ts";
 
 export default function removeElements(
   head: SinglyLinkedListNode<number> | null,

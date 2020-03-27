@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import middleOfTheLinkedList from "./middleOfTheLinkedList.ts";
-import { createSinglyLinkedListNode } from "../../../data_structures/SinglyLinkedListNode.ts";
+import { createSinglyLinkedListNode } from "../../../datastructure/SinglyLinkedListNode.ts";
 
 Deno.test("0876. Middle of the Linked List", () => {
   assertEquals(

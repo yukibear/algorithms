@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
+import { BinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
 export default function isValidBST(
   root: BinaryTreeNode<number> | null,
@@ -13,6 +13,8 @@ export default function isValidBST(
     return false;
   }
 
-  return isValidBST(root.left, minVal, root.val) &&
-    isValidBST(root.right, root.val, maxVal);
+  return (
+    isValidBST(root.left, minVal, root.val) &&
+    isValidBST(root.right, root.val, maxVal)
+  );
 }

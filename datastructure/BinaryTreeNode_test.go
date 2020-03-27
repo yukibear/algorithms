@@ -6,6 +6,8 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
+type TreeNode = BinaryTreeNode
+
 func Test_CreateBinaryTreeNode(t *testing.T) {
 	t.Parallel()
 
@@ -14,22 +16,42 @@ func Test_CreateBinaryTreeNode(t *testing.T) {
 		out BinaryTreeNode
 	}{
 		{
+			[]string{"0"},
+			BinaryTreeNode{
+				Val:   0,
+				Left:  nil,
+				Right: nil,
+			},
+		},
+		{
+			[]string{"1", "null", "2"},
+			BinaryTreeNode{
+				Val:  1,
+				Left: nil,
+				Right: &BinaryTreeNode{
+					Val:   2,
+					Left:  nil,
+					Right: nil,
+				},
+			},
+		},
+		{
 			[]string{"3", "9", "20", "null", "null", "15", "7"},
 			BinaryTreeNode{
-				3,
-				&BinaryTreeNode{
+				Val: 3,
+				Left: &BinaryTreeNode{
 					9,
 					nil,
 					nil,
 				},
-				&BinaryTreeNode{
-					20,
-					&BinaryTreeNode{
+				Right: &BinaryTreeNode{
+					Val: 20,
+					Left: &BinaryTreeNode{
 						15,
 						nil,
 						nil,
 					},
-					&BinaryTreeNode{
+					Right: &BinaryTreeNode{
 						7,
 						nil,
 						nil,
@@ -39,17 +61,16 @@ func Test_CreateBinaryTreeNode(t *testing.T) {
 		},
 	}
 
-	for i, tt := range tests {
-		i := i
+	for _, tt := range tests {
 		tt := tt
 
 		t.Run("Test", func(t *testing.T) {
 			t.Parallel()
 
-			got := createBinaryTreeNode(tt.in)
+			got := CreateBinaryTreeNodeFromString(tt.in)
 
 			if !cmp.Equal(got, tt.out) {
-				t.Errorf("\n#%02d\ngot: %#v\nwant: %#v", i, got, tt.out)
+				t.Errorf("got %#v want %#v", got, tt.out)
 			}
 		})
 	}

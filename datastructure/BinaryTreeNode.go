@@ -10,45 +10,56 @@ type BinaryTreeNode struct {
 	Left  *BinaryTreeNode
 	Right *BinaryTreeNode
 }
+type treeNodeQueue struct {
+	node   *BinaryTreeNode
+	isLeft bool
+}
 
-func CreateBinaryTreeNodeFromString(numStrings []string) BinaryTreeNode {
+// CreateBinaryTreeNodeFromString creates a tructure of BinaryTreeNode
+// from an array of string(or "null") in LeetCode expression
+// ex) ["1", "2", "null", "3"]
+func CreateBinaryTreeNodeFromString(numStrings []string) *BinaryTreeNode {
 	if len(numStrings) == 0 {
-		return BinaryTreeNode{0, nil, nil}
+		return nil
 	}
-
 	var root BinaryTreeNode
+	numString := numStrings[0]
+	numStrings = numStrings[1:]
 
-	if num, err := strconv.Atoi(numStrings[0]); err == nil {
+	if num, err := strconv.Atoi(numString); err == nil {
 		root = BinaryTreeNode{num, nil, nil}
 	} else {
-		return BinaryTreeNode{0, nil, nil}
+		return nil
 	}
 
-	queue := []*BinaryTreeNode{&root}
+	if len(numStrings) == 0 {
+		return &root
+	}
+
+	queue := []treeNodeQueue{
+		treeNodeQueue{&root, true},
+		treeNodeQueue{&root, false},
+	}
 
 	for len(numStrings) > 0 {
-		node, queue := queue[0], queue[1:]
-
-		leftVal := numStrings[0]
+		q, queue := queue[0], queue[1:]
+		numString := numStrings[0]
 		numStrings = numStrings[1:]
 
-		if num, err := strconv.Atoi(leftVal); err == nil {
-			node.Left = &BinaryTreeNode{num, nil, nil}
-			queue = append(queue, node.Left)
-		}
+		if num, err := strconv.Atoi(numString); err == nil {
+			if q.isLeft {
+				q.node.Left = &BinaryTreeNode{num, nil, nil}
+			} else {
+				q.node.Right = &BinaryTreeNode{num, nil, nil}
+			}
 
-		if len(numStrings) == 0 {
-			return root
-		}
-
-		rightVal := numStrings[0]
-		numStrings = numStrings[1:]
-
-		if num, err := strconv.Atoi(rightVal); err == nil {
-			node.Right = &BinaryTreeNode{num, nil, nil}
-			queue = append(queue, node.Right)
+			queue = append(
+				queue,
+				treeNodeQueue{q.node.Left, true},
+				treeNodeQueue{q.node.Right, false},
+			)
 		}
 	}
 
-	return root
+	return &root
 }

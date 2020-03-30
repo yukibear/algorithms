@@ -10,7 +10,7 @@ type BinaryTreeNode struct {
 	Left  *BinaryTreeNode
 	Right *BinaryTreeNode
 }
-type treeNodeQueue struct {
+type queueData struct {
 	node   *BinaryTreeNode
 	isLeft bool
 }
@@ -22,41 +22,52 @@ func CreateBinaryTreeNodeFromString(numStrings []string) *BinaryTreeNode {
 	if len(numStrings) == 0 {
 		return nil
 	}
-	var root BinaryTreeNode
+
 	numString := numStrings[0]
 	numStrings = numStrings[1:]
 
-	if num, err := strconv.Atoi(numString); err == nil {
-		root = BinaryTreeNode{num, nil, nil}
-	} else {
+	num, err := strconv.Atoi(numString)
+
+	if err != nil {
 		return nil
 	}
+
+	root := BinaryTreeNode{num, nil, nil}
 
 	if len(numStrings) == 0 {
 		return &root
 	}
 
-	queue := []treeNodeQueue{
-		treeNodeQueue{&root, true},
-		treeNodeQueue{&root, false},
+	queue := []queueData{
+		queueData{&root, true},
+		queueData{&root, false},
 	}
 
 	for len(numStrings) > 0 {
-		q, queue := queue[0], queue[1:]
+		q := queue[0]
+		queue = queue[1:]
 		numString := numStrings[0]
 		numStrings = numStrings[1:]
 
-		if num, err := strconv.Atoi(numString); err == nil {
-			if q.isLeft {
-				q.node.Left = &BinaryTreeNode{num, nil, nil}
-			} else {
-				q.node.Right = &BinaryTreeNode{num, nil, nil}
-			}
+		num, err := strconv.Atoi(numString)
 
+		if err != nil {
+			continue
+		}
+
+		if q.isLeft {
+			q.node.Left = &BinaryTreeNode{num, nil, nil}
 			queue = append(
 				queue,
-				treeNodeQueue{q.node.Left, true},
-				treeNodeQueue{q.node.Right, false},
+				queueData{q.node.Left, true},
+				queueData{q.node.Left, false},
+			)
+		} else {
+			q.node.Right = &BinaryTreeNode{num, nil, nil}
+			queue = append(
+				queue,
+				queueData{q.node.Right, true},
+				queueData{q.node.Right, false},
 			)
 		}
 	}

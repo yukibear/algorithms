@@ -13,45 +13,65 @@ func Test_CreateBinaryTreeNode(t *testing.T) {
 
 	tests := []struct {
 		in  []string
-		out BinaryTreeNode
+		out *BinaryTreeNode
 	}{
 		{
+			[]string{},
+			nil,
+		},
+		{
 			[]string{"0"},
-			BinaryTreeNode{
-				Val:   0,
-				Left:  nil,
-				Right: nil,
+			&BinaryTreeNode{
+				0,
+				nil,
+				nil,
 			},
 		},
 		{
 			[]string{"1", "null", "2"},
-			BinaryTreeNode{
-				Val:  1,
-				Left: nil,
-				Right: &BinaryTreeNode{
-					Val:   2,
-					Left:  nil,
-					Right: nil,
+			&BinaryTreeNode{
+				1,
+				nil,
+				&BinaryTreeNode{
+					2,
+					nil,
+					nil,
+				},
+			},
+		},
+		{
+			[]string{"3", "9", "20"},
+			&BinaryTreeNode{
+				3,
+				&BinaryTreeNode{
+					9,
+					nil,
+					nil,
+				},
+				&BinaryTreeNode{
+					20,
+					nil,
+					nil,
 				},
 			},
 		},
 		{
 			[]string{"3", "9", "20", "null", "null", "15", "7"},
-			BinaryTreeNode{
-				Val: 3,
-				Left: &BinaryTreeNode{
+			&BinaryTreeNode{
+				3,
+				&BinaryTreeNode{
 					9,
 					nil,
 					nil,
 				},
-				Right: &BinaryTreeNode{
-					Val: 20,
-					Left: &BinaryTreeNode{
+				&BinaryTreeNode{
+					20,
+					&BinaryTreeNode{
 						15,
 						nil,
 						nil,
 					},
-					Right: &BinaryTreeNode{
+					&BinaryTreeNode{
 						7,
 						nil,
 						nil,

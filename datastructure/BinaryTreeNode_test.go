@@ -11,11 +11,51 @@ func Test_CreateBinaryTreeNode(t *testing.T) {
 
 	tests := []struct {
 		in  []string
-		out BinaryTreeNode
+		out *BinaryTreeNode
 	}{
 		{
+			[]string{},
+			nil,
+		},
+		{
+			[]string{"0"},
+			&BinaryTreeNode{
+				0,
+				nil,
+				nil,
+			},
+		},
+		{
+			[]string{"1", "null", "2"},
+			&BinaryTreeNode{
+				1,
+				nil,
+				&BinaryTreeNode{
+					2,
+					nil,
+					nil,
+				},
+			},
+		},
+		{
+			[]string{"3", "9", "20"},
+			&BinaryTreeNode{
+				3,
+				&BinaryTreeNode{
+					9,
+					nil,
+					nil,
+				},
+				&BinaryTreeNode{
+					20,
+					nil,
+					nil,
+				},
+			},
+		},
+		{
 			[]string{"3", "9", "20", "null", "null", "15", "7"},
-			BinaryTreeNode{
+			&BinaryTreeNode{
 				3,
 				&BinaryTreeNode{
 					9,
@@ -39,17 +79,16 @@ func Test_CreateBinaryTreeNode(t *testing.T) {
 		},
 	}
 
-	for i, tt := range tests {
-		i := i
+	for _, tt := range tests {
 		tt := tt
 
 		t.Run("Test", func(t *testing.T) {
 			t.Parallel()
 
-			got := createBinaryTreeNode(tt.in)
+			got := CreateBinaryTreeNodeFromString(tt.in)
 
 			if !cmp.Equal(got, tt.out) {
-				t.Errorf("\n#%02d\ngot: %#v\nwant: %#v", i, got, tt.out)
+				t.Errorf("got %#v want %#v", got, tt.out)
 			}
 		})
 	}

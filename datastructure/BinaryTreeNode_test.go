@@ -6,8 +6,6 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-type TreeNode = BinaryTreeNode
-
 func Test_CreateBinaryTreeNode(t *testing.T) {
 	t.Parallel()
 

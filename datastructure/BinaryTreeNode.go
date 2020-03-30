@@ -10,45 +10,67 @@ type BinaryTreeNode struct {
 	Left  *BinaryTreeNode
 	Right *BinaryTreeNode
 }
+type queueData struct {
+	node   *BinaryTreeNode
+	isLeft bool
+}
 
-func CreateBinaryTreeNodeFromString(numStrings []string) BinaryTreeNode {
+// CreateBinaryTreeNodeFromString creates a tructure of BinaryTreeNode
+// from an array of string(or "null") in LeetCode expression
+// ex) ["1", "2", "null", "3"]
+func CreateBinaryTreeNodeFromString(numStrings []string) *BinaryTreeNode {
 	if len(numStrings) == 0 {
-		return BinaryTreeNode{0, nil, nil}
+		return nil
 	}
 
-	var root BinaryTreeNode
+	numString := numStrings[0]
+	numStrings = numStrings[1:]
 
-	if num, err := strconv.Atoi(numStrings[0]); err == nil {
-		root = BinaryTreeNode{num, nil, nil}
-	} else {
-		return BinaryTreeNode{0, nil, nil}
+	num, err := strconv.Atoi(numString)
+
+	if err != nil {
+		return nil
 	}
 
-	queue := []*BinaryTreeNode{&root}
+	root := BinaryTreeNode{num, nil, nil}
+
+	if len(numStrings) == 0 {
+		return &root
+	}
+
+	queue := []queueData{
+		queueData{&root, true},
+		queueData{&root, false},
+	}
 
 	for len(numStrings) > 0 {
-		node, queue := queue[0], queue[1:]
-
-		leftVal := numStrings[0]
+		q := queue[0]
+		queue = queue[1:]
+		numString := numStrings[0]
 		numStrings = numStrings[1:]
 
-		if num, err := strconv.Atoi(leftVal); err == nil {
-			node.Left = &BinaryTreeNode{num, nil, nil}
-			queue = append(queue, node.Left)
+		num, err := strconv.Atoi(numString)
+
+		if err != nil {
+			continue
 		}
 
-		if len(numStrings) == 0 {
-			return root
-		}
-
-		rightVal := numStrings[0]
-		numStrings = numStrings[1:]
-
-		if num, err := strconv.Atoi(rightVal); err == nil {
-			node.Right = &BinaryTreeNode{num, nil, nil}
-			queue = append(queue, node.Right)
+		if q.isLeft {
+			q.node.Left = &BinaryTreeNode{num, nil, nil}
+			queue = append(
+				queue,
+				queueData{q.node.Left, true},
+				queueData{q.node.Left, false},
+			)
+		} else {
+			q.node.Right = &BinaryTreeNode{num, nil, nil}
+			queue = append(
+				queue,
+				queueData{q.node.Right, true},
+				queueData{q.node.Right, false},
+			)
 		}
 	}
 
-	return root
+	return &root
 }

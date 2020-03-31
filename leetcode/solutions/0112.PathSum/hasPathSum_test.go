@@ -7,7 +7,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func Test_hoge(t *testing.T) {
+func Test_0112_PathSum(t *testing.T) {
 	type in = struct {
 		arg1 *TreeNode
 		arg2 int

@@ -8,6 +8,8 @@ import (
 )
 
 func Test_0112_PathSum(t *testing.T) {
+	t.Parallel()
+
 	type in = struct {
 		arg1 *TreeNode
 		arg2 int

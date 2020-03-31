@@ -101,6 +101,46 @@ func Test_CreateBinaryTreeNode(t *testing.T) {
 				},
 			},
 		},
+		{
+			[]string{"5", "4", "8", "11", "null", "13", "4", "7", "2", "null", "null", "null", "1"},
+			&BinaryTreeNode{
+				5,
+				&BinaryTreeNode{
+					4,
+					&BinaryTreeNode{
+						11,
+						&BinaryTreeNode{
+							7,
+							nil,
+							nil,
+						},
+						&BinaryTreeNode{
+							2,
+							nil,
+							nil,
+						},
+					},
+					nil,
+				},
+				&BinaryTreeNode{
+					8,
+					&BinaryTreeNode{
+						13,
+						nil,
+						nil,
+					},
+					&BinaryTreeNode{
+						4,
+						nil,
+						&BinaryTreeNode{
+							1,
+							nil,
+							nil,
+						},
+					},
+				},
+			},
+		},
 	}
 
 	for _, tt := range tests {

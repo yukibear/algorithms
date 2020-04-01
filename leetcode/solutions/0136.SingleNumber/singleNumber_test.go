@@ -6,7 +6,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func Test_0653_TwoSumIVInputIsABST(t *testing.T) {
+func Test_0136_SingleNumber(t *testing.T) {
 	t.Parallel()
 	tests := []struct {
 		in  []int

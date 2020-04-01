@@ -1,27 +1,26 @@
 package solution
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import (
+	"../../../datastructure"
+)
+
+// TreeNode structure for LeetCode
+type TreeNode = datastructure.BinaryTreeNode
 
 func findTarget(root *TreeNode, k int) bool {
-	return dfs(root, k, make(map[int]bool))
+	return dfs(root, k, map[int]bool{})
 }
 
-func dfs(root *TreeNode, k int, found map[int]bool) bool {
-	if root == nil {
+func dfs(node *TreeNode, k int, targets map[int]bool) bool {
+	if node == nil {
 		return false
 	}
 
-	target := k - root.Val
-
-	if found[target] {
+	if targets[node.Val] {
 		return true
 	}
 
-	found[root.Val] = true
+	targets[k-node.Val] = true
 
-	return dfs(root.Left, k, found) || dfs(root.Right, k, found)
+	return dfs(node.Left, k, targets) || dfs(node.Right, k, targets)
 }

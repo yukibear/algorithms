@@ -14,12 +14,8 @@ func isHappy(n int) bool {
 			sum += num * num
 		}
 
-		if sum == 1 {
-			return true
-		}
-
 		n = sum
 	}
 
-	return false
+	return n == 1
 }

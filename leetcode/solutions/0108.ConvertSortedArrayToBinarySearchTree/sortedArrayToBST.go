@@ -1,20 +1,40 @@
 package solution
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import (
+	"../../../datastructure"
+)
+
+// TreeNode is re-defined for LeetCode contest
+// because they use this name as a type of binary tree node
+type TreeNode = datastructure.BinaryTreeNode
 
 func sortedArrayToBST(nums []int) *TreeNode {
 	if len(nums) == 0 {
 		return nil
 	}
 
-	i := len(nums) / 2
+	mid := (len(nums) - 1) / 2
+	root := &TreeNode{Val: nums[mid]}
+	dfs(nums[:mid], root, true)
+	dfs(nums[mid+1:], root, false)
 
-	node := &TreeNode{Val: nums[i]}
-	node.Left, node.Right = sortedArrayToBST(nums[:i]), sortedArrayToBST(nums[i+1:])
+	return root
+}
 
-	return node
+func dfs(nums []int, tree *TreeNode, isLeft bool) {
+	if len(nums) == 0 {
+		return
+	}
+
+	mid := (len(nums) - 1) / 2
+
+	if isLeft {
+		tree.Left = &TreeNode{Val: nums[mid]}
+		dfs(nums[:mid], tree.Left, true)
+		dfs(nums[mid+1:], tree.Left, false)
+	} else {
+		tree.Right = &TreeNode{Val: nums[mid]}
+		dfs(nums[:mid], tree.Right, true)
+		dfs(nums[mid+1:], tree.Right, false)
+	}
 }

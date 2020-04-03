@@ -1,10 +1,9 @@
 package solution
 
 func maxSubArray(nums []int) int {
-	max := nums[0]
-	prevMax := 0
+	max, prevMax := nums[0], nums[0]
 
-	for _, num := range nums {
+	for _, num := range nums[1:] {
 		prevMax = maxInt(prevMax+num, num)
 		max = maxInt(max, prevMax)
 	}
@@ -12,7 +11,7 @@ func maxSubArray(nums []int) int {
 	return max
 }
 
-func maxInt(num1 int, num2 int) int {
+func maxInt(num1, num2 int) int {
 	if num1 > num2 {
 		return num1
 	}

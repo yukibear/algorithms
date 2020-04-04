@@ -23,6 +23,6 @@ jobs:
     steps:
       - uses: cedrickring/golang-action/go1.14@1.5.2
         with:
-          args: version
+          args: go version
       - uses: actions/checkout@v2
       - run: go test ./leetcode/solutions/...

@@ -21,7 +21,8 @@ jobs:
     name: Testing Go Solutions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - uses: cedrickring/golang-action/go1.14@1.5.2
         with:
-          args: test ./leetcode/solutions/...
+          args: version
+      - uses: actions/checkout@v2
+      - run: go test ./leetcode/solutions/...

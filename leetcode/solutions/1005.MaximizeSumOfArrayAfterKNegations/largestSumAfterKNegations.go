@@ -19,10 +19,10 @@ func largestSumAfterKNegations(A []int, K int) int {
 		if num <= 0 && K > 0 {
 			num = -num
 			K--
+		}
 
-			if minAbs > num {
-				minAbs = num
-			}
+		if minAbs > num {
+			minAbs = num
 		}
 
 		sum += num

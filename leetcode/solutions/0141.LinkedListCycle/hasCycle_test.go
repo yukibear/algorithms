@@ -7,6 +7,8 @@ import (
 )
 
 func Test_0141_LinkedListCycle(t *testing.T) {
+	t.Parallel()
+
 	type Test struct {
 		in  *ListNode
 		out bool

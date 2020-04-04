@@ -3,53 +3,46 @@ package solution
 import (
 	"testing"
 
+	ds "../../../datastructure"
 	"github.com/google/go-cmp/cmp"
 )
 
 func Test_0653_TwoSumIVInputIsABST(t *testing.T) {
 	t.Parallel()
-
+	type in = struct {
+		arg1 *TreeNode
+		arg2 int
+	}
 	tests := []struct {
-		in  []string
-		out BinaryTreeNode
+		in  in
+		out bool
 	}{
 		{
-			[]string{"3", "9", "20", "null", "null", "15", "7"},
-			BinaryTreeNode{
-				3,
-				&BinaryTreeNode{
-					9,
-					nil,
-					nil,
-				},
-				&BinaryTreeNode{
-					20,
-					&BinaryTreeNode{
-						15,
-						nil,
-						nil,
-					},
-					&BinaryTreeNode{
-						7,
-						nil,
-						nil,
-					},
-				},
+			in{
+				ds.CreateBinaryTreeNodeFromString([]string{"5", "3", "6", "2", "4", "null", "7"}),
+				9,
 			},
+			true,
+		},
+		{
+			in{
+				ds.CreateBinaryTreeNodeFromString([]string{"5", "3", "6", "2", "4", "null", "7"}),
+				28,
+			},
+			false,
 		},
 	}
 
-	for i, tt := range tests {
-		i := i
+	for _, tt := range tests {
 		tt := tt
 
 		t.Run("Test", func(t *testing.T) {
 			t.Parallel()
 
-			got := createBinaryTreeNode(tt.in)
+			got := findTarget(tt.in.arg1, tt.in.arg2)
 
 			if !cmp.Equal(got, tt.out) {
-				t.Errorf("\n#%02d\ngot: %#v\nwant: %#v", i, got, tt.out)
+				t.Errorf("got %#v want  %#v", got, tt.out)
 			}
 		})
 	}

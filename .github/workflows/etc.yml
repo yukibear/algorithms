@@ -1,11 +1,13 @@
 name: etc
+
 on:
   pull_request:
     paths:
       - "etc/**.ts"
+
 jobs:
   test:
-    name: Test TypeScript Files
+    name: Testing TypeScript Solutions
     runs-on: ubuntu-latest
     env:
       DENO_INSTALL: ~/.local

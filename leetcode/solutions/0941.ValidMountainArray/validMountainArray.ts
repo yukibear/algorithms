@@ -1,6 +1,4 @@
-export default function validMountainArray(
-  nums: number[]
-): boolean {
+export default function validMountainArray(nums: number[]): boolean {
   if (nums.length < 3) {
     return false;
   }
@@ -15,8 +13,7 @@ export default function validMountainArray(
     if (prev === current) {
       return false;
     }
-    if (climbing && prev > current
-      || !climbing && prev < current) {
+    if ((climbing && prev > current) || (!climbing && prev < current)) {
       return false;
     }
     if (current === peak) {

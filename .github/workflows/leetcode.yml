@@ -1,17 +1,28 @@
 name: LeetCode
+
 on:
-  push:
-    branches:
-      - "*"
+  pull_request:
     paths:
       - "leetcode/solutions/**"
+
 jobs:
-  test:
-    name: Test LeetCode
+  test-typescript:
+    name: Testing TypeScript Solutions
     runs-on: ubuntu-latest
     env:
       DENO_INSTALL: ~/.local
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - run: curl -fsSL https://deno.land/x/install/install.sh | sh
-      - run: $DENO_INSTALL/bin/deno test --allow-net --allow-env leetcode/solutions
+      - run: deno --version
+      - run: $DENO_INSTALL/bin/deno test --allow-net --allow-env --allow-write leetcode/solutions/*
+
+  test-go:
+    name: Testing Go Solutions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: cedrickring/golang-action/go1.14@1.5.2
+        with:
+          args: version
+      - uses: actions/checkout@v2
+      - run: go test ./leetcode/solutions/...

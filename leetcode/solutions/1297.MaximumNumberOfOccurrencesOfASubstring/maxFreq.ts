@@ -6,7 +6,6 @@ export default function maxFreq(
   minSize: number,
   _maxSize: number
 ): number {
-
   const strCountMap = new Map<string, number>();
 
   for (let i = 0, last = s.length - minSize; i <= last; i++) {

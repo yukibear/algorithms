@@ -11,6 +11,10 @@ export default function buddyStrings(A: string, B: string): boolean {
     }
   }
 
-  return diff.length === 2 && A[diff[0]] === B[diff[1]] && A[diff[1]] === B[diff[0]]
-    || diff.length === 0 && new Set<string>(A).size !== A.length;
+  return (
+    (diff.length === 2 &&
+      A[diff[0]] === B[diff[1]] &&
+      A[diff[1]] === B[diff[0]]) ||
+    (diff.length === 0 && new Set<string>(A).size !== A.length)
+  );
 }

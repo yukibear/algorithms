@@ -25,4 +25,5 @@ jobs:
         with:
           args: go version
       - uses: actions/checkout@v2
+      - run: go get -u github.com/google/go-cmp/cmp
       - run: go test ./leetcode/solutions/...

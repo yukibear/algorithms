@@ -8,20 +8,12 @@ import (
 type ListNode = datastructure.SinglyLinkedListNode
 
 func middleNode(head *ListNode) *ListNode {
-	if head == nil {
-		return nil
+	result := head
+
+	for head != nil && head.Next != nil {
+		head = head.Next.Next
+		result = result.Next
 	}
 
-	i := 0
-	node := head
-
-	for ; node != nil; i++ {
-		node = node.Next
-	}
-
-	for i /= 2; i > 0; i-- {
-		head = head.Next
-	}
-
-	return head
+	return result
 }

@@ -11,17 +11,22 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DENO_INSTALL: ~/.local
+      DENO_VERSION: v0.40.0
     steps:
       - uses: actions/checkout@v2
-      - run: curl -fsSL https://deno.land/x/install/install.sh | sh
-      - run: deno --version
+      - run: curl -LO https://github.com/denoland/deno/releases/download/$DENO_VERSION/deno-x86_64-unknown-linux-gnu.zip
+      - run: unzip deno-x86_64-unknown-linux-gnu.zip
+      - run: mkdir -p $DENO_INSTALL/bin && mv deno $_
+      - run: $DENO_INSTALL/bin/deno --version
       - run: $DENO_INSTALL/bin/deno test --allow-net --allow-env --allow-write leetcode/solutions/*
 
   test-go:
     name: Testing Go Solutions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - uses: cedrickring/golang-action/go1.14@1.5.2
         with:
-          args: test ./leetcode/solutions/...
+          args: go version
+      - uses: actions/checkout@v2
+      - run: go get -u github.com/google/go-cmp/cmp
+      - run: go test ./leetcode/solutions/...

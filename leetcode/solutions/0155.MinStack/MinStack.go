@@ -1,5 +1,6 @@
 package solution
 
+// MinStack is a simple stack implementation for LeetCode
 type MinStack struct {
 	stack []element
 }
@@ -9,40 +10,46 @@ type element struct {
 	min int
 }
 
+// Constructor represents as MinStack's constructor
 func Constructor() MinStack {
 	return MinStack{}
 }
 
-func (this *MinStack) Push(x int) {
-	this.stack = append(this.stack, element{
+// Push just pushes an element on top of the stack
+func (ms *MinStack) Push(x int) {
+	ms.stack = append(ms.stack, element{
 		val: x,
-		min: this.calcMin(x),
+		min: ms.calcMin(x),
 	})
 }
 
-func (this *MinStack) Pop() {
-	if len(this.stack) > 0 {
-		this.stack = this.stack[:len(this.stack)-1]
+// Pop removes the top of the element of the stack
+func (ms *MinStack) Pop() {
+	if len(ms.stack) > 0 {
+		ms.stack = ms.stack[:len(ms.stack)-1]
 	}
 }
 
-func (this *MinStack) Top() int {
-	if len(this.stack) > 0 {
-		return this.stack[len(this.stack)-1].val
+// Top returns the latest value of the stack
+func (ms *MinStack) Top() int {
+	if len(ms.stack) > 0 {
+		return ms.stack[len(ms.stack)-1].val
 	}
 	return 0
 }
 
-func (this *MinStack) GetMin() int {
-	return this.stack[len(this.stack)-1].min
+// GetMin returns the min value of the stack.
+// Operation cost is O(1) because it just returns the pre-calcurated value.
+func (ms *MinStack) GetMin() int {
+	return ms.stack[len(ms.stack)-1].min
 }
 
-func (this *MinStack) calcMin(x int) int {
-	if len(this.stack) == 0 {
+func (ms *MinStack) calcMin(x int) int {
+	if len(ms.stack) == 0 {
 		return x
 	}
 
-	currentMin := this.stack[len(this.stack)-1].min
+	currentMin := ms.stack[len(ms.stack)-1].min
 
 	if currentMin > x {
 		return x

@@ -1,7 +1,14 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import minStack from "./minStack.ts";
+import MinStack from "./MinStack.ts";
 
-test("0155. Min Stack", () => {
-  assertEquals(minStack(12345), 777);
+Deno.test("0155. Min Stack", () => {
+  const minStack = new MinStack();
+  minStack.push(-2);
+  minStack.push(0);
+  minStack.push(-3);
+  assertEquals(minStack.getMin(), -3);
+
+  minStack.pop();
+  assertEquals(minStack.top(), 0);
+  assertEquals(minStack.getMin(), -2);
 });

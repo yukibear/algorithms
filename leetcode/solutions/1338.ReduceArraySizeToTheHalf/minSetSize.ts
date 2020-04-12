@@ -5,9 +5,7 @@ export default function minSetSize(arr: number[]): number {
     numCountMap.set(num, (numCountMap.get(num) || 0) + 1);
   }
 
-  const sortedCounts = [...numCountMap.entries()].sort(
-    ([, a], [, b]) => b - a
-  );
+  const sortedCounts = [...numCountMap.entries()].sort(([, a], [, b]) => b - a);
 
   let count = 0;
   let half = Math.ceil(arr.length / 2);

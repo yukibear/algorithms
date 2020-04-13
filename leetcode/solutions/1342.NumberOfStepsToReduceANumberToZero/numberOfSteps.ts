@@ -1,8 +1,4 @@
 export function numberOfSteps_DividingByTwo(num: number): number {
-  if (num === 0) {
-    return 0;
-  }
-
   let count = 0;
 
   while (num > 0) {

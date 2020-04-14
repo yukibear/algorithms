@@ -3,7 +3,7 @@ package solution
 import (
 	"testing"
 
-	ds "../../../datastructure"
+	ds "github.com/yukisato/leetcode-util/datastructure"
 
 	"github.com/google/go-cmp/cmp"
 )
@@ -21,15 +21,15 @@ func Test_0108_sortedArrayToBST(t *testing.T) {
 		},
 		{
 			[]int{0},
-			ds.CreateBinaryTreeNodeFromString([]string{"0"}),
+			ds.CreateTreeNodeFromString([]string{"0"}),
 		},
 		{
 			[]int{-1, 0, 1},
-			ds.CreateBinaryTreeNodeFromString([]string{"0", "-1", "1"}),
+			ds.CreateTreeNodeFromString([]string{"0", "-1", "1"}),
 		},
 		{
 			[]int{-4, -3, -2, -1, 0, 1, 2, 3, 4, 5},
-			ds.CreateBinaryTreeNodeFromString([]string{
+			ds.CreateTreeNodeFromString([]string{
 				"0",
 				"-3",
 				"3",
@@ -49,7 +49,7 @@ func Test_0108_sortedArrayToBST(t *testing.T) {
 		},
 		{
 			[]int{-10, -3, 0, 5, 9},
-			ds.CreateBinaryTreeNodeFromString([]string{
+			ds.CreateTreeNodeFromString([]string{
 				"0",
 				"-10",
 				"5",

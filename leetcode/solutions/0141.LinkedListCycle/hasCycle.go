@@ -1,9 +1,11 @@
 package solution
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import (
+	"github.com/yukisato/leetcode-util/datastructure"
+)
+
+// ListNode structure for LeetCode
+type ListNode = datastructure.ListNode
 
 func hasCycle(head *ListNode) bool {
 	walker, runner := head, head

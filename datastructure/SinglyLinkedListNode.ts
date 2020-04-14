@@ -5,9 +5,7 @@ export interface SinglyLinkedListNode<T> {
 
 export default SinglyLinkedListNode;
 
-export function createSinglyLinkedListNode<T>(
-  array: T[]
-): SinglyLinkedListNode<T> | null {
+export function CreateListNode<T>(array: T[]): SinglyLinkedListNode<T> | null {
   if (array.length === 0) return null;
 
   const head: SinglyLinkedListNode<T> = { val: array[0], next: null };

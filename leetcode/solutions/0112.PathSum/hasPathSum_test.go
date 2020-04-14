@@ -3,8 +3,8 @@ package solution
 import (
 	"testing"
 
-	ds "../../../datastructure"
 	"github.com/google/go-cmp/cmp"
+	ds "github.com/yukisato/leetcode-util/datastructure"
 )
 
 func Test_0112_PathSum(t *testing.T) {
@@ -27,21 +27,21 @@ func Test_0112_PathSum(t *testing.T) {
 		},
 		{
 			in{
-				ds.CreateBinaryTreeNodeFromString([]string{"1"}),
+				ds.CreateTreeNodeFromString([]string{"1"}),
 				1,
 			},
 			true,
 		},
 		{
 			in{
-				ds.CreateBinaryTreeNodeFromString([]string{"1", "2"}),
+				ds.CreateTreeNodeFromString([]string{"1", "2"}),
 				1,
 			},
 			false,
 		},
 		{
 			in{
-				ds.CreateBinaryTreeNodeFromString([]string{"5", "4", "8", "11", "null", "13", "4", "7", "2", "null", "null", "null", "1"}),
+				ds.CreateTreeNodeFromString([]string{"5", "4", "8", "11", "null", "13", "4", "7", "2", "null", "null", "null", "1"}),
 				22,
 			},
 			true,

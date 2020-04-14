@@ -3,8 +3,8 @@ package solution
 import (
 	"testing"
 
-	ds "../../../datastructure"
 	"github.com/google/go-cmp/cmp"
+	ds "github.com/yukisato/leetcode-util/datastructure"
 )
 
 func Test_0653_TwoSumIVInputIsABST(t *testing.T) {
@@ -19,14 +19,14 @@ func Test_0653_TwoSumIVInputIsABST(t *testing.T) {
 	}{
 		{
 			in{
-				ds.CreateBinaryTreeNodeFromString([]string{"5", "3", "6", "2", "4", "null", "7"}),
+				ds.CreateTreeNodeFromString([]string{"5", "3", "6", "2", "4", "null", "7"}),
 				9,
 			},
 			true,
 		},
 		{
 			in{
-				ds.CreateBinaryTreeNodeFromString([]string{"5", "3", "6", "2", "4", "null", "7"}),
+				ds.CreateTreeNodeFromString([]string{"5", "3", "6", "2", "4", "null", "7"}),
 				28,
 			},
 			false,

@@ -3,15 +3,12 @@ import {
   assertStrictEq,
   assertThrows,
 } from "https://deno.land/std/testing/asserts.ts";
-import {
-  createSinglyLinkedListNode,
-  getNthNode,
-} from "./SinglyLinkedListNode.ts";
+import { CreateListNode, getNthNode } from "./SinglyLinkedListNode.ts";
 
 Deno.test(
-  "createSinglyLinkedListNode() returns a LinkedListNode by the given array",
+  "CreateListNode() returns a LinkedListNode by the given array",
   () => {
-    assertEquals(createSinglyLinkedListNode([1, 2, 3, 4, 5, 6, 7]), {
+    assertEquals(CreateListNode([1, 2, 3, 4, 5, 6, 7]), {
       val: 1,
       next: {
         val: 2,
@@ -33,41 +30,26 @@ Deno.test(
         },
       },
     });
-    assertEquals(createSinglyLinkedListNode([1]), {
+    assertEquals(CreateListNode([1]), {
       val: 1,
       next: null,
     });
   }
 );
 
-Deno.test(
-  "createSinglyLinkedListNode() returns null if the given array is empty",
-  () => {
-    assertStrictEq(createSinglyLinkedListNode([]), null);
-  }
-);
+Deno.test("CreateListNode() returns null if the given array is empty", () => {
+  assertStrictEq(CreateListNode([]), null);
+});
 
 Deno.test("getNthNode(node, n) returns the n-th node", () => {
-  assertStrictEq(
-    getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, 0).val,
-    0
-  );
-  assertStrictEq(
-    getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, 2).val,
-    2
-  );
-  assertStrictEq(
-    getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -1).val,
-    5
-  );
-  assertStrictEq(
-    getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -3).val,
-    3
-  );
+  assertStrictEq(getNthNode(CreateListNode([0, 1, 2, 3, 4, 5])!, 0).val, 0);
+  assertStrictEq(getNthNode(CreateListNode([0, 1, 2, 3, 4, 5])!, 2).val, 2);
+  assertStrictEq(getNthNode(CreateListNode([0, 1, 2, 3, 4, 5])!, -1).val, 5);
+  assertStrictEq(getNthNode(CreateListNode([0, 1, 2, 3, 4, 5])!, -3).val, 3);
 });
 
 Deno.test("getNthNode(node, n) doesn't mutates the given linked list", () => {
-  const head = createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!;
+  const head = CreateListNode([0, 1, 2, 3, 4, 5])!;
 
   getNthNode(head, 1);
   getNthNode(head, 2);
@@ -80,11 +62,11 @@ Deno.test(
   "getNthNode(node, n) throws an Error if the given index is out of bounds",
   () => {
     assertThrows(
-      () => getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, 7),
+      () => getNthNode(CreateListNode([0, 1, 2, 3, 4, 5])!, 7),
       Error
     );
     assertThrows(
-      () => getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -7),
+      () => getNthNode(CreateListNode([0, 1, 2, 3, 4, 5])!, -7),
       Error
     );
   }
@@ -94,21 +76,19 @@ Deno.test(
   "getNthNode(node, n) throws a TypeError if the given index is not an integer",
   () => {
     assertThrows(
-      () => getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, 1.1),
+      () => getNthNode(CreateListNode([0, 1, 2, 3, 4, 5])!, 1.1),
       TypeError
     );
     assertThrows(
-      () =>
-        getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, Infinity),
+      () => getNthNode(CreateListNode([0, 1, 2, 3, 4, 5])!, Infinity),
       TypeError
     );
     assertThrows(
-      () =>
-        getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -Infinity),
+      () => getNthNode(CreateListNode([0, 1, 2, 3, 4, 5])!, -Infinity),
       TypeError
     );
     assertThrows(
-      () => getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, NaN),
+      () => getNthNode(CreateListNode([0, 1, 2, 3, 4, 5])!, NaN),
       TypeError
     );
   }

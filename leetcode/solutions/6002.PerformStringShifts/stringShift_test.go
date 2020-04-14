@@ -15,28 +15,28 @@ func Test_6002_PerformStringShifts(t *testing.T) {
 		in  in
 		out string
 	}{
-		// {
-		// 	in{
-		// 		"abc",
-		// 		[][]int{
-		// 			{0, 1},
-		// 			{1, 2},
-		// 		},
-		// 	},
-		// 	"cab",
-		// },
-		// {
-		// 	in{
-		// 		"abcdefg",
-		// 		[][]int{
-		// 			{1, 1},
-		// 			{1, 1},
-		// 			{0, 2},
-		// 			{1, 3},
-		// 		},
-		// 	},
-		// 	"efgabcd",
-		// },
+		{
+			in{
+				"abc",
+				[][]int{
+					{0, 1},
+					{1, 2},
+				},
+			},
+			"cab",
+		},
+		{
+			in{
+				"abcdefg",
+				[][]int{
+					{1, 1},
+					{1, 1},
+					{0, 2},
+					{1, 3},
+				},
+			},
+			"efgabcd",
+		},
 		{
 			in{
 				"wpdhhcj",

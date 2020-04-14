@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
+	ds "github.com/yukisato/leetcode-util/datastructure"
 )
 
 func Test_0141_LinkedListCycle(t *testing.T) {
@@ -15,13 +16,7 @@ func Test_0141_LinkedListCycle(t *testing.T) {
 	}
 	var tests []Test
 
-	node := &ListNode{
-		1,
-		&ListNode{
-			2,
-			nil,
-		},
-	}
+	node := ds.CreateListNode([]int{1, 2})
 	node.Next.Next = node
 
 	tests = append(tests, Test{node, true})

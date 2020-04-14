@@ -1,11 +1,11 @@
 package solution
 
 import (
-	"../../../datastructure"
+	"github.com/yukisato/leetcode-util/datastructure"
 )
 
 // ListNode structure for LeetCode
-type ListNode = datastructure.SinglyLinkedListNode
+type ListNode = datastructure.ListNode
 
 func middleNode(head *ListNode) *ListNode {
 	result := head

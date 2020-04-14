@@ -1,11 +1,11 @@
 package solution
 
 import (
-	"../../../datastructure"
+	"github.com/yukisato/leetcode-util/datastructure"
 )
 
 // TreeNode structure for LeetCode
-type TreeNode = datastructure.BinaryTreeNode
+type TreeNode = datastructure.TreeNode
 
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	if root.Val > p.Val && root.Val > q.Val {

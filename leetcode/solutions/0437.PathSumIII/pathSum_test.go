@@ -3,7 +3,7 @@ package solution
 import (
 	"testing"
 
-	ds "../../../datastructure"
+	ds "github.com/yukisato/leetcode-util/datastructure"
 )
 
 func Test_0437_PathSumIII(t *testing.T) {
@@ -19,21 +19,21 @@ func Test_0437_PathSumIII(t *testing.T) {
 	}{
 		{
 			in{
-				ds.CreateBinaryTreeNodeFromString([]string{"1", "1"}),
+				ds.CreateTreeNodeFromString([]string{"1", "1"}),
 				2,
 			},
 			1,
 		},
 		{
 			in{
-				ds.CreateBinaryTreeNodeFromString([]string{"1", "1", "null", "0", "null", "-1", "null", "1"}),
+				ds.CreateTreeNodeFromString([]string{"1", "1", "null", "0", "null", "-1", "null", "1"}),
 				2,
 			},
 			3,
 		},
 		{
 			in{
-				ds.CreateBinaryTreeNodeFromString([]string{"10", "5", "-3", "3", "2", "null", "11", "3", "-2", "null", "1"}),
+				ds.CreateTreeNodeFromString([]string{"10", "5", "-3", "3", "2", "null", "11", "3", "-2", "null", "1"}),
 				8,
 			},
 			3,

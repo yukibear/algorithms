@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	ds "../../../datastructure"
+	ds "github.com/yukisato/leetcode-util/datastructure"
 )
 
 func Test_0876_MiddleOfTheLinkedList(t *testing.T) {
@@ -16,20 +16,20 @@ func Test_0876_MiddleOfTheLinkedList(t *testing.T) {
 		out *ListNode
 	}{
 		{
-			ds.CreateSinglyLinkedListNode([]int{}),
+			ds.CreateListNode([]int{}),
 			nil,
 		},
 		{
-			ds.CreateSinglyLinkedListNode([]int{1}),
-			ds.CreateSinglyLinkedListNode([]int{1}),
+			ds.CreateListNode([]int{1}),
+			ds.CreateListNode([]int{1}),
 		},
 		{
-			ds.CreateSinglyLinkedListNode([]int{1, 2, 3, 4, 5}),
-			ds.CreateSinglyLinkedListNode([]int{3, 4, 5}),
+			ds.CreateListNode([]int{1, 2, 3, 4, 5}),
+			ds.CreateListNode([]int{3, 4, 5}),
 		},
 		{
-			ds.CreateSinglyLinkedListNode([]int{1, 2, 3, 4, 5, 6}),
-			ds.CreateSinglyLinkedListNode([]int{4, 5, 6}),
+			ds.CreateListNode([]int{1, 2, 3, 4, 5, 6}),
+			ds.CreateListNode([]int{4, 5, 6}),
 		},
 	}
 

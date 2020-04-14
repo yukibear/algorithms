@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import addTwoNumbers from "./addTwoNumbers.ts";
-import { createSinglyLinkedListNode as createNode } from "../../../datastructure/SinglyLinkedListNode.ts";
+import { CreateListNode as createNode } from "../../../datastructure/SinglyLinkedListNode.ts";
 
 Deno.test("0002. Add Two Numbers", () => {
   assertEquals(

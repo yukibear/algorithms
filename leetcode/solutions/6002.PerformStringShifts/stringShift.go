@@ -15,22 +15,14 @@ func stringShift(s string, shift [][]int) string {
 	amount %= len(r)
 
 	switch {
-	case amount == 0:
-		return s
-
 	case amount > 0:
-		r2 := make([]rune, len(r))
-		copy(r2, r[len(r)-amount:])
-		copy(r2[amount:], r[:len(r)-amount])
-		return string(r2)
+		return string(r[len(r)-amount:]) + string(r[:len(r)-amount])
 
 	case amount < 0:
 		amount = -amount
-		r2 := make([]rune, len(r))
-		copy(r2, r[amount:])
-		copy(r2[len(r)-amount:], r[:amount])
-		return string(r2)
-	}
+		return string(r[amount:]) + string(r[:amount])
 
-	return ""
+	default:
+		return s
+	}
 }

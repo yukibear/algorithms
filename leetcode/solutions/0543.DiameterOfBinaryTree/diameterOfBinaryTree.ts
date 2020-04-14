@@ -19,8 +19,6 @@ function dfs(node: BinaryTreeNode<number> | null): [number, number] {
 
   const [len1, sum1] = dfs(node.left);
   const [len2, sum2] = dfs(node.right);
-  let maxLen = Math.max(len1, len2) + 1;
-  let maxSum = Math.max(len1 + len2, sum1, sum2);
 
-  return [maxLen, maxSum];
+  return [Math.max(len1, len2) + 1, Math.max(len1 + len2, sum1, sum2)];
 }

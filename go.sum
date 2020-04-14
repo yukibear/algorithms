@@ -1,0 +1,10 @@
+github.com/google/go-cmp v0.4.0 h1:xsAVV57WRhGj6kEIi8ReJzQlHHqcBYCElAvkovg3B/4=
+github.com/google/go-cmp v0.4.0/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
+github.com/yukisato/algorithms v0.0.0-20200413051947-089f3de1edf6 h1:QkYIq6CHj6fMActptxUeJDuMTgZFl06pwKPVvxfA31Q=
+github.com/yukisato/algorithms v0.0.0-20200413051947-089f3de1edf6/go.mod h1:vYFvPJDYppoxM12i2czQv88+OUQBDInVQPdK9KoqYrQ=
+github.com/yukisato/leetcode-util v0.0.0-20200414011031-675bdbf67b9c h1:DBr2JUnZn65NsBmGKjA2ofeNorCVRiQ6oDGvm6j+Re8=
+github.com/yukisato/leetcode-util v0.0.0-20200414011031-675bdbf67b9c/go.mod h1:x61bjiVNrm/XmDO+xA1KWRwknsGYmKU5hjiKuhIliqA=
+github.com/yukisato/leetcode-util v1.0.0 h1:nIPnImC6A2ab7/VbeJye1s0m2l9KH2iFddRy5KNtUWU=
+github.com/yukisato/leetcode-util v1.0.0/go.mod h1:x61bjiVNrm/XmDO+xA1KWRwknsGYmKU5hjiKuhIliqA=
+golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 h1:E7g+9GITq07hpfrRu66IVDexMakfv52eLZ2CXBWiKr4=
+golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=

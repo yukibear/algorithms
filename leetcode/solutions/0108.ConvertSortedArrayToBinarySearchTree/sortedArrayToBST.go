@@ -1,12 +1,12 @@
 package solution
 
 import (
-	"../../../datastructure"
+	"github.com/yukisato/leetcode-util/datastructure"
 )
 
 // TreeNode is re-defined for LeetCode contest
 // because they use this name as a type of binary tree node
-type TreeNode = datastructure.BinaryTreeNode
+type TreeNode = datastructure.TreeNode
 
 func sortedArrayToBST(nums []int) *TreeNode {
 	if len(nums) == 0 {

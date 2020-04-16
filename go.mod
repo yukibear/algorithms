@@ -1,4 +1,4 @@
-module leetcode/solution
+module github.com/yukisato/algorithms
 
 go 1.14
 

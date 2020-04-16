@@ -1,6 +1,6 @@
 github.com/google/go-cmp v0.4.0 h1:xsAVV57WRhGj6kEIi8ReJzQlHHqcBYCElAvkovg3B/4=
 github.com/google/go-cmp v0.4.0/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
-github.com/yukisato/leetcode-util v0.4.0 h1:SOXCm2QxYJRNZ5xuR/9TNaTlcX/NNtXvCc70+po65Ug=
-github.com/yukisato/leetcode-util v0.4.0/go.mod h1:f47CyN3gUq+85YvCXgn+EOxbqI+5ul2jw06ZZomXqpI=
+github.com/yukisato/leetcode-util v1.0.4 h1:Iqte4ohWusX0iwvLltBEd+/2Yi+ukWtqj2RG5xCQ64E=
+github.com/yukisato/leetcode-util v1.0.4/go.mod h1:f47CyN3gUq+85YvCXgn+EOxbqI+5ul2jw06ZZomXqpI=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 h1:E7g+9GITq07hpfrRu66IVDexMakfv52eLZ2CXBWiKr4=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=

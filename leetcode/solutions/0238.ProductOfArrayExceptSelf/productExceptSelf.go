@@ -1,34 +1,18 @@
 package solution
 
 func productExceptSelf(nums []int) []int {
-	var zeroCount int
-	productOfAll := 1
-
-	for _, n := range nums {
-		if n == 0 {
-			zeroCount++
-			continue
-		}
-
-		productOfAll *= n
+	left, right := 1, 1
+	res := make([]int, len(nums))
+	for i := range res {
+		res[i] = 1
 	}
 
-	for i, n := range nums {
-		switch zeroCount {
-		case 0:
-			nums[i] = productOfAll / n
-
-		case 1:
-			if n == 0 {
-				nums[i] = productOfAll
-			} else {
-				nums[i] = 0
-			}
-
-		default:
-			nums[i] = 0
-		}
+	for l := range nums {
+		r := len(nums) - l - 1
+		res[l] *= left
+		res[r] *= right
+		left, right = left*nums[l], right*nums[r]
 	}
 
-	return nums
+	return res
 }

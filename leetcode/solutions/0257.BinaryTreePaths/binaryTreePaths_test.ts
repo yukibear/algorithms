@@ -1,18 +1,12 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import binaryTreePaths from "./binaryTreePaths.ts";
-import TreeNode from "../../../data_structures/TreeNode.ts";
+import { createBinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
-test("0257. Binary Tree Paths", () => {
-  const testTreeNode: TreeNode = {
-    val: 1,
-    left: {
-      val: 2,
-      right: { val: 5 },
-    },
-    right: { val: 3 },
-  }
-  assertEquals(binaryTreePaths(testTreeNode), ["1->2->5", "1->3"]);
+Deno.test("0257. Binary Tree Paths", () => {
+  assertEquals(binaryTreePaths(createBinaryTreeNode([1, 2, 3, null, 5])), [
+    "1->2->5",
+    "1->3",
+  ]);
   assertEquals(binaryTreePaths(null), []);
-  assertEquals(binaryTreePaths({ val: 1 }), ["1"]);
+  assertEquals(binaryTreePaths(createBinaryTreeNode([1])), ["1"]);
 });

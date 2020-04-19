@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import insertIntoBST from "./insertIntoBST.ts";
-import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
+import { createBinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
 Deno.test("0701. Insert into a Binary Search Tree", () => {
   assertEquals(

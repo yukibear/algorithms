@@ -1,15 +1,23 @@
 package solution
 
-func merge(nums1 []int, m int, nums2, int[], n int) void {
-	i := m - 1
-	j := n - 1
-	k := m + n - 1
+func merge(nums1 []int, m int, nums2 []int, n int) {
+	i := 0
 
-	for i >= 0 && j >= 0 {
-		if nums1[i] > nums2[j] {
-			nums1[k--] = nums2[i--]
-		} else {
-			nums1[k--] = nums2[j--]
+	for j, num := range nums2 {
+		for ; i < m; i++ {
+			if num < nums1[i] {
+				break
+			}
 		}
+
+		if i == m {
+			copy(nums1[m:], nums2[j:])
+			return
+		}
+
+		copy(nums1[i+1:], nums1[i:])
+		nums1[i] = num
+		i++
+		m++
 	}
 }

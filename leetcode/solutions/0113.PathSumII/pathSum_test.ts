@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import pathSum from "./pathSum.ts";
-import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
+import { createBinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
 const sorter = (arr1: number[], arr2: number[]) => {
   if (arr1.length !== arr2.length) {
@@ -19,34 +19,16 @@ const sorter = (arr1: number[], arr2: number[]) => {
 Deno.test("0113. Path Sum II", () => {
   assertEquals(
     pathSum(
-      createBinaryTreeNode(
-        [5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1]
-      )!,
+      createBinaryTreeNode([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1])!,
       22
     ).sort(sorter),
     [
       [5, 4, 11, 2],
-      [5, 8, 4, 5]
+      [5, 8, 4, 5],
     ].sort(sorter)
   );
 
-  assertEquals(
-    pathSum(
-      createBinaryTreeNode(
-        [1, 2]
-      )!,
-      1
-    ).sort(sorter),
-    []
-  );
+  assertEquals(pathSum(createBinaryTreeNode([1, 2])!, 1).sort(sorter), []);
 
-  assertEquals(
-    pathSum(
-      createBinaryTreeNode(
-        [1]
-      )!,
-      1
-    ).sort(sorter),
-    [[1]]
-  );
+  assertEquals(pathSum(createBinaryTreeNode([1])!, 1).sort(sorter), [[1]]);
 });

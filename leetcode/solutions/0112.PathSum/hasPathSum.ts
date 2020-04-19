@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
+import { BinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
 export function hasPathSum_DFS(
   node: BinaryTreeNode<number> | null,

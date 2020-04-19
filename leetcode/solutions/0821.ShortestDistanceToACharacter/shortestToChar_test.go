@@ -1,11 +1,14 @@
 package solution
 
 import (
-	"github.com/google/go-cmp/cmp"
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 )
 
 func Test_0821_ShortestDistanceToACharacter(t *testing.T) {
+	t.Parallel()
+
 	type in struct {
 		arg1 string
 		arg2 byte

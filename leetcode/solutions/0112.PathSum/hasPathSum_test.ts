@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import { hasPathSum_DFS, hasPathSum_BFS } from "./hasPathSum.ts";
-import { createBinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
+import { createBinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
 const createTestFunction = (func: Function) => {
   return () => {
@@ -19,7 +19,7 @@ const createTestFunction = (func: Function) => {
           null,
           null,
           null,
-          1
+          1,
         ]),
         22
       ),

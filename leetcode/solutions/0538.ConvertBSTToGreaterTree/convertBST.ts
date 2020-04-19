@@ -1,5 +1,4 @@
-import { BinaryTreeNode
-  as BST } from "../../../data_structures/BinaryTreeNode.ts";
+import { BinaryTreeNode as BST } from "../../../datastructure/BinaryTreeNode.ts";
 
 export default function convertBST(
   node: BST<number> | null

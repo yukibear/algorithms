@@ -22,6 +22,8 @@ func Test_0665_NonDecreasingArray(t *testing.T) {
 		_, tt := i, tt
 
 		t.Run("Test", func(t *testing.T) {
+			t.Parallel()
+
 			got := checkPossibility(tt.in)
 
 			if !cmp.Equal(got, tt.out) {

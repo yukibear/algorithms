@@ -25,7 +25,7 @@ export default class CustomStack {
 
     k = Math.min(k, this.nums.length);
 
-    for (let i = k - 1; i >= 0 ; i--) {
+    for (let i = k - 1; i >= 0; i--) {
       this.nums[i] += val;
     }
   }

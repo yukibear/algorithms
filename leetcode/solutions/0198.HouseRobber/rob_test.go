@@ -5,19 +5,33 @@ import (
 )
 
 func Test_0198_HouseRobber(t *testing.T) {
+	t.Parallel()
 
-	result := rob([]int{1, 2, 3, 1})
-	expected := 4
-
-	if result != expected {
-		t.Errorf("TEST FAILED! got: %#v, want: %#v.", result, expected)
+	tests := []struct {
+		in  []int
+		out int
+	}{
+		{
+			[]int{1, 2, 3, 1},
+			4,
+		},
+		{
+			[]int{2, 7, 9, 3, 1},
+			12,
+		},
 	}
 
-	result = rob([]int{2, 7, 9, 3, 1})
-	expected = 12
+	for _, tt := range tests {
+		tt := tt
 
-	if result != expected {
-		t.Errorf("TEST FAILED! got: %#v, want: %#v.", result, expected)
+		t.Run("Test", func(t *testing.T) {
+			t.Parallel()
+
+			got := rob(tt.in)
+
+			if got != tt.out {
+				t.Errorf("got %#v want  %#v", got, tt.out)
+			}
+		})
 	}
-
 }

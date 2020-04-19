@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
+import { BinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
 export default function isSameTree(
   tree1: BinaryTreeNode<number> | null,

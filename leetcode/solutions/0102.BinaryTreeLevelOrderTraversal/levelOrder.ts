@@ -1,8 +1,6 @@
-import { BinaryTreeNode } from "../../../data_structures/BinaryTreeNode.ts";
+import { BinaryTreeNode } from "../../../datastructure/BinaryTreeNode.ts";
 
-export function levelOrder_BFS(
-  root: BinaryTreeNode<number>
-): number[][] {
+export function levelOrder_BFS(root: BinaryTreeNode<number>): number[][] {
   const result: number[][] = [];
   const queue: [BinaryTreeNode<number> | null, number][] = [[root, 0]];
 
@@ -25,9 +23,7 @@ export function levelOrder_BFS(
   return result;
 }
 
-export function levelOrder_DFS(
-  root: BinaryTreeNode<number>
-): number[][] {
+export function levelOrder_DFS(root: BinaryTreeNode<number>): number[][] {
   const result: number[][] = [];
 
   function dfs(node: BinaryTreeNode<number> | null, i: number): void {

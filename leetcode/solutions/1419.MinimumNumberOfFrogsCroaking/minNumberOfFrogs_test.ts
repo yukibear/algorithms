@@ -1,7 +1,7 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import minNumberOfFrogs from "./minNumberOfFrogs.ts";
 
-Deno.test("5390. Minimum Number of Frogs Croaking", () => {
+Deno.test("1419. Minimum Number of Frogs Croaking", () => {
   type test = [string, number];
   const tests: test[] = [
     ["croakcroak", 1],

@@ -1,7 +1,7 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import displayTable from "./displayTable.ts";
 
-Deno.test("5389. Display Table of Food Orders in a Restaurant", () => {
+Deno.test("1418. Display Table of Food Orders in a Restaurant", () => {
   type test = [string[][], string[][]];
   const tests: test[] = [
     [

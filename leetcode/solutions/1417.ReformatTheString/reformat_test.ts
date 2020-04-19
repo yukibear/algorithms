@@ -1,7 +1,7 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import reformat from "./reformat.ts";
 
-Deno.test("5388. Reformat The String", () => {
+Deno.test("1417. Reformat The String", () => {
   type test = [string, string];
   const tests: test[] = [
     ["a0b1c2", "a0b1c2"],

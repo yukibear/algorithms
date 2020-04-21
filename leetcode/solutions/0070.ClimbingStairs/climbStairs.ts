@@ -10,4 +10,7 @@ export default function climbStairs(n: number): number {
   return func(n);
 }
 
-const MEMO = new Map<number, number>([[1, 1], [2, 2]]);
+const MEMO = new Map<number, number>([
+  [1, 1],
+  [2, 2]
+]);

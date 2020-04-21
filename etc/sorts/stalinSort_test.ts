@@ -1,8 +1,7 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import stalinSort from "./stalinSort.ts";
 
-test("sorts: Starlin Sort", () => {
+Deno.test("sorts: Starlin Sort", () => {
   assertEquals(stalinSort([]), []);
   assertEquals(stalinSort([1]), [1]);
   assertEquals(stalinSort([0, 1, 2, 3]), [0, 1, 2, 3]);

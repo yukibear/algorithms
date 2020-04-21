@@ -20,7 +20,8 @@ export default function maxSideLength(
 
   return result;
 }
-const sumSquare = (mat: number[][],
+const sumSquare = (
+  mat: number[][],
   startI: number,
   startJ: number,
   len: number,
@@ -36,4 +37,4 @@ const sumSquare = (mat: number[][],
     }
   }
   return sum;
-}
+};

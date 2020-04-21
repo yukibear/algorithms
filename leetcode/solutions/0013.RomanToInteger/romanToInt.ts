@@ -4,7 +4,7 @@ export default function romanToInt(s: string): number {
 
   for (let i = s.length - 1; i >= 0; --i) {
     let num = ROMAN_CHAR_INT_MAP.get(s.charAt(i)) || 0;
-    sum += (num < prevNum) ? -num : num;
+    sum += num < prevNum ? -num : num;
     prevNum = num;
   }
 
@@ -18,5 +18,5 @@ const ROMAN_CHAR_INT_MAP = new Map([
   ["L", 50],
   ["C", 100],
   ["D", 500],
-  ["M", 1000],
+  ["M", 1000]
 ]);

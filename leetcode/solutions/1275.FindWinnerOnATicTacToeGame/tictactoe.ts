@@ -1,8 +1,6 @@
-export default function tictactoe(
-  moves: number[][]
-): string {
+export default function tictactoe(moves: number[][]): string {
   let A: number[][] = [];
-  let B:number[][] = [];
+  let B: number[][] = [];
   for (let i in moves) {
     const [n, m] = moves[i];
     if (Number.parseInt(i) % 2 === 0) {
@@ -25,14 +23,25 @@ export default function tictactoe(
 }
 
 function checkWin(moves: number[][]) {
-  if (moves[0] && moves[1] && moves[2]
-    && (moves[0][0] && moves[1][1] && moves[2][2]
-    || moves[0][2] && moves[1][1] && moves[2][0])) {
+  if (
+    moves[0] &&
+    moves[1] &&
+    moves[2] &&
+    ((moves[0][0] && moves[1][1] && moves[2][2]) ||
+      (moves[0][2] && moves[1][1] && moves[2][0]))
+  ) {
     return true;
   }
   for (let n = 0; n < 3; n++) {
-    if (moves[n] && moves[n][0] && moves[n][1] && moves[n][2]
-      || moves[0] && moves[1] && moves[2] && moves[0][n] && moves[1][n] && moves[2][n]) {
+    if (
+      (moves[n] && moves[n][0] && moves[n][1] && moves[n][2]) ||
+      (moves[0] &&
+        moves[1] &&
+        moves[2] &&
+        moves[0][n] &&
+        moves[1][n] &&
+        moves[2][n])
+    ) {
       return true;
     }
   }

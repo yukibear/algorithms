@@ -1,6 +1,4 @@
-export default function countSquares(
-  matrix: number[][]
-): number {
+export default function countSquares(matrix: number[][]): number {
   if (matrix[0] == null || matrix[0][0] == null) {
     return 0;
   }

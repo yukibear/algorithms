@@ -1,28 +1,35 @@
-export default function search(nums: number[],target: number): number {
-  function search(from: number, to: number): number {
-    if (to - from < 2) {
-      if (nums[from] === target) return from;
-      if (nums[to] === target) return to;
-      return -1;
-    }
+export default function search(nums: number[], target: number): number {
+  let l = 0;
+  let r = nums.length - 1;
 
-    const middle = Math.floor((from + to) / 2);
-    const [first, pivot, last] = [nums[from], nums[middle], nums[to]];
+  while (l < r) {
+    const mid = (l + r) >>> 1;
 
-    if (target === pivot) return middle;
-    if (first < last) {
-      return target < pivot ? search(from, middle - 1) : search(middle + 1, to);
+    if (nums[mid] > nums[r]) {
+      l = mid + 1;
     } else {
-      if (
-        first < pivot && first <= target && target < pivot
-        || first > pivot && (first <= target || target < pivot)
-      ) {
-        return search(from, middle - 1);
-      } else {
-        return search(middle + 1, to);
-      }
+      r = mid;
     }
   }
 
-  return search(0, nums.length - 1);
+  const start = l;
+  l = 0;
+  r = nums.length - 1;
+
+  while (l <= r) {
+    const mid = (l + r) >>> 1;
+    const realMid = (mid + start) % nums.length;
+
+    if (nums[realMid] === target) {
+      return realMid;
+    }
+
+    if (nums[realMid] < target) {
+      l = mid + 1;
+    } else {
+      r = mid - 1;
+    }
+  }
+
+  return -1;
 }

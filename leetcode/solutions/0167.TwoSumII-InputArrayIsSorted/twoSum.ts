@@ -1,7 +1,4 @@
-export default function twoSum(
-  numbers: number[],
-  target: number
-): number[] {
+export default function twoSum(numbers: number[], target: number): number[] {
   let i = 0;
   let j = numbers.length - 1;
 
@@ -9,7 +6,7 @@ export default function twoSum(
     const sum = numbers[i] + numbers[j];
 
     if (sum === target) {
-      return [++i, ++j]
+      return [++i, ++j];
     }
 
     if (sum < target) {

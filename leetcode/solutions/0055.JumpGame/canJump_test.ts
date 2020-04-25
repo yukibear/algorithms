@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import canJump from "./jumpGame.ts";
+import canJump from "./canJump.ts";
 
 Deno.test("0055. Jump Game", () => {
   assertEquals(canJump([2, 3, 1, 1, 4]), true);

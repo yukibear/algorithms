@@ -1,26 +1,19 @@
 package solution
 
 func canJump(nums []int) bool {
-	if len(nums) == 0 {
-		return true
-	}
+	var max int
 
-	memo := make([]int, len(nums))
-	memo[0] = 1
-
-	for i, n := range nums {
-		if memo[i] == 0 {
-			continue
+	for i, num := range nums {
+		if i > max {
+			return false
 		}
 
-		if i+n >= len(nums)-1 {
-			return true
-		}
+		next := i + num
 
-		for j := 1; j <= n; j++ {
-			memo[i+j] = n
+		if next > max {
+			max = next
 		}
 	}
 
-	return false
+	return true
 }

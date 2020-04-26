@@ -20,6 +20,7 @@ func Test_1143_LongestCommonSubsequence(t *testing.T) {
 		{in{"abcde", "ace"}, 3},
 		{in{"abc", "abc"}, 3},
 		{in{"abc", "def"}, 0},
+		{in{"pmjghexybyrgzczy", "hafcdqbgncrcbihkd"}, 4},
 	}
 
 	for _, tt := range tests {

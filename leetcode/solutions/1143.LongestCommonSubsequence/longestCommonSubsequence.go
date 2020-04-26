@@ -1,27 +1,26 @@
 package solution
 
 func longestCommonSubsequence(text1 string, text2 string) int {
-	dp := make([][]int, len(text1)+1)
-
+	dp := make([][]int, 2)
 	numRow := len(text2) + 1
-	dp[0] = make([]int, numRow)
+	dp[0], dp[1] = make([]int, numRow), make([]int, numRow)
 
-	for i := 1; i <= len(text1); i++ {
-		r1 := text1[i-1]
-		dp[i] = make([]int, numRow)
-
-		for j := 1; j <= len(text2); j++ {
-			r2 := text2[j-1]
+	for _, r1 := range text1 {
+		for j, r2 := range text2 {
+			row := j + 1
 
 			if r1 == r2 {
-				dp[i][j] = max(dp[i][j-1], dp[i-1][j-1]+1)
+				dp[1][row] = max(dp[1][row-1], dp[0][row-1]+1)
 			} else {
-				dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+				dp[1][row] = max(dp[1][row-1], dp[0][row])
 			}
 		}
+
+		copy(dp[0], dp[1])
+		dp[1][0] = 0
 	}
 
-	return dp[len(text1)][len(text2)]
+	return dp[0][numRow-1]
 }
 
 func max(a, b int) int {

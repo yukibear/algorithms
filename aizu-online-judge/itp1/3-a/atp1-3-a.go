@@ -1,12 +1,9 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"io"
 	"os"
-	"strconv"
-	"strings"
 )
 
 var (
@@ -29,29 +26,4 @@ func run() {
 	}
 
 	fmt.Fprint(writer, result)
-}
-
-// readIntsFromStdin parses lines of inputs into 2D int array.
-func readIntsFromStdin() [][]int {
-	out := [][]int{}
-	scanner := bufio.NewScanner(reader)
-
-	for scanner.Scan() {
-		var ints []int
-
-		for _, s := range strings.Split(scanner.Text(), " ") {
-			i, err := strconv.Atoi(s)
-
-			if err != nil {
-				fmt.Fprintln(os.Stderr, "Failed to parse string into int.", err)
-				os.Exit(1)
-			}
-
-			ints = append(ints, i)
-		}
-
-		out = append(out, ints)
-	}
-
-	return out
 }

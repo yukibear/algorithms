@@ -3,17 +3,15 @@ package main
 import (
 	"bytes"
 	"testing"
-
-	"github.com/yukisato/algoutil/atcoder"
 )
 
 func Test_run(t *testing.T) {
 	t.Parallel()
 
 	b := &bytes.Buffer{}
-	rw := &atcoder.IoReadWriter{Writer: b}
+	writer = b
 
-	run(rw)
+	run()
 	got := b.String()
 	want := "Hello World\n"
 

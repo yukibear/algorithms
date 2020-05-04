@@ -21,6 +21,8 @@ func Test_run(t *testing.T) {
 		tt := tt
 
 		t.Run("Test", func(t *testing.T) {
+			t.Parallel()
+
 			b := &bytes.Buffer{}
 			writer = b
 			reader = strings.NewReader(tt.in)

@@ -16,6 +16,6 @@ func Test_run(t *testing.T) {
 	want := "Hello World\n"
 
 	if got != want {
-		t.Errorf("got %#v want %#v", string(got), want)
+		t.Errorf("got %#v want %#v", got, want)
 	}
 }

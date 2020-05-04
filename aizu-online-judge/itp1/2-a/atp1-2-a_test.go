@@ -27,7 +27,7 @@ func Test_run(t *testing.T) {
 		got := strings.TrimSpace(b.String())
 
 		if got != tt.out {
-			t.Errorf("got %#v want %#v", string(got), tt.out)
+			t.Errorf("got %#v want %#v", got, tt.out)
 		}
 	}
 }

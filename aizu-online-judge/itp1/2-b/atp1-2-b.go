@@ -34,7 +34,7 @@ func run() {
 	fmt.Fprintln(writer, result)
 }
 
-// ReadInts parses lines of inputs into 2D int array.
+// readIntsFromStdin parses lines of inputs into 2D int array.
 func readIntsFromStdin() [][]int {
 	out := [][]int{}
 	scanner := bufio.NewScanner(reader)

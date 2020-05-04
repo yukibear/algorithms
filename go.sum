@@ -1,5 +1,7 @@
 github.com/google/go-cmp v0.4.0 h1:xsAVV57WRhGj6kEIi8ReJzQlHHqcBYCElAvkovg3B/4=
 github.com/google/go-cmp v0.4.0/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
+github.com/yukisato/algoutil v0.0.3 h1:ocRULoEzmXTuyrBv2Hs9WSeo8crlo+LLGCgmxjznIsU=
+github.com/yukisato/algoutil v0.0.3/go.mod h1:MDwcNm9QZiP6JyxtDB/g2/7pYnWpBvOdJ/dvyqqpU8Q=
 github.com/yukisato/leetcode-util v1.0.4 h1:Iqte4ohWusX0iwvLltBEd+/2Yi+ukWtqj2RG5xCQ64E=
 github.com/yukisato/leetcode-util v1.0.4/go.mod h1:f47CyN3gUq+85YvCXgn+EOxbqI+5ul2jw06ZZomXqpI=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 h1:E7g+9GITq07hpfrRu66IVDexMakfv52eLZ2CXBWiKr4=

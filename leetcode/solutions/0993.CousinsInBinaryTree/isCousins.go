@@ -19,9 +19,9 @@ func isCousins(root *TreeNode, x int, y int) bool {
 	}
 
 	type seekData struct {
-		pairDepth int
-		rootVal   int
-		val       int
+		ignoreParentVal int
+		depth           int
+		val             int
 	}
 	seeking := seekData{
 		0,
@@ -37,18 +37,18 @@ func isCousins(root *TreeNode, x int, y int) bool {
 		case node == nil:
 			continue
 		case node.Val == seeking.val:
-			return rootVal != seeking.rootVal && depth == seeking.pairDepth
+			return depth == seeking.depth && rootVal != seeking.ignoreParentVal
 		case node.Val == x:
 			seeking = seekData{
-				pairDepth: depth,
-				rootVal:   rootVal,
-				val:       y,
+				ignoreParentVal: rootVal,
+				depth:           depth,
+				val:             y,
 			}
 		case node.Val == y:
 			seeking = seekData{
-				pairDepth: depth,
-				rootVal:   rootVal,
-				val:       x,
+				ignoreParentVal: rootVal,
+				depth:           depth,
+				val:             x,
 			}
 		default:
 			depth++

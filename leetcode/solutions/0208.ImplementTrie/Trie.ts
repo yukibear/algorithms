@@ -1,9 +1,7 @@
 export interface TrieNode {
   isEndOfWord: boolean;
-  children: (TrieNode | null)[];
+  children: Map<string, TrieNode>;
 }
-
-const CHARCODE_A = "a".charCodeAt(0);
 
 export default class Trie {
   private trie: TrieNode;
@@ -15,52 +13,53 @@ export default class Trie {
   insert(word: string) {
     let node = this.trie;
 
-    for (let i = 0; i < word.length; i++) {
-      const key = word.charCodeAt(i) - CHARCODE_A;
+    for (const key of word) {
+      let nextNode = node.children.get(key);
 
-      if (!node.children[key]) {
-        node.children[key] = this.createTrieNode();
+      if (!nextNode) {
+        nextNode = this.createTrieNode();
+        node.children.set(key, nextNode);
       }
 
-      node = node.children[key]!;
+      node = nextNode;
     }
 
     node.isEndOfWord = true;
   }
 
   search(word: string): boolean {
-    let head = this.trie;
+    let node = this.trie;
 
-    for (let i = 0; i < word.length; i++) {
-      const key = word.charCodeAt(i) - CHARCODE_A;
+    for (const key of word) {
+      const nextNode = node.children.get(key);
 
-      if (!head.children[key]) {
+      if (!nextNode) {
         return false;
       }
 
-      head = head.children[key]!;
+      node = nextNode;
     }
 
-    return head.isEndOfWord;
+    return node.isEndOfWord;
   }
 
   startsWith(prefix: string): boolean {
-    let head = this.trie;
+    let node = this.trie;
 
-    for (let i = 0; i < prefix.length; i++) {
-      const key = prefix.charCodeAt(i) - CHARCODE_A;
+    for (const key of prefix) {
+      const nextNode = node.children.get(key);
 
-      if (!head.children[key]) {
+      if (!nextNode) {
         return false;
       }
 
-      head = head.children[key]!;
+      node = nextNode;
     }
 
     return true;
   }
 
   createTrieNode(): TrieNode {
-    return { isEndOfWord: false, children: [null] };
+    return { isEndOfWord: false, children: new Map<string, TrieNode>() };
   }
 }

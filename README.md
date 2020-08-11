@@ -7,5 +7,5 @@
 Most part of this repository is codes for [LeetCode](https://leetcode.com/) problem solutions.
 
  - 💯All solutions are implemented in TypeScript run on [Deno](https://deno.land)
- - 🦸‍♂️️For personal reason, some algorythms may also be implemented in other languages such as Go
+ - 🦸‍♂️️Most algorythms are also implemented in Go for fun
  - 🆗Fully tested

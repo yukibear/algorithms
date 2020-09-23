@@ -1,7 +1,7 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import stringShift from "./stringShift.ts";
 
-Deno.test("6001. Perform String Shifts", () => {
+Deno.test("1427. Perform String Shifts", () => {
   type args = [string, [number, number][]];
   type test = [args, string];
   const tests: test[] = [

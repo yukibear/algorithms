@@ -1,7 +1,7 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import countElements from "./countElements.ts";
 
-Deno.test("6001. CountingElements", () => {
+Deno.test("1426. CountingElements", () => {
   type test = [number[] | null, number];
   const tests: test[] = [
     [null, 0],

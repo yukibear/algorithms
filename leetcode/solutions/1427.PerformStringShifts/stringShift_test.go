@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func Test_6002_PerformStringShifts(t *testing.T) {
+func Test_1427_PerformStringShifts(t *testing.T) {
 	t.Parallel()
 
 	type in struct {

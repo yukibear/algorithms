@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func Test_0119_PascalsTriangleII(t *testing.T) {
+func Test_0525_ContiguousArray(t *testing.T) {
 	t.Parallel()
 
 	tests := []struct {

@@ -1,5 +1,6 @@
 package solution
 
+// MapSum represents a trie structure with corresponding values.
 type MapSum struct {
 	num      int
 	children [26]*MapSum

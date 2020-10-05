@@ -10,15 +10,13 @@ jobs:
     name: Testing TypeScript Solutions
     runs-on: ubuntu-latest
     env:
-      DENO_INSTALL: ~/.local
-      DENO_VERSION: v0.40.0
+      DENO_INSTALL: ~/.deno
+      DENO_VERSION: v1.4.4
     steps:
       - uses: actions/checkout@v2
-      - run: curl -LO https://github.com/denoland/deno/releases/download/$DENO_VERSION/deno-x86_64-unknown-linux-gnu.zip
-      - run: unzip deno-x86_64-unknown-linux-gnu.zip
-      - run: mkdir -p $DENO_INSTALL/bin && mv deno $_
+      - run: curl -fsSL https://deno.land/x/install/install.sh | sh
       - run: $DENO_INSTALL/bin/deno --version
-      - run: $DENO_INSTALL/bin/deno test --allow-net --allow-env --allow-write leetcode/solutions/*
+      - run: $DENO_INSTALL/bin/deno test -A leetcode/solutions/*
 
   test-go:
     name: Testing Go Solutions
@@ -27,5 +25,5 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v1
         with:
-          go-version: 1.14
+          go-version: 1.15
       - run: go test ./leetcode/solutions/...

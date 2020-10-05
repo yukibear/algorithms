@@ -5,7 +5,7 @@ import (
 )
 
 func Test_1281_SubtractTheProductAndSumOfDigitsOfAnInteger(t *testing.T) {
-	// t.Parallel()
+	t.Parallel()
 
 	tests := []struct {
 		in  int
@@ -24,7 +24,7 @@ func Test_1281_SubtractTheProductAndSumOfDigitsOfAnInteger(t *testing.T) {
 		tt := tt
 
 		t.Run("Test", func(t *testing.T) {
-			// t.Parallel()
+			t.Parallel()
 
 			got := subtractProductAndSum(tt.in)
 

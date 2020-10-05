@@ -32,10 +32,10 @@ jobs:
         run: go mod download
 
       - name: Install linters
-        run: "( go get golang.org/x/lint/golint )"
+        run: go get golang.org/x/lint/golint
 
       - name: Setup reviewdog
-        run: go install ./cmd/reviewdog
+        run: go get github.com/reviewdog/reviewdog/cmd/reviewdog
 
       - name: Run reviewdog (github-pr-review with tee)
         continue-on-error: true

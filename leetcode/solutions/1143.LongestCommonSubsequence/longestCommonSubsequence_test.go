@@ -32,7 +32,7 @@ func Test_1143_LongestCommonSubsequence(t *testing.T) {
 			got := longestCommonSubsequence(tt.in.arg1, tt.in.arg2)
 
 			if got != tt.out {
-				t.Errorf("got %#v want %#v", string(got), tt.out)
+				t.Errorf("got %#v want %#v", got, tt.out)
 			}
 		})
 	}

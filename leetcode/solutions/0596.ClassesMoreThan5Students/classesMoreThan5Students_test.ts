@@ -1,9 +1,9 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import classesMoreThan5Students from "./classesMoreThan5Students.ts";
-import { open, DB } from "https://deno.land/x/sqlite/mod.ts";
+import { DB } from "https://deno.land/x/sqlite/mod.ts";
 
 Deno.test("0596. Classes More Than 5 Students", async () => {
-  const db: DB = await open("leetcode.db");
+  const db: DB = new DB("leetcode.db");
 
   setupData(db, []);
   assertEquals(classesMoreThan5Students(db), []);
@@ -20,7 +20,7 @@ Deno.test("0596. Classes More Than 5 Students", async () => {
     { student: "F", cource: "Computer" },
     { student: "G", cource: "Math" },
     { student: "H", cource: "Math" },
-    { student: "I", cource: "Math" }
+    { student: "I", cource: "Math" },
   ];
   setupData(db, COURSES_DATA_1);
   assertEquals(classesMoreThan5Students(db), ["Math"]);
@@ -31,7 +31,7 @@ Deno.test("0596. Classes More Than 5 Students", async () => {
     { student: "C", cource: "Math" },
     { student: "D", cource: "Biology" },
     { student: "E", cource: "Math" },
-    { student: "F", cource: "Computer" }
+    { student: "F", cource: "Computer" },
   ];
   setupData(db, COURSES_DATA_2);
   assertEquals(classesMoreThan5Students(db), []);
@@ -41,7 +41,7 @@ Deno.test("0596. Classes More Than 5 Students", async () => {
     { student: "B", cource: "Math" },
     { student: "C", cource: "Math" },
     { student: "D", cource: "Math" },
-    { student: "E", cource: "Math" }
+    { student: "E", cource: "Math" },
   ];
   setupData(db, COURSES_DATA_3);
   assertEquals(classesMoreThan5Students(db), ["Math"]);
@@ -51,7 +51,7 @@ Deno.test("0596. Classes More Than 5 Students", async () => {
     { student: "A", cource: "Math" },
     { student: "A", cource: "Math" },
     { student: "A", cource: "Math" },
-    { student: "A", cource: "Math" }
+    { student: "A", cource: "Math" },
   ];
   setupData(db, COURSES_DATA_4);
   assertEquals(classesMoreThan5Students(db), []);
@@ -66,7 +66,7 @@ Deno.test("0596. Classes More Than 5 Students", async () => {
     { student: "B", cource: "Computer" },
     { student: "C", cource: "Computer" },
     { student: "D", cource: "Computer" },
-    { student: "E", cource: "Computer" }
+    { student: "E", cource: "Computer" },
   ];
   setupData(db, COURSES_DATA_5);
   assertEquals(classesMoreThan5Students(db), ["Computer", "Math"]);
@@ -86,9 +86,9 @@ const setupData = (db: DB, data: Affiliation[]) => {
   db.query(`DELETE FROM courses`);
 
   data.forEach(({ student, cource }) => {
-    db.query(
-      "INSERT INTO courses (student, class) VALUES (?, ?)",
-      [student, cource]
-    );
+    db.query("INSERT INTO courses (student, class) VALUES (?, ?)", [
+      student,
+      cource,
+    ]);
   });
 };

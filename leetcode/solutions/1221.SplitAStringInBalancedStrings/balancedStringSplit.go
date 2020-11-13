@@ -2,23 +2,19 @@ package solution
 
 func balancedStringSplit(s string) int {
 	var (
-		start  rune
-		result int
 		count  int
+		result int
 	)
 
 	for _, r := range s {
-		switch {
-		case count == 0:
-			result++
+		if r == 'R' {
 			count++
-			start = r
-
-		case r == start:
-			count++
-
-		default:
+		} else {
 			count--
+		}
+
+		if count == 0 {
+			result++
 		}
 	}
 
